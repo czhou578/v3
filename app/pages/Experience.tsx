@@ -11,55 +11,38 @@ const Experience: React.FC<{
   description: string[];
 }> = ({ companyLogo, companyName, position, date, location, description }) => {
   return (
-    <div style={{ width: "100%", marginTop: "20px" }}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-start",
-          columnGap: "3px",
-          flexBasis: "1px",
-        }}
-      >
-        <div>
-          <Image
-            height="100px"
-            width="100px"
-            src={companyLogo}
-            objectFit="contain"
-          />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            marginLeft: "20px",
-            flexBasis: "900px",
-          }}
-        >
-          <div>
-            <span style={{ display: "block" }} className={styles.position}>
-              {position}
-            </span>
-            <span style={{ display: "block" }} className={styles.companyName}>
-              {companyName}
-            </span>
-            <span style={{ display: "block" }} className={styles.date}>
-              {date}
-            </span>
-            <span style={{ display: "block" }} className={styles.location}>
-              {location}
-            </span>
+    <div className="max-w-sm w-full lg:max-w-full lg:flex">
+      <Image src={companyLogo} width="100" height="100" alt="pic" />
+      <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+        <div className="mb-8">
+          <p className="text-sm text-gray-600 flex items-center">
+            <svg
+              className="fill-current text-gray-500 w-3 h-3 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+            </svg>
+            Members only
+          </p>
+          <div className="text-gray-900 font-bold text-xl mb-2">
+            Can coffee make you a better developer?
           </div>
-          <div>
-            {description.map((element, key) => {
-              return (
-                <div>
-                  <p key={key} className={styles.element}>
-                    {element}
-                  </p>
-                </div>
-              );
-            })}
+          <p className="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div className="flex items-center">
+          {/* <Image
+            className="w-10 h-10 rounded-full mr-4"
+            src="/img/jonathan.jpg"
+            alt="Avatar of Jonathan Reinink"
+          /> */}
+          <div className="text-sm">
+            <p className="text-gray-900 leading-none">Jonathan Reinink</p>
+            <p className="text-gray-600">Aug 18</p>
           </div>
         </div>
       </div>

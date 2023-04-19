@@ -2,6 +2,11 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import Introduction from "./Introduction";
 import HeaderBar from "./Headerbar";
+import Education from "./Education";
+import UIUCLogo from "../public/images/UIUC-Logo.jpg";
+import BCLogo from "../public/images/BellevueCollegeLogo.png";
+import CHSLogo from "../public/images/CupertinoHighLogo.jpg";
+import SkillsList from "./SkillsList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,13 +15,31 @@ export default function Home() {
     <div>
       <HeaderBar />
       <Introduction />
-      <div className="flex flex-col h-screen justify-center items-center">
-        <div className="bg-gray-100 p-4 mb-4 w-70vw">Content Container 1</div>
-        <div className="bg-gray-200 p-4 mb-4 w-70vw">Content Container 2</div>
-        <div className="bg-gray-300 p-4 mb-4 w-70vw">Content Container 3</div>
-        <div className="bg-gray-400 p-4 mb-4 w-70vw">Content Container 4</div>
-        <div className="bg-gray-500 p-4 mb-4 w-70vw">Content Container 5</div>
-      </div>
+      <Education
+        logo={UIUCLogo}
+        school="University of Illinois Urbana-Champaign"
+        degreeLevel="Masters"
+        date="2022-2023"
+        activities={["None"]}
+        relevantClasses={["CS 411"]}
+      />
+      <Education
+        logo={BCLogo}
+        school="Bellevue College"
+        degreeLevel="Bachelor of Science"
+        date="2022-2023"
+        activities={["None"]}
+        relevantClasses={["CS 411"]}
+      />
+      <Education
+        logo={CHSLogo}
+        school="Cupertino High School"
+        degreeLevel="High school Diploma"
+        date="2022-2023"
+        activities={["None"]}
+        relevantClasses={["CS 411"]}
+      />
+      <SkillsList />
     </div>
   );
 }
