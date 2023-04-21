@@ -17,6 +17,21 @@ import PencilLogo from "../public/images/pencil.jpg";
 import QuoraLogo from "../public/images/QuoraLogo.png";
 import SelfEmployedLogo from "../public/images/SelfEmployedLogo.jpg";
 import UpworkLogo from "../public/images/upworkLogo.png";
+import { ImHtmlFive, ImCss3 } from "react-icons/im";
+import {
+  SiTypescript,
+  SiAmazonaws,
+  SiGooglecloud,
+  SiMongodb,
+  SiMysql,
+  SiNodedotjs,
+  SiGraphql,
+  SiJira,
+  SiGit,
+  SiMarkdown,
+  SiMessenger,
+  SiGoogle,
+} from "react-icons/si";
 
 export default function Home() {
   return (
@@ -46,6 +61,38 @@ export default function Home() {
         date="2022-2023"
         activities={["None"]}
         relevantClasses={["CS 411"]}
+      />
+      <SkillsList
+        header="HTML, CSS, TypeScript"
+        icon={[
+          <ImHtmlFive key="first" />,
+          <ImCss3 key="second" />,
+          <SiTypescript key="third" />,
+        ]}
+      />
+      <SkillsList
+        header="AWS, GCP"
+        icon={[<SiAmazonaws key="first" />, <SiGooglecloud key="second" />]}
+      />
+      <SkillsList
+        header="Node.js, GraphQL"
+        icon={[<SiNodedotjs key="first" />, <SiGraphql key="second" />]}
+      />
+      <SkillsList
+        header="MongoDB, MySQL"
+        icon={[<SiMongodb key="first" />, <SiMysql key="second" />]}
+      />
+      <SkillsList
+        header="Git, Jira, Markdown"
+        icon={[
+          <SiGit key="first" />,
+          <SiJira key="second" />,
+          <SiMarkdown key="third" />,
+        ]}
+      />
+      <SkillsList
+        header="Communication, Googling"
+        icon={[<SiMessenger key="first" />, <SiGoogle key="second" />]}
       />
       <Experience
         companyLogo={IOIntel}
@@ -169,12 +216,79 @@ export default function Home() {
           `Coordinated with high school/college teachers with tutoring progress.`,
         ]}
       />
-      <SkillsList header="HTML, CSS, JavaScript" icon={<div></div>} />
-      <SkillsList header="AWS, GCP" />
-      <SkillsList header="Node.js" />
-      <SkillsList header="MongoDB, MySQL" />
-      {/* <NoteWorthyProjects /> */}
-      {/* <Classwork /> */}
+      <NoteWorthyProjects
+        header="Morsecode Binary Tree"
+        githubLink="https://github.com/czhou578/MorseCodeBinaryTree"
+        description="Decoding morse code using binary trees, written in Java. This was for a class project."
+        techUsed={["Java"]}
+      />
+      <NoteWorthyProjects
+        header="Personal Website V1"
+        githubLink="https://github.com/czhou578/Personal-Website"
+        description="This is the very first version of my personal website, using basic front end technologies."
+        techUsed={["HTML", "CSS", "JS"]}
+      />
+      <NoteWorthyProjects
+        header="Wordament V1"
+        githubLink="https://github.com/czhou578/Wordament"
+        description="This is the very first version of Wordament, using basic web technologies."
+        techUsed={["HTML", "CSS", "JS"]}
+      />
+      <NoteWorthyProjects
+        header="Doctors Orders"
+        githubLink="https://github.com/deekshacheruku/DoctorsOrders"
+        description="An Android app to help doctors and family track the medicine schedules of elderly patients."
+        techUsed={["Java"]}
+      />
+      <NoteWorthyProjects
+        header="Country Database"
+        githubLink="https://github.com/cs411-alawini/fa22-cs411-Q-team044-OurSQL"
+        description="A web app that allows for querying various data about all the countries of the world."
+        techUsed={["JS", "React"]}
+      />
+      <NoteWorthyProjects
+        header="Crypto Website"
+        githubLink="https://github.com/czhou578/CryptoWebsiteMockup"
+        description="A mockup of a cryptocurrency website, which helped me practice
+        CSS animations."
+        techUsed={["HTML", "CSS", "JS", "Figma"]}
+      />
+      <Classwork
+        header="Web Programming (Winter 2022)"
+        githubLink="https://github.com/czhou578/CS-380-Work"
+        description="Work that I did for Bellevue College's Web Programming class"
+        techUsed={["HTML", "CSS", "JS", "React"]}
+      />
+      <Classwork
+        header="Internet of Things (Winter 2022)"
+        githubLink="https://github.com/czhou578/IoT-work"
+        description="Code that I wrote for Bellevue College's IoT class"
+        techUsed={["C++", "C"]}
+      />
+      <Classwork
+        header="Operating Systems (Fall 2021)"
+        githubLink="https://github.com/czhou578/CS360-Work"
+        description="Code that I wrote for Bellevue College's Operating Systems class"
+        techUsed={["C"]}
+      />
+      <Classwork
+        header="Data Structures / Databases (Fall 2020)"
+        githubLink="https://github.com/czhou578/Fall-2020-Work"
+        description="Data Structures and databases work from Bellevue College"
+        techUsed={["Java", "C++"]}
+      />
+      <Classwork
+        header="Programming Languages (Winter 2021)"
+        githubLink="https://github.com/czhou578/Winter-2021-Quarter-Work"
+        description="Work from mainly my Programming Languages class at Bellevue College"
+        techUsed={["Java", "Python"]}
+      />
+      <Classwork
+        header="Fundamentals of CS II (Winter 2020)"
+        githubLink="https://github.com/czhou578/CS-211-Work"
+        description="Work from my second ever CS class at Bellevue College"
+        techUsed={["Java"]}
+      />
       <Designs />
       <Footer />
     </div>

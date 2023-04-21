@@ -8,7 +8,7 @@
 
 interface Props {
   header: string;
-  icon: HTMLDivElement;
+  icon: any;
 }
 
 export default function SkillsList(props: Props) {
@@ -30,7 +30,7 @@ export default function SkillsList(props: Props) {
       </svg>
       <a href="#">
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          Need a help in Claim?
+          {props.header}
         </h5>
       </a>
       <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
