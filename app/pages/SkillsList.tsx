@@ -1,4 +1,17 @@
-export default function SkillsList() {
+/**
+ *  Github, Jira, Management, markdown
+ *  HTML, CSS, React, typescript, javascrupt
+ *  Mongodb, mysql, node.js
+ *  AWS GCP,
+ *  speaking, writing, googling, prompt engineering
+ */
+
+interface Props {
+  header: string;
+  icon: HTMLDivElement;
+}
+
+export default function SkillsList(props: Props) {
   return (
     <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <svg
