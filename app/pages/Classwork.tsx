@@ -1,4 +1,4 @@
-const NoteWorthyProjects: React.FC<{
+const Classwork: React.FC<{
   header: string;
   githubLink: string;
   description: string;
@@ -32,4 +32,4 @@ const NoteWorthyProjects: React.FC<{
   );
 };
 
-export default NoteWorthyProjects;
+export default Classwork;
