@@ -11,7 +11,7 @@ const Experience: React.FC<{
   description: string[];
 }> = ({ companyLogo, companyName, position, date, location, description }) => {
   return (
-    <div className="max-w-sm w-full lg:max-w-full lg:flex">
+    <div className="max-w-sm w-full lg:max-w-full lg:flex flex justify-center">
       <Image src={companyLogo} width="100" height="100" alt="pic" />
       <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
         <div className="mb-8">
@@ -22,13 +22,15 @@ const Experience: React.FC<{
               {date}. {location}
             </p>
           </div>
-          <p className="text-gray-700 text-base">
-            {description
-              ? description.map((element, idx) => {
-                  return <p key={idx}>{element}</p>;
-                })
-              : null}
-          </p>
+          {description
+            ? description.map((element, idx) => {
+                return (
+                  <p className="text-gray-700 text-base" key={idx}>
+                    {element}
+                  </p>
+                );
+              })
+            : null}
         </div>
         <div className="flex items-center">
           {/* <Image
