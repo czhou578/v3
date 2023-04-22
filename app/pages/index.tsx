@@ -32,6 +32,7 @@ import {
   SiMessenger,
   SiGoogle,
 } from "react-icons/si";
+import Projects from "./Projects";
 
 export default function Home() {
   return (
@@ -50,15 +51,15 @@ export default function Home() {
         logo={BCLogo}
         school="Bellevue College"
         degreeLevel="Bachelor of Science"
-        date="2022-2023"
+        date="2019-2022"
         activities={["None"]}
         relevantClasses={["CS 411"]}
       />
       <Education
         logo={CHSLogo}
         school="Cupertino High School"
-        degreeLevel="High school Diploma"
-        date="2022-2023"
+        degreeLevel="High School Diploma"
+        date="2015-2019"
         activities={["None"]}
         relevantClasses={["CS 411"]}
       />
@@ -70,30 +71,32 @@ export default function Home() {
           <SiTypescript key="third" />,
         ]}
       />
-      <SkillsList
-        header="AWS, GCP"
-        icon={[<SiAmazonaws key="first" />, <SiGooglecloud key="second" />]}
-      />
-      <SkillsList
-        header="Node.js, GraphQL"
-        icon={[<SiNodedotjs key="first" />, <SiGraphql key="second" />]}
-      />
-      <SkillsList
-        header="MongoDB, MySQL"
-        icon={[<SiMongodb key="first" />, <SiMysql key="second" />]}
-      />
-      <SkillsList
-        header="Git, Jira, Markdown"
-        icon={[
-          <SiGit key="first" />,
-          <SiJira key="second" />,
-          <SiMarkdown key="third" />,
-        ]}
-      />
-      <SkillsList
-        header="Communication, Googling"
-        icon={[<SiMessenger key="first" />, <SiGoogle key="second" />]}
-      />
+      <div className="flex justify-center grid grid-cols-3 gap-1">
+        <SkillsList
+          header="AWS, GCP"
+          icon={[<SiAmazonaws key="first" />, <SiGooglecloud key="second" />]}
+        />
+        <SkillsList
+          header="Node.js, GraphQL"
+          icon={[<SiNodedotjs key="first" />, <SiGraphql key="second" />]}
+        />
+        <SkillsList
+          header="MongoDB, MySQL"
+          icon={[<SiMongodb key="first" />, <SiMysql key="second" />]}
+        />
+        <SkillsList
+          header="Git, Jira, Markdown"
+          icon={[
+            <SiGit key="first" />,
+            <SiJira key="second" />,
+            <SiMarkdown key="third" />,
+          ]}
+        />
+        <SkillsList
+          header="Communication, Googling"
+          icon={[<SiMessenger key="first" />, <SiGoogle key="second" />]}
+        />
+      </div>
       <Experience
         companyLogo={IOIntel}
         companyName="IOIntelligence"
@@ -216,6 +219,7 @@ export default function Home() {
           `Coordinated with high school/college teachers with tutoring progress.`,
         ]}
       />
+      {/* <Projects /> */}
       <NoteWorthyProjects
         header="Morsecode Binary Tree"
         githubLink="https://github.com/czhou578/MorseCodeBinaryTree"

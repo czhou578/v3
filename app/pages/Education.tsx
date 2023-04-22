@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-// import styles from "../styles/education.module.css";
 
 const Education: React.FC<{
   logo: StaticImageData;
@@ -11,84 +10,42 @@ const Education: React.FC<{
   relevantClasses: string[];
 }> = ({ school, degreeLevel, date, activities, relevantClasses, logo }) => {
   return (
-    <div className="max-w-sm w-full lg:max-w-full lg:flex">
-      <Image src={logo} width="100" height="100" alt="pic" />
-      <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-        <div className="mb-8">
-          <div className="text-gray-900 font-bold text-xl mb-2">{school}</div>
-          <div className="text-sm">
-            <p className="text-gray-900 leading-none">{degreeLevel}</p>
-            <p className="text-gray-600">{date}</p>
-          </div>
-          <p className="text-gray-700 text-base">
-            <p>Activies: {activities}</p>
-            <p>Relevant Classes: {relevantClasses}</p>
+    <div className="flex justify-center">
+      <ol className="relative border-l border-gray-200 dark:border-gray-700">
+        <li className="mb-10 ml-6">
+          <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <svg
+              aria-hidden="true"
+              className="w-3 h-3 text-blue-800 dark:text-blue-300"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+          <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+            {school}{" "}
+            <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+              {degreeLevel}
+            </span>
+          </h3>
+          <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            {date}
+          </time>
+          <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+            Get access to over 20+ pages including a dashboard layout, charts,
+            kanban board, calendar, and pre-order E-commerce & Marketing pages.
           </p>
-        </div>
-        <div className="flex items-center">
-          {/* <Image
-            className="w-10 h-10 rounded-full mr-4"
-            src="/img/jonathan.jpg"
-            alt="Avatar of Jonathan Reinink"
-          /> */}
-        </div>
-      </div>
+          <p>Relevant classes: {relevantClasses}</p>
+        </li>
+      </ol>
     </div>
   );
 };
 
 export default Education;
-// const Education: React.FC<{
-//   logo: StaticImageData;
-//   school: string;
-//   degreeLevel: string;
-//   date: string;
-//   activities?: string[];
-//   relevantClasses: string[];
-// }> = ({ school, degreeLevel, date, activities, relevantClasses, logo }) => {
-//   return (
-// <div className={styles.globalwrapper}>
-//   <div className={styles.degreedatewrapper}>
-//     <div>
-//       <div className={styles.school}>
-//         <Image
-//           src={logo}
-//           width="100px"
-//           height="100px"
-//           objectFit="contain"
-//         />
-//         <h2>{school}</h2>
-//       </div>
-//       <div className={styles.degree}>
-//         <h3>{degreeLevel}</h3>
-//       </div>
-//     </div>
-//     <div className={styles.date}>
-//       <h3>{date}</h3>
-//     </div>
-//   </div>
-//   <div className={styles.activities}>
-//     <h4>Activities</h4>
-//     <ul>
-//       {activities
-//         ? activities.map((element, idx) => {
-//             return <li key={idx}>{element}</li>;
-//           })
-//         : null}
-//     </ul>
-//   </div>
-//   <div className={styles.classes}>
-//     <h4>Relevant Classes</h4>
-//     <ul>
-//       {relevantClasses
-//         ? relevantClasses.map((element, idx) => {
-//             return <li key={idx}>{element}</li>;
-//           })
-//         : null}
-//     </ul>
-//   </div>
-// </div>
-//   );
-// };
-
-// export default Education;
