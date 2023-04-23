@@ -15,6 +15,12 @@
   }
 }
 
+@layer base {
+  .skill-gap {
+    gap: 1rem
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

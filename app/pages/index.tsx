@@ -63,8 +63,8 @@ export default function Home() {
         activities={["None"]}
         relevantClasses={["CS 411"]}
       />
-      <div className="mx-auto ml-10 items-center">
-        <div className="grid grid-cols-3 p-10">
+      <div className="mx-auto p-8 w-7/12">
+        <div className="grid lg:grid-cols-3 skill-gap">
           <SkillsList
             header="HTML, CSS, TypeScript"
             icon={[
@@ -210,82 +210,86 @@ export default function Home() {
         ]}
       />
       {/* <Projects /> */}
-      <div className="flex justify-center grid grid-cols-3">
-        <NoteWorthyProjects
-          header="Morsecode Binary Tree"
-          githubLink="https://github.com/czhou578/MorseCodeBinaryTree"
-          description="Decoding morse code using binary trees, written in Java. This was for a class project."
-          techUsed={["Java"]}
-        />
-        <NoteWorthyProjects
-          header="Personal Website V1"
-          githubLink="https://github.com/czhou578/Personal-Website"
-          description="This is the very first version of my personal website, using basic front end technologies."
-          techUsed={["HTML", "CSS", "JS"]}
-        />
-        <NoteWorthyProjects
-          header="Wordament V1"
-          githubLink="https://github.com/czhou578/Wordament"
-          description="This is the very first version of Wordament, using basic web technologies."
-          techUsed={["HTML", "CSS", "JS"]}
-        />
-        <NoteWorthyProjects
-          header="Doctors Orders"
-          githubLink="https://github.com/deekshacheruku/DoctorsOrders"
-          description="An Android app to help doctors and family track the medicine schedules of elderly patients."
-          techUsed={["Java"]}
-        />
-        <NoteWorthyProjects
-          header="Country Database"
-          githubLink="https://github.com/cs411-alawini/fa22-cs411-Q-team044-OurSQL"
-          description="A web app that allows for querying various data about all the countries of the world."
-          techUsed={["JS", "React"]}
-        />
-        <NoteWorthyProjects
-          header="Crypto Website"
-          githubLink="https://github.com/czhou578/CryptoWebsiteMockup"
-          description="A mockup of a cryptocurrency website, which helped me practice
-          CSS animations."
-          techUsed={["HTML", "CSS", "JS", "Figma"]}
-        />
+      <div className="mx-auto p-8 w-7/12">
+        <div className="grid lg:grid-cols-3 skill-gap">
+          <NoteWorthyProjects
+            header="Morsecode Binary Tree"
+            githubLink="https://github.com/czhou578/MorseCodeBinaryTree"
+            description="Decoding morse code using binary trees, written in Java. This was for a class project."
+            techUsed={["Java"]}
+          />
+          <NoteWorthyProjects
+            header="Personal Website V1"
+            githubLink="https://github.com/czhou578/Personal-Website"
+            description="This is the very first version of my personal website, using basic front end technologies."
+            techUsed={["HTML", "CSS", "JS"]}
+          />
+          <NoteWorthyProjects
+            header="Wordament V1"
+            githubLink="https://github.com/czhou578/Wordament"
+            description="This is the very first version of Wordament, using basic web technologies."
+            techUsed={["HTML", "CSS", "JS"]}
+          />
+          <NoteWorthyProjects
+            header="Doctors Orders"
+            githubLink="https://github.com/deekshacheruku/DoctorsOrders"
+            description="An Android app to help doctors and family track the medicine schedules of elderly patients."
+            techUsed={["Java"]}
+          />
+          <NoteWorthyProjects
+            header="Country Database"
+            githubLink="https://github.com/cs411-alawini/fa22-cs411-Q-team044-OurSQL"
+            description="A web app that allows for querying various data about all the countries of the world."
+            techUsed={["JS", "React"]}
+          />
+          <NoteWorthyProjects
+            header="Crypto Website"
+            githubLink="https://github.com/czhou578/CryptoWebsiteMockup"
+            description="A mockup of a cryptocurrency website, which helped me practice
+            CSS animations."
+            techUsed={["HTML", "CSS", "JS", "Figma"]}
+          />
+        </div>
       </div>
-      <div className="flex justify-center grid grid-cols-3">
-        <Classwork
-          header="Web Programming (Winter 2022)"
-          githubLink="https://github.com/czhou578/CS-380-Work"
-          description="Work that I did for Bellevue College's Web Programming class"
-          techUsed={["HTML", "CSS", "JS", "React"]}
-        />
-        <Classwork
-          header="Internet of Things (Winter 2022)"
-          githubLink="https://github.com/czhou578/IoT-work"
-          description="Code that I wrote for Bellevue College's IoT class"
-          techUsed={["C++", "C"]}
-        />
-        <Classwork
-          header="Operating Systems (Fall 2021)"
-          githubLink="https://github.com/czhou578/CS360-Work"
-          description="Code that I wrote for Bellevue College's Operating Systems class"
-          techUsed={["C"]}
-        />
-        <Classwork
-          header="Data Structures / Databases (Fall 2020)"
-          githubLink="https://github.com/czhou578/Fall-2020-Work"
-          description="Data Structures and databases work from Bellevue College"
-          techUsed={["Java", "C++"]}
-        />
-        <Classwork
-          header="Programming Languages (Winter 2021)"
-          githubLink="https://github.com/czhou578/Winter-2021-Quarter-Work"
-          description="Work from mainly my Programming Languages class at Bellevue College"
-          techUsed={["Java", "Python"]}
-        />
-        <Classwork
-          header="Fundamentals of CS II (Winter 2020)"
-          githubLink="https://github.com/czhou578/CS-211-Work"
-          description="Work from my second ever CS class at Bellevue College"
-          techUsed={["Java"]}
-        />
+      <div className="mx-auto p-8 w-7/12">
+        <div className="grid lg:grid-cols-3 skill-gap">
+          <Classwork
+            header="Web Programming (Winter 2022)"
+            githubLink="https://github.com/czhou578/CS-380-Work"
+            description="Work that I did for Bellevue College's Web Programming class"
+            techUsed={["HTML", "CSS", "JS", "React"]}
+          />
+          <Classwork
+            header="Internet of Things (Winter 2022)"
+            githubLink="https://github.com/czhou578/IoT-work"
+            description="Code that I wrote for Bellevue College's IoT class"
+            techUsed={["C++", "C"]}
+          />
+          <Classwork
+            header="Operating Systems (Fall 2021)"
+            githubLink="https://github.com/czhou578/CS360-Work"
+            description="Code that I wrote for Bellevue College's Operating Systems class"
+            techUsed={["C"]}
+          />
+          <Classwork
+            header="Data Structures / Databases (Fall 2020)"
+            githubLink="https://github.com/czhou578/Fall-2020-Work"
+            description="Data Structures and databases work from Bellevue College"
+            techUsed={["Java", "C++"]}
+          />
+          <Classwork
+            header="Programming Languages (Winter 2021)"
+            githubLink="https://github.com/czhou578/Winter-2021-Quarter-Work"
+            description="Work from mainly my Programming Languages class at Bellevue College"
+            techUsed={["Java", "Python"]}
+          />
+          <Classwork
+            header="Fundamentals of CS II (Winter 2020)"
+            githubLink="https://github.com/czhou578/CS-211-Work"
+            description="Work from my second ever CS class at Bellevue College"
+            techUsed={["Java"]}
+          />
+        </div>
       </div>
       <Designs />
       <Footer />
