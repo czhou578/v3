@@ -16,56 +16,56 @@ export default function Designs() {
           <Image
             src={BCollege1}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg   rounded-lg"
           />
         </div>
         <div>
           <Image
             src={BCollege2}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
         <div>
           <Image
             src={ElpisUI1}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
         <div>
           <Image
             src={ElpisUI2}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
         <div>
           <Image
             src={FoodApp1}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
         <div>
           <Image
             src={FoodApp2}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
         <div>
           <Image
             src={UIDesign1}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
         <div>
           <Image
             src={UIDesign2}
             alt="Picture of BC1"
-            className="h-auto max-w-full rounded-lg"
+            className="h-auto max-w-lg rounded-lg"
           />
         </div>
       </div>

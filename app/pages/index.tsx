@@ -291,7 +291,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <Designs />
+      <div className="mx-auto p-8 w-fit">
+        <Designs />
+      </div>
       <Footer />
     </div>
   );
