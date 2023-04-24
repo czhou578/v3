@@ -33,37 +33,40 @@ import {
   SiGoogle,
 } from "react-icons/si";
 import Projects from "./Projects";
+import DistanceCalc1 from "../public/images/distancecalc1.png";
 
 export default function Home() {
   return (
     <div>
       <HeaderBar />
       <Introduction />
-      <Education
-        logo={UIUCLogo}
-        school="University of Illinois Urbana-Champaign"
-        degreeLevel="Masters"
-        date="2022-2023"
-        activities={["None"]}
-        relevantClasses={["CS 411"]}
-      />
-      <Education
-        logo={BCLogo}
-        school="Bellevue College"
-        degreeLevel="Bachelor of Science"
-        date="2019-2022"
-        activities={["None"]}
-        relevantClasses={["CS 411"]}
-      />
-      <Education
-        logo={CHSLogo}
-        school="Cupertino High School"
-        degreeLevel="High School Diploma"
-        date="2015-2019"
-        activities={["None"]}
-        relevantClasses={["CS 411"]}
-      />
-      <div className="mx-auto p-8 w-7/12">
+      <div className="mx-auto md:w-5/12">
+        <Education
+          logo={UIUCLogo}
+          school="University of Illinois Urbana-Champaign"
+          degreeLevel="Masters"
+          date="2022-2023"
+          activities={["None"]}
+          relevantClasses={["CS 411"]}
+        />
+        <Education
+          logo={BCLogo}
+          school="Bellevue College"
+          degreeLevel="Bachelor of Science"
+          date="2019-2022"
+          activities={["None"]}
+          relevantClasses={["CS 411"]}
+        />
+        <Education
+          logo={CHSLogo}
+          school="Cupertino High School"
+          degreeLevel="High School Diploma"
+          date="2015-2019"
+          activities={["None"]}
+          relevantClasses={["CS 411"]}
+        />
+      </div>
+      <div className="mx-auto p-8 w-7/12 md:w-8/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <SkillsList
             header="HTML, CSS, TypeScript"
@@ -209,8 +212,23 @@ export default function Home() {
           `Coordinated with high school/college teachers with tutoring progress.`,
         ]}
       />
-      {/* <Projects /> */}
-      <div className="mx-auto p-8 w-7/12">
+      <Projects
+        header="DistanceCalc"
+        img={"/images/distancecalc1.png"}
+        list={[
+          "HTML/CSS",
+          "JavaScript",
+          "React.js",
+          "Material UI",
+          "React Router",
+          "Firebase",
+        ]}
+        description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
+        in the United States, and calculate their distance and the travel time in minutes. After each request,
+        the data will be logged in an external form, which I took from Material UI.`}
+        githubLink="https://github.com/czhou578/DistanceCalc"
+      />
+      <div className="mx-auto p-8 w-7/12 md:w-9/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <NoteWorthyProjects
             header="Morsecode Binary Tree"
@@ -251,7 +269,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="mx-auto p-8 w-7/12">
+      <div className="mx-auto p-8 w-7/12 md:w-9/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <Classwork
             header="Web Programming (Winter 2022)"

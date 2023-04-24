@@ -10,7 +10,7 @@ const Education: React.FC<{
   relevantClasses: string[];
 }> = ({ school, degreeLevel, date, activities, relevantClasses, logo }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center max-w-md">
       <ol className="relative border-l border-gray-200 dark:border-gray-700">
         <li className="mb-10 ml-6">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
@@ -38,8 +38,9 @@ const Education: React.FC<{
             {date}
           </time>
           <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-            Get access to over 20+ pages including a dashboard layout, charts,
-            kanban board, calendar, and pre-order E-commerce & Marketing pages.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
+            hic quasi natus repellendus assumenda perspiciatis neque ullam sunt
+            dolorum voluptatibus.
           </p>
           <p>Relevant classes: {relevantClasses}</p>
         </li>
