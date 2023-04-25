@@ -40,14 +40,14 @@ export default function Home() {
     <div>
       <HeaderBar />
       <Introduction />
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12">
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
         Education
       </h2>
       <div className="mx-auto md:w-5/12 lg:w-3/12">
         <Education
           logo={UIUCLogo}
           school="University of Illinois Urbana-Champaign"
-          degreeLevel="Masters"
+          degreeLevel="Masters in Computer Science"
           date="2022-2023"
           activities={["CS 411 Database Project Team Lead"]}
           relevantClasses={[
@@ -61,7 +61,7 @@ export default function Home() {
         <Education
           logo={BCLogo}
           school="Bellevue College"
-          degreeLevel="Bachelor of Science"
+          degreeLevel="B.S. in Computer Science"
           date="2019-2022"
           activities={["CS Student Advisory Board Treasurer"]}
           relevantClasses={[
@@ -260,22 +260,113 @@ export default function Home() {
       <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
         Projects
       </h2>
-      <Projects
-        header="DistanceCalc"
-        img={"/images/distancecalc1.png"}
-        list={[
-          "HTML/CSS",
-          "JavaScript",
-          "React.js",
-          "Material UI",
-          "React Router",
-          "Firebase",
-        ]}
-        description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
-        in the United States, and calculate their distance and the travel time in minutes. After each request,
-        the data will be logged in an external form, which I took from Material UI.`}
-        githubLink="https://github.com/czhou578/DistanceCalc"
-      />
+      <div className="mx-auto">
+        <Projects
+          header="DistanceCalc"
+          img={["/images/distancecalc1.png", "/images/distancecalc2.png"]}
+          list={[
+            "HTML/CSS",
+            "JavaScript",
+            "React.js",
+            "Material UI",
+            "React Router",
+            "Firebase",
+          ]}
+          description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
+          in the United States, and calculate their distance and the travel time in minutes. After each request,
+          the data will be logged in an external form, which I took from Material UI.`}
+          githubLink="https://github.com/czhou578/DistanceCalc"
+        />
+        <Projects
+          header="StreetFoodLove"
+          img={["../images/FoodApp1.png", "../images/FoodApp2.png"]}
+          list={[
+            "HTML/CSS Modules",
+            "TypeScript",
+            "React.js",
+            "Semantic UI",
+            "AWS",
+            "Redux",
+          ]}
+          description={`For my senior year capstone project, I helped to create a Yelp-like app
+          that will empower and enable food truck vendors to more easily attract customers and run their business.
+          I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
+          the initial mockups. `}
+          githubLink="https://github.com/bcfoodapp/streetfoodlove"
+        />
+        <Projects
+          header="Project Elpis App"
+          img={["../images/PE1.png", "../images/PE2.png"]}
+          list={[
+            "HTML/CSS Modules",
+            "TypeScript",
+            "React.js",
+            "Semantic UI",
+            "AWS",
+            "Redux",
+          ]}
+          description={`For my senior year capstone project, I helped to create a Yelp-like app
+          that will empower and enable food truck vendors to more easily attract customers and run their business.
+          I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
+          the initial mockups. `}
+          githubLink="https://github.com/bcfoodapp/streetfoodlove"
+        />
+        <Projects
+          header="React Backend-Benchmarks"
+          img={["/images/benchmark1.png", "/images/benchmark2.png"]}
+          list={[
+            "TypeScript",
+            "React.js",
+            "Node.js",
+            "MySQL",
+            "Python / Flask",
+            "Golang",
+          ]}
+          description={`A web application with a React frontend and three backends written in different
+            languages that are all connected to a common MySQL database. Users will be able to send repetitive queries to any
+            backend that they choose and see how fast the server responds after the completed operation.`}
+          githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
+        />
+        <Projects
+          header="Wordament / Wordle"
+          img={["/images/W1.png", "/images/W2.png"]}
+          list={[
+            "HTML/CSS Modules",
+            "TypeScript",
+            "React.js",
+            "Express",
+            "MySQL",
+          ]}
+          description={`I created my own version of the popular Microsoft game Wordament. Users are to 
+            swipe with a mouse to create words using the provided alphabet letters, and are awarded a 
+            specific amount of points depending on whether a guess results in a word.`}
+          githubLink="https://github.com/czhou578/Wordament-v2"
+        />
+        <Projects
+          header="Whitehouse.gov 2025"
+          img={["/images/whitehouse1.png", "/images/whitehouse2.png"]}
+          list={[
+            "HTML/CSS",
+            "JavaScript",
+            "React.js",
+            "Firebase",
+            "FEC / Google Civics API",
+          ]}
+          description={`This project was a playground for me to practice my designing skills while imagining
+        what a future of the whitehouse.gov website would look like if Andrew Yang got elected as the
+        US President in 2024.`}
+          githubLink="https://github.com/czhou578/AmericanScorecard"
+        />
+        <Projects
+          header="YouTubeBlocker"
+          img={["/images/YT.png", "/images/YT2.png"]}
+          list={["Google Chrome API", "CSS"]}
+          description={`A way to block distractions on YouTube. Using this blocker,
+        users will be able to cover up the recommended videos section,
+        allowing for less distractions and greater concentration on tasks.`}
+          githubLink="https://github.com/czhou578/YouTubeBlocker"
+        />
+      </div>
       <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
         Noteworthy Projects
       </h2>

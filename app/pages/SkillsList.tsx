@@ -18,7 +18,7 @@ export default function SkillsList(props: Props) {
         {props.icon
           ? props.icon.map((element: any, idx: any) => {
               return (
-                <div key={idx} className="ml-5 mb-5">
+                <div key={idx} className="ml-3 mb-5">
                   {element}
                 </div>
               );
