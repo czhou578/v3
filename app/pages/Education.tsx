@@ -38,9 +38,7 @@ const Education: React.FC<{
             {date}
           </time>
           <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-            hic quasi natus repellendus assumenda perspiciatis neque ullam sunt
-            dolorum voluptatibus.
+            {activities}
           </p>
           <p>Relevant classes: {relevantClasses}</p>
         </li>

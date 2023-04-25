@@ -11,7 +11,7 @@ import Image from "next/image";
 export default function Designs() {
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-2 sm:max-md:grid-cols-1 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:max-md:grid-cols-1 gap-4">
         <div>
           <Image
             src={BCollege1}

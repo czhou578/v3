@@ -40,68 +40,113 @@ export default function Home() {
     <div>
       <HeaderBar />
       <Introduction />
-      <div className="mx-auto md:w-5/12">
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12">
+        Education
+      </h2>
+      <div className="mx-auto md:w-5/12 lg:w-3/12">
         <Education
           logo={UIUCLogo}
           school="University of Illinois Urbana-Champaign"
           degreeLevel="Masters"
           date="2022-2023"
-          activities={["None"]}
-          relevantClasses={["CS 411"]}
+          activities={["CS 411 Database Project Team Lead"]}
+          relevantClasses={[
+            "User-Interface Design, ",
+            "Databases, ",
+            "Advanced Data Management ",
+            "Human-Computer Interaction, ",
+            "Artificial Intelligence",
+          ]}
         />
         <Education
           logo={BCLogo}
           school="Bellevue College"
           degreeLevel="Bachelor of Science"
           date="2019-2022"
-          activities={["None"]}
-          relevantClasses={["CS 411"]}
+          activities={["CS Student Advisory Board Treasurer"]}
+          relevantClasses={[
+            "Algorithms, ",
+            "Cloud Computing, ",
+            "Software Engineering, ",
+            "Data Structures, ",
+            "Computer Networks, ",
+            "Operating Systems, ",
+            "Linear Algebra, ",
+            "Discrete Math",
+          ]}
         />
         <Education
           logo={CHSLogo}
           school="Cupertino High School"
           degreeLevel="High School Diploma"
           date="2015-2019"
-          activities={["None"]}
-          relevantClasses={["CS 411"]}
+          activities={[
+            "Speech and Debate Club Member, ",
+            "Sophomore English Tutor",
+          ]}
+          relevantClasses={[
+            "AP Computer Science A, ",
+            "AP Statistics, ",
+            "AP Physics C: Mechanics, ",
+            "AP Chemistry, ",
+            "AP United States History",
+          ]}
         />
       </div>
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12">
+        Skills
+      </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <SkillsList
             header="HTML, CSS, TypeScript"
             icon={[
-              <ImHtmlFive key="first" />,
-              <ImCss3 key="second" />,
-              <SiTypescript key="third" />,
+              <ImHtmlFive key="first" size="4em" />,
+              <ImCss3 key="second" size="4em" />,
+              <SiTypescript key="third" size="4em" />,
             ]}
           />
           <SkillsList
             header="AWS, GCP"
-            icon={[<SiAmazonaws key="first" />, <SiGooglecloud key="second" />]}
+            icon={[
+              <SiAmazonaws key="first" size="4em" />,
+              <SiGooglecloud key="second" size="4em" />,
+            ]}
           />
           <SkillsList
             header="Node.js, GraphQL"
-            icon={[<SiNodedotjs key="first" />, <SiGraphql key="second" />]}
+            icon={[
+              <SiNodedotjs key="first" size="4em" />,
+              <SiGraphql key="second" size="4em" />,
+            ]}
           />
           <SkillsList
             header="MongoDB, MySQL"
-            icon={[<SiMongodb key="first" />, <SiMysql key="second" />]}
+            icon={[
+              <SiMongodb key="first" size="4em" />,
+              <SiMysql key="second" size="4em" />,
+            ]}
           />
           <SkillsList
             header="Git, Jira, Markdown"
             icon={[
-              <SiGit key="first" />,
-              <SiJira key="second" />,
-              <SiMarkdown key="third" />,
+              <SiGit key="first" size="4em" />,
+              <SiJira key="second" size="4em" />,
+              <SiMarkdown key="third" size="4em" />,
             ]}
           />
           <SkillsList
             header="Communication, Googling"
-            icon={[<SiMessenger key="first" />, <SiGoogle key="second" />]}
+            icon={[
+              <SiMessenger key="first" size="4em" />,
+              <SiGoogle key="second" size="4em" />,
+            ]}
           />
         </div>
       </div>
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+        Experience
+      </h2>
       <Experience
         companyLogo={IOIntel}
         companyName="IOIntelligence"
@@ -212,6 +257,9 @@ export default function Home() {
           `Coordinated with high school/college teachers with tutoring progress.`,
         ]}
       />
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+        Projects
+      </h2>
       <Projects
         header="DistanceCalc"
         img={"/images/distancecalc1.png"}
@@ -228,6 +276,9 @@ export default function Home() {
         the data will be logged in an external form, which I took from Material UI.`}
         githubLink="https://github.com/czhou578/DistanceCalc"
       />
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+        Noteworthy Projects
+      </h2>
       <div className="mx-auto p-8 w-7/12 md:w-9/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <NoteWorthyProjects
@@ -269,6 +320,9 @@ export default function Home() {
           />
         </div>
       </div>
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+        Classwork
+      </h2>
       <div className="mx-auto p-8 w-7/12 md:w-9/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <Classwork
@@ -309,6 +363,9 @@ export default function Home() {
           />
         </div>
       </div>
+      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+        Designs
+      </h2>
       <div className="mx-auto p-8 w-fit">
         <Designs />
       </div>
