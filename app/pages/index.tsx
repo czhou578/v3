@@ -43,7 +43,7 @@ export default function Home() {
       <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
         Education
       </h2>
-      <div className="mx-auto md:w-5/12 lg:w-3/12">
+      <div className="mx-auto md:w-6/12 lg:w-6/12">
         <Education
           logo={UIUCLogo}
           school="University of Illinois Urbana-Champaign"
@@ -419,19 +419,19 @@ export default function Home() {
           <Classwork
             header="Web Programming (Winter 2022)"
             githubLink="https://github.com/czhou578/CS-380-Work"
-            description="Work that I did for Bellevue College's Web Programming class"
-            techUsed={["HTML", "CSS", "JS", "React"]}
+            description="Work done for Bellevue College's Web Programming class."
+            techUsed={["HTML/CSS", "JS", "React"]}
           />
           <Classwork
             header="Internet of Things (Winter 2022)"
             githubLink="https://github.com/czhou578/IoT-work"
-            description="Code that I wrote for Bellevue College's IoT class"
+            description="Code for Bellevue College's Internet of Things(IOT) class. The class used Arduino."
             techUsed={["C++", "C"]}
           />
           <Classwork
             header="Operating Systems (Fall 2021)"
             githubLink="https://github.com/czhou578/CS360-Work"
-            description="Code that I wrote for Bellevue College's Operating Systems class"
+            description="Code that I wrote for Bellevue College's Operating Systems class in Linux OS."
             techUsed={["C"]}
           />
           <Classwork
@@ -441,9 +441,9 @@ export default function Home() {
             techUsed={["Java", "C++"]}
           />
           <Classwork
-            header="Programming Languages (Winter 2021)"
+            header="Programming Lang. (Winter 2021)"
             githubLink="https://github.com/czhou578/Winter-2021-Quarter-Work"
-            description="Work from mainly my Programming Languages class at Bellevue College"
+            description="Learned regular expressions, and parsing."
             techUsed={["Java", "Python"]}
           />
           <Classwork

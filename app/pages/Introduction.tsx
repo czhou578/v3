@@ -16,23 +16,25 @@ export default function Introduction() {
   return (
     <div className="bg-gray-800 p-8 flex justify-center h-full">
       <div className="m-auto">
-        <h1 className="text-3xl font-bold mb-4 text-white">
+        <h1 className="text-6xl font-bold mb-4 text-white">
           Hi! I am Colin Zhou.....
         </h1>
-        <p className="text-lg text-white">
-          A software engineer currently studying at UIUC!
+        <p className="text-white text-3xl">
+          A software engineer currently studying at UIUC
         </p>
-        <TypewriterComponent
-          onInit={(typewriter) => {
-            typewriter
-              .typeString(
-                "Montreal -> Kitchener -> Cupertino -> Seattle -> Champaign"
-              )
-              .start();
-          }}
-        />
-        <div>
-          <h1 suppressHydrationWarning>{time.toLocaleString()}</h1>
+        <div className="mt-10">
+          <TypewriterComponent
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(
+                  '<strong style="font-size: 25px"> Montreal | Kitchener | Cupertino | Seattle | Champaign </strong'
+                )
+                .start();
+            }}
+          />
+        </div>
+        <div className="flex justify-center mt-10">
+          <h1 suppressHydrationWarning>Local Time: {time.toLocaleString()}</h1>
         </div>
       </div>
     </div>

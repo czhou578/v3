@@ -10,7 +10,7 @@ const Education: React.FC<{
   relevantClasses: string[];
 }> = ({ school, degreeLevel, date, activities, relevantClasses, logo }) => {
   return (
-    <div className="flex justify-center max-w-md">
+    <div className="flex justify-center w-auto">
       <ol className="relative border-l border-gray-200 dark:border-gray-700">
         <li className="mb-10 ml-6">
           <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">

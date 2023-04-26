@@ -24,25 +24,24 @@ const Projects: React.FC<{
   return (
     <div className="max-w-sm lg:max-w-fit lg:flex justify-center mb-10">
       <div
-        className="lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+        className="lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden h-2/6"
         title="Woman holding a mug"
       >
         {img
           ? img.map((element, idx) => {
               return (
                 <>
-                  <img src={element} alt="text" className="object-fill" />
+                  <img
+                    src={element}
+                    height={300}
+                    width={400}
+                    alt="text"
+                    className="object-fill hover:scale-150 transition-all duration-500 cursor-pointer"
+                  />
                 </>
               );
             })
           : null}
-        {/* <Image
-          src={img}
-          height={200}
-          width={200}
-          alt="project"
-          className="object-fill"
-        /> */}
       </div>
       <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-6/12">
         <div className="mb-8">
