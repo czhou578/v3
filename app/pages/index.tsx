@@ -260,8 +260,8 @@ export default function Home() {
       <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
         Projects
       </h2>
-      <div className="mx-auto p-8 w-7/12 md:w-9/12">
-        <div className="grid lg:grid-cols-3 skill-gap">
+      <div className="mx-auto p-8 w-3/12 md:w-11/12">
+        <div className="grid lg:grid-cols-2 skill-gap">
           <Projects
             header="DistanceCalc"
             img={["/images/distancecalc1.png", "/images/distancecalc2.png"]}
@@ -289,6 +289,7 @@ export default function Home() {
               "AWS",
               "Redux",
             ]}
+            // description={"hello there"}
             description={`For my senior year capstone project, I helped to create a Yelp-like app
             that will empower and enable food truck vendors to more easily attract customers and run their business.
             I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
