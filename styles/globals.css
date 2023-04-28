@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 66, 66, 66;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 66, 66, 66;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 31, 41, 55;
+  }
+}
+
+@layer base {
+  .skill-gap {
+    gap: 1rem
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-start-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
