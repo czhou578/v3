@@ -1,5 +1,3 @@
-//montreal - kitchener - bay area - washington - uiuc
-//get the time from my current location
 import { useEffect, useState } from "react";
 import TypewriterComponent from "typewriter-effect";
 
