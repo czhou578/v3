@@ -17,8 +17,10 @@ const Experience: React.FC<{
       </div>
       <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 dark:border-indigo-500/100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-3/6 mb-10">
         <div className="mb-8">
-          <div className="text-gray-200 font-bold text-xl mb-2">{position}</div>
-          <div className="text-sm">
+          <div className="dark:text-cyan-400 font-bold text-xl mb-2">
+            {position}
+          </div>
+          <div className="text-lg">
             <p className="text-gray-200 leading-none">{companyName}</p>
             <p className="text-gray-200 mt-3">
               {date}. {location}

@@ -48,7 +48,7 @@ export default function Home() {
         className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5"
         id="intro"
       >
-        <p>
+        <p className="text-lg">
           I am a UIUC CS Masters student. My passion is in web development,
           using my knowledge of front end technologies to architect websites for
           various for-good causes. As someone with experience in designing logos
