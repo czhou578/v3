@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function HeaderBar() {
   return (
@@ -23,10 +24,22 @@ function HeaderBar() {
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
           <a
-            href="#about"
+            href="#intro"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
           >
             About
+          </a>
+          <a
+            href="#education"
+            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+          >
+            Education
+          </a>
+          <a
+            href="#skills"
+            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+          >
+            Skills
           </a>
           <a
             href="#experience"
@@ -47,8 +60,9 @@ function HeaderBar() {
             Designs
           </a>
           <a
-            href="#resume"
+            href="/resume/resume.pdf"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white"
+            target="_blank"
           >
             Resume
           </a>

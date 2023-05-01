@@ -25,7 +25,7 @@ export default function Introduction() {
             onInit={(typewriter) => {
               typewriter
                 .typeString(
-                  '<strong style="font-size: 25px"> Montreal | Kitchener | Cupertino | Seattle | Champaign </strong'
+                  '<strong style="font-size: 20px"> Montreal | Kitchener | Cupertino | Seattle | Champaign </strong'
                 )
                 .start();
             }}

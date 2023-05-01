@@ -33,13 +33,34 @@ import {
   SiGoogle,
 } from "react-icons/si";
 import Projects from "./Projects";
+import Image from "next/image";
+import ProfilePic from "../public/images/IMG-0197.jpg";
 
 export default function Home() {
   return (
     <div>
       <HeaderBar />
       <Introduction />
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+      <div className="mx-auto flex justify-center mb-10">
+        <Image src={ProfilePic} width={200} height={100} alt="" />
+      </div>
+      <div className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12" id="intro">
+        <p>
+          I am a UIUC CS Masters student. My passion is in web development,
+          using my knowledge of front end technologies to architect websites for
+          various for-good causes. As someone with experience in designing logos
+          and simple designs, I strive to bring some elements of the future into
+          my creations. In addition, I have many years of experience writing
+          online, allowing me to share my ideas and thinking to millions around
+          the world. My dream is to be able to help design and architect
+          platforms that would help problem solvers communicate their solutions
+          to a pressing problem to the world.
+        </p>
+      </div>
+      <h2
+        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        id="education"
+      >
         Education
       </h2>
       <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
@@ -92,7 +113,10 @@ export default function Home() {
           ]}
         />
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12">
+      <h2
+        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12"
+        id="skills"
+      >
         Skills
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
@@ -104,6 +128,7 @@ export default function Home() {
               <ImCss3 key="second" size="4em" />,
               <SiTypescript key="third" size="4em" />,
             ]}
+            description="Familiar with front-end technologies to build responsive/dynamic websites."
           />
           <SkillsList
             header="AWS, GCP"
@@ -111,6 +136,7 @@ export default function Home() {
               <SiAmazonaws key="first" size="4em" />,
               <SiGooglecloud key="second" size="4em" />,
             ]}
+            description="Used AWS and GCP to host personal and university projects in undergrad and grad."
           />
           <SkillsList
             header="Node.js, GraphQL"
@@ -118,6 +144,7 @@ export default function Home() {
               <SiNodedotjs key="first" size="4em" />,
               <SiGraphql key="second" size="4em" />,
             ]}
+            description="Used Node.js to connect to various databases and used GraphQL in my 2021 internship. "
           />
           <SkillsList
             header="MongoDB, MySQL"
@@ -125,6 +152,7 @@ export default function Home() {
               <SiMongodb key="first" size="4em" />,
               <SiMysql key="second" size="4em" />,
             ]}
+            description="Learned about and interacted with databases throughout school classes."
           />
           <SkillsList
             header="Git, Jira, Markdown"
@@ -133,6 +161,7 @@ export default function Home() {
               <SiJira key="second" size="4em" />,
               <SiMarkdown key="third" size="4em" />,
             ]}
+            description="Experienced with Jira in my 2021 internship as well as Github services."
           />
           <SkillsList
             header="Communication, Googling"
@@ -140,10 +169,14 @@ export default function Home() {
               <SiMessenger key="first" size="4em" />,
               <SiGoogle key="second" size="4em" />,
             ]}
+            description="Familiar with skills that a 2020's programmer needs in order to gather more information more effectively."
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+      <h2
+        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        id="experience"
+      >
         Experience
       </h2>
       <Experience
@@ -256,7 +289,10 @@ export default function Home() {
           `Coordinated with high school/college teachers with tutoring progress.`,
         ]}
       />
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+      <h2
+        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        id="projects"
+      >
         Projects
       </h2>
       <div className="mx-auto p-8 w-3/12 md:w-11/12">
@@ -456,7 +492,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+      <h2
+        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        id="designs"
+      >
         Designs
       </h2>
       <div className="mx-auto p-8 w-fit">

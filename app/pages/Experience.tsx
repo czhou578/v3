@@ -20,14 +20,14 @@ const Experience: React.FC<{
           <div className="text-gray-200 font-bold text-xl mb-2">{position}</div>
           <div className="text-sm">
             <p className="text-gray-200 leading-none">{companyName}</p>
-            <p className="text-gray-200">
+            <p className="text-gray-200 mt-3">
               {date}. {location}
             </p>
           </div>
           {description
             ? description.map((element, idx) => {
                 return (
-                  <p className="text-gray-200 text-base" key={idx}>
+                  <p className="text-gray-200 text-base mt-3" key={idx}>
                     {element}
                   </p>
                 );
