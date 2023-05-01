@@ -44,7 +44,10 @@ export default function Home() {
       <div className="mx-auto flex justify-center mb-10">
         <Image src={ProfilePic} width={200} height={100} alt="" />
       </div>
-      <div className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12" id="intro">
+      <div
+        className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5"
+        id="intro"
+      >
         <p>
           I am a UIUC CS Masters student. My passion is in web development,
           using my knowledge of front end technologies to architect websites for
@@ -58,7 +61,7 @@ export default function Home() {
         </p>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="education"
       >
         Education
@@ -114,7 +117,7 @@ export default function Home() {
         />
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12"
         id="skills"
       >
         Skills
@@ -125,7 +128,7 @@ export default function Home() {
             header="HTML, CSS, TypeScript"
             icon={[
               <ImHtmlFive key="first" size="4em" />,
-              <ImCss3 key="second" size="4em" />,
+              // <ImCss3 key="second" size="4em" />,
               <SiTypescript key="third" size="4em" />,
             ]}
             description="Familiar with front-end technologies to build responsive/dynamic websites."
@@ -158,7 +161,7 @@ export default function Home() {
             header="Git, Jira, Markdown"
             icon={[
               <SiGit key="first" size="4em" />,
-              <SiJira key="second" size="4em" />,
+              // <SiJira key="second" size="4em" />,
               <SiMarkdown key="third" size="4em" />,
             ]}
             description="Experienced with Jira in my 2021 internship as well as Github services."
@@ -174,7 +177,7 @@ export default function Home() {
         </div>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="experience"
       >
         Experience
@@ -290,7 +293,7 @@ export default function Home() {
         ]}
       />
       <h2
-        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="projects"
       >
         Projects
@@ -405,7 +408,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
         Noteworthy Projects
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-9/12">
@@ -432,13 +435,13 @@ export default function Home() {
             header="Doctors Orders"
             githubLink="https://github.com/deekshacheruku/DoctorsOrders"
             description="An Android app to help doctors and family track the medicine schedules of elderly patients."
-            techUsed={["Java"]}
+            techUsed={["Java", "Android Studio"]}
           />
           <NoteWorthyProjects
             header="Country Database"
             githubLink="https://github.com/cs411-alawini/fa22-cs411-Q-team044-OurSQL"
             description="A web app that allows for querying various data about all the countries of the world."
-            techUsed={["JS", "React"]}
+            techUsed={["JS", "React", "MySQL", "Node.js"]}
           />
           <NoteWorthyProjects
             header="Crypto Website"
@@ -449,7 +452,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10">
+      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
         Classwork
       </h2>
       <div className="mx-auto p-8 w-4/12 md:w-9/12">
@@ -493,7 +496,7 @@ export default function Home() {
         </div>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-white mx-auto lg:w-6/12 mb-10"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-7/12 mb-10"
         id="designs"
       >
         Designs

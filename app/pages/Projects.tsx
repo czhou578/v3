@@ -23,7 +23,7 @@ const Projects: React.FC<{
 }) => {
   return (
     <div>
-      <h1 className="mb-5 text-2xl">{header}</h1>
+      <h1 className="mb-5 text-2xl text-indigo-300/100">{header}</h1>
       <div className="flex flex-col justify-center gap-6 mb-5">
         {img
           ? img.map((element, idx) => {

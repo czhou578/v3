@@ -6,7 +6,7 @@ const NoteWorthyProjects: React.FC<{
   techUsed: string[];
 }> = ({ header, githubLink, techUsed, description }) => {
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-200">
+    <div className="max-w-sm p-6 bg-white border rounded-lg shadow dark:bg-gray-800 dark:border-indigo-500/100">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{header}</div>
         <p className="text-base">{description}</p>

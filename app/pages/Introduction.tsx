@@ -17,9 +17,9 @@ export default function Introduction() {
         <h1 className="text-6xl font-bold mb-10 text-white">
           Hi! I am Colin Zhou.....
         </h1>
-        <p className="text-white text-3xl">
+        {/* <p className="text-white text-3xl">
           A software engineer currently studying at UIUC
-        </p>
+        </p> */}
         <div className="mt-10">
           <TypewriterComponent
             onInit={(typewriter) => {

@@ -14,12 +14,12 @@ interface Props {
 
 export default function SkillsList(props: Props) {
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="flex ">
+    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-500/100">
+      <div className="flex justify-evenly">
         {props.icon
           ? props.icon.map((element: any, idx: any) => {
               return (
-                <div key={idx} className="ml-3 mb-5">
+                <div key={idx} className="mb-5">
                   {element}
                 </div>
               );

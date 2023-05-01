@@ -15,7 +15,7 @@ const Experience: React.FC<{
       <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden mt-3">
         <Image src={companyLogo} width="120" height="120" alt="pic" />
       </div>
-      <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-3/6 mb-10">
+      <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 dark:border-indigo-500/100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-3/6 mb-10">
         <div className="mb-8">
           <div className="text-gray-200 font-bold text-xl mb-2">{position}</div>
           <div className="text-sm">

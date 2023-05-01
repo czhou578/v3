@@ -29,12 +29,12 @@ export default function Footer() {
             >
               <i className="fa-brands fa-linkedin"></i>
             </a>
-            <a
+            {/* <a
               href="https://www.worldcubeassociation.org/persons/2014ZHOU16"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <i className="fa-solid fa-cube"></i>
-            </a>
+            </a> */}
             <a
               href="https://dribbble.com/colinzhou"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"

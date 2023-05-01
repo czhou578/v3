@@ -10,64 +10,62 @@ import Image from "next/image";
 
 export default function Designs() {
   return (
-    <div>
-      <div className="grid grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:max-md:grid-cols-1 gap-4">
-        <div>
-          <Image
-            src={BCollege1}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={BCollege2}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={ElpisUI1}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={ElpisUI2}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={FoodApp1}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={FoodApp2}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={UIDesign1}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
-        <div>
-          <Image
-            src={UIDesign2}
-            alt="Picture of BC1"
-            className="h-auto max-w-lg rounded-lg"
-          />
-        </div>
+    <div className="grid grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:max-md:grid-cols-1 gap-4">
+      <div>
+        <Image
+          src={BCollege1}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={BCollege2}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={ElpisUI1}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={ElpisUI2}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={FoodApp1}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={FoodApp2}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={UIDesign1}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
+      </div>
+      <div>
+        <Image
+          src={UIDesign2}
+          alt="Picture of BC1"
+          className="h-auto max-w-lg rounded-lg hover:scale-150 transition-all duration-500 cursor-pointer"
+        />
       </div>
     </div>
   );
