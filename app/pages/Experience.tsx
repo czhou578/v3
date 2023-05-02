@@ -29,7 +29,10 @@ const Experience: React.FC<{
           {description
             ? description.map((element, idx) => {
                 return (
-                  <p className="text-gray-200 text-base mt-3" key={idx}>
+                  <p
+                    className="text-cyan-100 font-medium text-base mt-3"
+                    key={idx}
+                  >
                     {element}
                   </p>
                 );

@@ -406,6 +406,13 @@ export default function Home() {
           allowing for less distractions and greater concentration on tasks.`}
             githubLink="https://github.com/czhou578/YouTubeBlocker"
           />
+          <Projects
+            header="Personal Website V2."
+            img={["/images/PWV2-1.png", "/images/PWV2-2.png"]}
+            list={["React", "TypeScript", "Next.js", "CSS Modules"]}
+            description={`The second version of my personal website, built with React, TypeScript, and Next.js`}
+            githubLink="https://github.com/czhou578/v2"
+          />
         </div>
       </div>
       <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">

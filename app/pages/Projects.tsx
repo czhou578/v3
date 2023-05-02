@@ -56,7 +56,19 @@ const Projects: React.FC<{
           : null}
       </div>
       <div className="mb-5 text-lg">
-        <p>{description}</p>
+        <p className="text-cyan-100">{description}</p>
+      </div>
+      <div>
+        Skills:
+        {list
+          ? list.map((element, idx) => {
+              return (
+                <span key={idx} className="ml-5">
+                  {element}
+                </span>
+              );
+            })
+          : null}
       </div>
     </div>
     // <a
