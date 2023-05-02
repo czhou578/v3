@@ -40,7 +40,7 @@ const Education: React.FC<{
           <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
             {activities}
           </p>
-          <p>Relevant classes: {relevantClasses}</p>
+          <p className="text-lg">Relevant classes: {relevantClasses}</p>
         </li>
       </ol>
     </div>

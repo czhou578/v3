@@ -22,7 +22,7 @@ const Projects: React.FC<{
   hostingLink,
 }) => {
   return (
-    <div>
+    <div className="mt-3">
       <div className="flex items-baseline">
         <h1 className="mb-5 text-2xl text-indigo-300/100">{header}</h1>
         <a
