@@ -25,43 +25,43 @@ function HeaderBar() {
         <div className="text-sm lg:flex-grow">
           <a
             href="#intro"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             About
           </a>
           <a
             href="#education"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Education
           </a>
           <a
             href="#skills"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Skills
           </a>
           <a
             href="#experience"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Experience
           </a>
           <a
             href="#projects"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Projects
           </a>
           <a
             href="#designs"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Designs
           </a>
           <a
             href="/resume/resume.pdf"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white"
+            className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white"
             target="_blank"
           >
             Resume

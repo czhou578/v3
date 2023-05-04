@@ -24,7 +24,6 @@ jobs:
           cache-dependency-path: package-lock.json
       - name: Prettier
         run: npx prettier --check .
-        # working-directory: app
 
   build:
     runs-on: ubuntu-latest
