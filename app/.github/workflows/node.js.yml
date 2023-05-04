@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: "16.1"
           cache: "npm"
-          cache-dependency-path: app/package-lock.json
+          cache-dependency-path: package-lock.json
       - name: Prettier
         run: npx prettier --check .
-        working-directory: app
+        # working-directory: app
 
   build:
     runs-on: ubuntu-latest
