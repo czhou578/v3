@@ -45,7 +45,7 @@ export default function Home() {
         <Image src={ProfilePic} width={200} height={100} alt="" />
       </div>
       <div
-        className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5"
+        className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5 rounded-lg"
         id="intro"
       >
         <p className="text-lg">
@@ -76,7 +76,7 @@ export default function Home() {
           relevantClasses={[
             "User-Interface Design, ",
             "Databases, ",
-            "Advanced Data Management ",
+            "Advanced Data Management, ",
             "Human-Computer Interaction, ",
             "Artificial Intelligence",
           ]}
@@ -88,14 +88,15 @@ export default function Home() {
           date="2019-2022"
           activities={["CS Student Advisory Board Treasurer"]}
           relevantClasses={[
+            "Data Structures, ",
             "Algorithms, ",
             "Cloud Computing, ",
-            "Software Engineering, ",
-            "Data Structures, ",
-            "Computer Networks, ",
             "Operating Systems, ",
+            "Software Engineering, ",
+            "Computer Networks, ",
             "Linear Algebra, ",
-            "Discrete Math",
+            "Discrete Math, ",
+            "Calculus III",
           ]}
         />
         <Education

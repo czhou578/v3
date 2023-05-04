@@ -34,11 +34,11 @@ const Education: React.FC<{
               {degreeLevel}
             </span>
           </h3>
-          <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          <time className="block mb-2 text-lg leading-none text-gray-400 dark:text-white-500">
             {date}
           </time>
           <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-            {activities}
+            Activities: {activities}
           </p>
           <p className="text-lg">Relevant classes: {relevantClasses}</p>
         </li>
