@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: "16.1"
           cache: "npm"
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: app/package-lock.json
       - name: Prettier
         run: npx prettier --check .
         working-directory: ${{ matrix.dir }}
@@ -49,23 +49,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: out # The folder the action should deploy.
-
-
-        # webpack:
-  #   name: Typescript
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Setup Node
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: "16.1"
-  #         cache: "npm"
-  #         cache-dependency-path: package-lock.json
-  #     - name: Build
-  #       run: |
-  #         npm ci
-  #         npm run typescript
-  #         npm run build
+          folder: app/out # The folder the action should deploy.
