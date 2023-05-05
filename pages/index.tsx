@@ -36,13 +36,20 @@ import Projects from "./Projects";
 import Image from "next/image";
 import ProfilePic from "../public/images/IMG-0197.jpg";
 
+const prefix = "/v3";
+
 export default function Home() {
   return (
     <div>
       <HeaderBar />
       <Introduction />
       <div className="mx-auto flex justify-center mb-10">
-        <Image src={ProfilePic} width={200} height={100} alt="" />
+        <Image
+          src={prefix + "/images/IMG-0197.jpg"}
+          width={200}
+          height={100}
+          alt=""
+        />
       </div>
       <div
         className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5 rounded-lg"
