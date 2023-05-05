@@ -124,66 +124,6 @@ export default function Home() {
         />
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12"
-        id="skills"
-      >
-        Skills
-      </h2>
-      <div className="mx-auto p-8 w-7/12 md:w-8/12">
-        <div className="grid lg:grid-cols-3 skill-gap">
-          <SkillsList
-            header="HTML, CSS, TypeScript"
-            icon={[
-              <ImHtmlFive key="first" size="4em" />,
-              // <ImCss3 key="second" size="4em" />,
-              <SiTypescript key="third" size="4em" />,
-            ]}
-            description="Familiar with front-end technologies to build responsive/dynamic websites."
-          />
-          <SkillsList
-            header="AWS, GCP"
-            icon={[
-              <SiAmazonaws key="first" size="4em" />,
-              <SiGooglecloud key="second" size="4em" />,
-            ]}
-            description="Used AWS and GCP to host personal and university projects in undergrad and grad."
-          />
-          <SkillsList
-            header="Node.js, GraphQL"
-            icon={[
-              <SiNodedotjs key="first" size="4em" />,
-              <SiGraphql key="second" size="4em" />,
-            ]}
-            description="Used Node.js to connect to various databases and used GraphQL in my 2021 internship. "
-          />
-          <SkillsList
-            header="MongoDB, MySQL"
-            icon={[
-              <SiMongodb key="first" size="4em" />,
-              <SiMysql key="second" size="4em" />,
-            ]}
-            description="Learned about and interacted with databases throughout school classes."
-          />
-          <SkillsList
-            header="Git, Jira, Markdown"
-            icon={[
-              <SiGit key="first" size="4em" />,
-              // <SiJira key="second" size="4em" />,
-              <SiMarkdown key="third" size="4em" />,
-            ]}
-            description="Experienced with Jira in my 2021 internship as well as Github services."
-          />
-          <SkillsList
-            header="Communication, Googling"
-            icon={[
-              <SiMessenger key="first" size="4em" />,
-              <SiGoogle key="second" size="4em" />,
-            ]}
-            description="Familiar with skills that a 2020's programmer needs in order to gather more information more effectively."
-          />
-        </div>
-      </div>
-      <h2
         className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="experience"
       >
@@ -352,10 +292,10 @@ export default function Home() {
               "AWS",
               "Redux",
             ]}
-            description={`For my senior year capstone project, I helped to create a Yelp-like app
-            that will empower and enable food truck vendors to more easily attract customers and run their business.
-            I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
-            the initial mockups. `}
+            description={`I helped create an educational web app that helps at risk high school 
+              students track their future career goals. I utilized various front end technologies like React.js 
+              along with backend tools like AWS for hosting. After the internship was completed, this app is now in
+              beta testing in a high school of a couple hundred students in New York City.`}
             githubLink="https://github.com/bcfoodapp/streetfoodlove"
           />
           <Projects
@@ -419,6 +359,65 @@ export default function Home() {
             list={["React", "TypeScript", "Next.js", "CSS Modules"]}
             description={`The second version of my personal website, built with React, TypeScript, and Next.js`}
             githubLink="https://github.com/czhou578/v2"
+          />
+        </div>
+      </div>
+      <h2
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12"
+        id="skills"
+      >
+        Skills
+      </h2>
+      <div className="mx-auto p-8 w-7/12 md:w-8/12">
+        <div className="grid lg:grid-cols-3 skill-gap">
+          <SkillsList
+            header="HTML, CSS, TypeScript"
+            icon={[
+              <ImHtmlFive key="first" size="4em" />,
+              // <ImCss3 key="second" size="4em" />,
+              <SiTypescript key="third" size="4em" />,
+            ]}
+            description="Familiar with front-end technologies to build responsive/dynamic websites."
+          />
+          <SkillsList
+            header="AWS, GCP"
+            icon={[
+              <SiAmazonaws key="first" size="4em" />,
+              <SiGooglecloud key="second" size="4em" />,
+            ]}
+            description="Used AWS and GCP to host personal and university projects in undergrad and grad."
+          />
+          <SkillsList
+            header="Node.js, GraphQL"
+            icon={[
+              <SiNodedotjs key="first" size="4em" />,
+              <SiGraphql key="second" size="4em" />,
+            ]}
+            description="Used Node.js to connect to various databases and used GraphQL in my 2021 internship. "
+          />
+          <SkillsList
+            header="MongoDB, MySQL"
+            icon={[
+              <SiMongodb key="first" size="4em" />,
+              <SiMysql key="second" size="4em" />,
+            ]}
+            description="Learned about and interacted with databases throughout school classes."
+          />
+          <SkillsList
+            header="Git, Jira, Markdown"
+            icon={[
+              <SiGit key="first" size="4em" />,
+              <SiMarkdown key="third" size="4em" />,
+            ]}
+            description="Experienced with Jira in my 2021 internship as well as Github services."
+          />
+          <SkillsList
+            header="Communication, Googling"
+            icon={[
+              <SiMessenger key="first" size="4em" />,
+              <SiGoogle key="second" size="4em" />,
+            ]}
+            description="Familiar with skills that a 2020's programmer needs in order to gather more information more effectively."
           />
         </div>
       </div>

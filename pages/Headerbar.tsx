@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "next/link";
 
 function HeaderBar() {
+  const prefix = "/v3";
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -39,19 +39,19 @@ function HeaderBar() {
             href="#skills"
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
-            Skills
+            Experience
           </a>
           <a
             href="#experience"
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
-            Experience
+            Projects
           </a>
           <a
             href="#projects"
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
-            Projects
+            Skills
           </a>
           <a
             href="#designs"
@@ -60,7 +60,7 @@ function HeaderBar() {
             Designs
           </a>
           <a
-            href="/resume/resume.pdf"
+            href={prefix + "/resume/resume.pdf"}
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white"
             target="_blank"
           >
