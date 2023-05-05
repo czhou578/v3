@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Projects: React.FC<{
   header: string;
   img: string[];
@@ -28,7 +26,7 @@ const Projects: React.FC<{
       <div className="flex items-baseline">
         <h1 className="mb-5 text-2xl text-indigo-300/100">{header}</h1>
         <a
-          href={prefix + githubLink}
+          href={githubLink}
           className="text-blue-600 hover:underline"
           target="_blank"
         >
@@ -50,7 +48,7 @@ const Projects: React.FC<{
                 <div key={idx} className="max-w-full">
                   <img
                     className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
-                    src={element}
+                    src={prefix + element}
                   />
                 </div>
               );
