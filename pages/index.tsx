@@ -34,7 +34,6 @@ import {
 } from "react-icons/si";
 import Projects from "./Projects";
 import Image from "next/image";
-import ProfilePic from "../public/images/IMG-0197.jpg";
 
 const prefix = "/v3";
 
