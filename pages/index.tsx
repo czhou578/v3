@@ -325,7 +325,7 @@ export default function Home() {
           />
           <Projects
             header="StreetFoodLove"
-            img={["../images/FoodApp1.png", "../images/FoodApp2.png"]}
+            img={["/images/FoodApp1.png", "/images/FoodApp2.png"]}
             list={[
               "HTML/CSS Modules",
               "TypeScript",
@@ -343,7 +343,7 @@ export default function Home() {
           />
           <Projects
             header="Project Elpis App"
-            img={["../images/PE1.png", "../images/PE2.png"]}
+            img={["/images/PE1.png", "/images/PE2.png"]}
             list={[
               "HTML/CSS Modules",
               "TypeScript",
