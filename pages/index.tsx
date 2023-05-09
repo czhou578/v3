@@ -265,7 +265,7 @@ export default function Home() {
           />
           <Projects
             header="StreetFoodLove"
-            img={["/images/FoodApp1.png", "/images/FoodApp2.png"]}
+            img={["/images/Sapp.png", "/images/Sapp2.png"]}
             list={[
               "HTML/CSS Modules",
               "TypeScript",
