@@ -512,6 +512,12 @@ export default function Home() {
             description="Work from my artificial intelligence class at UIUC"
             techUsed={["Python"]}
           />
+          <Classwork
+            header="Cloud Computing (Spring 2022)"
+            githubLink="https://github.com/czhou578/Cloud-Computing-Work"
+            description="Work from my cloud computing class at Bellevue College, involving AWS services"
+            techUsed={["C#"]}
+          />
         </div>
       </div>
       <h2
