@@ -14,7 +14,10 @@ export default function Footer() {
             Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
-            <a href="https://github.com/czhou578">
+            <a
+              href="https://github.com/czhou578"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
               <i className="fa-brands fa-github "></i>
             </a>
             <a
@@ -28,6 +31,18 @@ export default function Footer() {
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://twitter.com/ZhouColin01"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
+              <i className="fa-brands fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/colin.uiuc.pianist/"
+              className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            >
+              <i className="fa-brands fa-instagram"></i>
             </a>
             {/* <a
               href="https://www.worldcubeassociation.org/persons/2014ZHOU16"
