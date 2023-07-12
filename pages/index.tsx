@@ -422,9 +422,9 @@ export default function Home() {
         </div>
       </div>
       <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
-        Noteworthy Projects
+        Other Projects
       </h2>
-      <div className="mx-auto p-8 w-7/12 md:w-9/12">
+      <div className="mx-auto p-8 w-7/12 md:w-8/12">
         <div className="grid lg:grid-cols-3 skill-gap">
           <NoteWorthyProjects
             header="Morsecode Binary Tree"
@@ -468,7 +468,7 @@ export default function Home() {
       <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
         Classwork
       </h2>
-      <div className="mx-auto p-8 w-4/12 md:w-9/12">
+      <div className="mx-auto p-8 w-4/12 md:w-8/12">
         <div className="grid lg:grid-cols-3 gap-3.5">
           <Classwork
             header="Web Programming (Winter 2022)"
@@ -517,6 +517,12 @@ export default function Home() {
             githubLink="https://github.com/czhou578/Cloud-Computing-Work"
             description="Work from my cloud computing class at Bellevue College, involving AWS services"
             techUsed={["C#"]}
+          />
+          <Classwork
+            header="Artificial Intelligence (Spring 2023)"
+            githubLink="https://github.com/czhou578/AI-Class-Work"
+            description="Work from my artificial intelligence class at UIUC, involving Python"
+            techUsed={["Python"]}
           />
         </div>
       </div>

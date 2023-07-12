@@ -36,19 +36,19 @@ function HeaderBar() {
             Education
           </a>
           <a
-            href="#skills"
+            href="#experience"
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Experience
           </a>
           <a
-            href="#experience"
+            href="#projects"
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Projects
           </a>
           <a
-            href="#projects"
+            href="#skills"
             className="block mt-4 lg:inline-block lg:mt-0 text-indigo-300 hover:text-white mr-4"
           >
             Skills
