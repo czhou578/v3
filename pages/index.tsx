@@ -526,6 +526,12 @@ export default function Home() {
             description="Work from my artificial intelligence class at UIUC, involving Python"
             techUsed={["Python"]}
           />
+          <Classwork
+            header="Spring 2021 Bellevue College Work"
+            githubLink="https://github.com/czhou578/Spring-Quarter-2021"
+            description="Work from my Fall 2021 quarter at Bellevue College, involving Java"
+            techUsed={["Java"]}
+          />
         </div>
       </div>
       <h2
