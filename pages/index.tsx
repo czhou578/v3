@@ -17,6 +17,7 @@ import PencilLogo from "../public/images/pencil.jpg";
 import QuoraLogo from "../public/images/QuoraLogo.png";
 import SelfEmployedLogo from "../public/images/SelfEmployedLogo.jpg";
 import UpworkLogo from "../public/images/upworkLogo.png";
+import DemocracyLabLogo from "../public/images/democracyLab.jpg";
 import { ImHtmlFive, ImCss3 } from "react-icons/im";
 import {
   SiTypescript,
@@ -84,8 +85,8 @@ export default function Home() {
             "Databases, ",
             "Advanced Data Management, ",
             "Human-Computer Interaction, ",
-            "Artificial Intelligence",
-            "Distributed Systems (in progress)",
+            "Artificial Intelligence ",
+            "Distributed Systems (in progress) ",
             "ML + Data Systems (in progress",
           ]}
         />
@@ -185,6 +186,19 @@ export default function Home() {
           `Helped facilitate constructive communication between faculty and students with regards to curriculum.`,
 
           `Planned out $1000 budget for CS department use in 2023. Tracked all expenses using Microsoft Excel.`,
+        ]}
+      />
+      <Experience
+        companyLogo={DemocracyLabLogo}
+        companyName="DemocracyLab"
+        position="Open Source Web Developer"
+        date="05/2021 - 08/2021"
+        location="Issaquah, Washington, United States"
+        description={[
+          `Used Figma to design 3 wireframes for the CodePDX project, which is a web app that develops applications to improve the lives of people living in Portland, Oregon.`,
+          `Used React to redesign 5 components for the Accessibility Ratings Project, which aims to help users submit accessibility feedback to big tech companies
+          regarding their app offerings.`,
+          `Designed 3 wireframes for the iSeaTree mobile app project, which aims to help young kids explore the indigenous tree species of the Pacific Northwest.`,
         ]}
       />
       <Experience
