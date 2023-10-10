@@ -18,6 +18,7 @@ import QuoraLogo from "../public/images/QuoraLogo.png";
 import SelfEmployedLogo from "../public/images/SelfEmployedLogo.jpg";
 import UpworkLogo from "../public/images/upworkLogo.png";
 import DemocracyLabLogo from "../public/images/democracyLab.jpg";
+import EcoLogicalLogo from "../public/images/ecological.jpg";
 import { ImHtmlFive, ImCss3 } from "react-icons/im";
 import {
   SiTypescript,
@@ -132,6 +133,16 @@ export default function Home() {
       >
         Experience
       </h2>
+      <Experience
+        companyLogo={EcoLogicalLogo}
+        companyName="EcoLogical"
+        position="Software Engineer Intern"
+        date="09/2023 - present"
+        location="Champaign, Illinois, United States (Remote)"
+        description={[
+          `Using Ant Design components to improve the front-end experience of the flagship web app.`,
+        ]}
+      />
       <Experience
         companyLogo={IOIntel}
         companyName="IOIntelligence"
