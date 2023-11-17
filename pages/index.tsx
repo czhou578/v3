@@ -28,11 +28,18 @@ import {
   SiMysql,
   SiNodedotjs,
   SiGraphql,
-  SiJira,
   SiGit,
   SiMarkdown,
   SiMessenger,
   SiGoogle,
+  SiPython,
+  SiApachehadoop,
+  SiFirebase,
+  SiOpenai,
+  SiJira,
+  SiLatex,
+  SiAdobexd,
+  SiFigma,
 } from "react-icons/si";
 import Projects from "./Projects";
 import Image from "next/image";
@@ -408,12 +415,21 @@ export default function Home() {
             description="Familiar with front-end technologies to build responsive/dynamic websites."
           />
           <SkillsList
-            header="AWS, GCP"
+            header="AWS, GCP, Firebase"
             icon={[
               <SiAmazonaws key="first" size="4em" />,
               <SiGooglecloud key="second" size="4em" />,
+              <SiFirebase key="third" size="4em" />,
             ]}
             description="Used AWS and GCP to host personal and university projects in undergrad and grad."
+          />
+          <SkillsList
+            header="Python, MapReduce"
+            icon={[
+              <SiPython key="first" size="4em" />,
+              <SiApachehadoop key="second" size="4em" />,
+            ]}
+            description="I have a general understanding of distributed systems and "
           />
           <SkillsList
             header="Node.js, GraphQL"
@@ -432,12 +448,28 @@ export default function Home() {
             description="Learned about and interacted with databases throughout school classes."
           />
           <SkillsList
-            header="Git, Jira, Markdown"
+            header="Git, Jira"
             icon={[
               <SiGit key="first" size="4em" />,
-              <SiMarkdown key="third" size="4em" />,
+              <SiJira key="second" size="4em" />,
             ]}
             description="Experienced with Jira in my 2021 internship as well as Github services."
+          />
+          <SkillsList
+            header="Figma, AdobeXD"
+            icon={[
+              <SiAdobexd key="first" size="4em" />,
+              <SiFigma key="second" size="4em" />,
+            ]}
+            description="Experienced with using designer tools through various collaborations with designers in past projects."
+          />
+          <SkillsList
+            header="LaTeX, Markdown"
+            icon={[
+              <SiLatex key="first" size="4em" />,
+              <SiMarkdown key="second" size="4em" />,
+            ]}
+            description="Used markdown and LaTeX extensively in school projects to do project writeups."
           />
           <SkillsList
             header="Communication, Googling"
@@ -446,6 +478,11 @@ export default function Home() {
               <SiGoogle key="second" size="4em" />,
             ]}
             description="Familiar with skills that a 2020's programmer needs in order to gather more information more effectively."
+          />
+          <SkillsList
+            header="ChatGPT"
+            icon={[<SiOpenai key="first" size="4em" />]}
+            description="Familiar with using prompt engineering in development workflows."
           />
         </div>
       </div>

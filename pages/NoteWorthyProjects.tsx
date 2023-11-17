@@ -1,4 +1,3 @@
-import Link from "next/link";
 const NoteWorthyProjects: React.FC<{
   header: string;
   githubLink: string;
