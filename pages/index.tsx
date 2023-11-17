@@ -86,8 +86,8 @@ export default function Home() {
             "Databases, ",
             "Advanced Data Management, ",
             "Human-Computer Interaction, ",
-            "Artificial Intelligence ",
-            "Distributed Systems (in progress) ",
+            "Artificial Intelligence, ",
+            "Distributed Systems (in progress), ",
             "ML + Data Systems (in progress",
           ]}
         />
@@ -141,6 +141,7 @@ export default function Home() {
         location="Champaign, Illinois, United States (Remote)"
         description={[
           `Using Ant Design components to improve the front-end experience of the flagship web app.`,
+          `Set up 10 mutations and queries to AWS Amplify backend`,
         ]}
       />
       <Experience
