@@ -40,6 +40,8 @@ import {
   SiLatex,
   SiAdobexd,
   SiFigma,
+  SiShell,
+  SiLinux,
 } from "react-icons/si";
 import Projects from "./Projects";
 import Image from "next/image";
@@ -94,8 +96,8 @@ export default function Home() {
             "Advanced Data Management, ",
             "Human-Computer Interaction, ",
             "Artificial Intelligence, ",
-            "Distributed Systems (in progress), ",
-            "ML + Data Systems (in progress",
+            "Distributed Systems, ",
+            "ML + Data Systems",
           ]}
         />
         <Education
@@ -429,7 +431,7 @@ export default function Home() {
               <SiPython key="first" size="4em" />,
               <SiApachehadoop key="second" size="4em" />,
             ]}
-            description="I have a general understanding of distributed systems and "
+            description="I have a general understanding of distributed systems and running jobs on frameworks like Apache Hadoop."
           />
           <SkillsList
             header="Node.js, GraphQL"
@@ -468,8 +470,9 @@ export default function Home() {
             icon={[
               <SiLatex key="first" size="4em" />,
               <SiMarkdown key="second" size="4em" />,
+              <SiLinux key="third" size="4em" />,
             ]}
-            description="Used markdown and LaTeX extensively in school projects to do project writeups."
+            description="Used markdown and LaTeX extensively in school projects to do project writeups. Used Linux extensively in distributed systems class."
           />
           <SkillsList
             header="Communication, Googling"
@@ -535,6 +538,12 @@ export default function Home() {
       </h2>
       <div className="mx-auto p-8 w-4/12 md:w-8/12">
         <div className="grid lg:grid-cols-3 gap-3.5">
+          <Classwork
+            header="Distributed System (Fall 2023)"
+            githubLink="https://github.com/czhou578/CS425"
+            description="Work done for UIUC's Distributed Systems class"
+            techUsed={["Python", "Linux", "Shell Scripting", "Hadoop"]}
+          />
           <Classwork
             header="Web Programming (Winter 2022)"
             githubLink="https://github.com/czhou578/CS-380-Work"
