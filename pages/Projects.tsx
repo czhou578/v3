@@ -21,8 +21,8 @@ const Projects: React.FC<{
   githubLink,
   hostingLink,
 }) => {
-  // const prefix = "/v3";
-  const prefix = "/v3/public";
+  const prefix = "/v3";
+  // const prefix = "/v3/public";
 
   return (
     <div className="mt-3 mx-auto w-1/2  ">
@@ -60,7 +60,7 @@ const Projects: React.FC<{
                       style={{ objectFit: "cover" }}
                       // fill={true}
                       // className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
-                      src={element}
+                      src={prefix + element}
                     />
                   </div>
                 );
