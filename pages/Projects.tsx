@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Projects: React.FC<{
   header: string;
   img: string[];
@@ -19,10 +21,11 @@ const Projects: React.FC<{
   githubLink,
   hostingLink,
 }) => {
-  const prefix = "/v3";
+  // const prefix = "/v3";
+  const prefix = "/v3/public";
 
   return (
-    <div className="mt-3">
+    <div className="mt-3 mx-auto w-1/2  ">
       <div className="flex items-baseline">
         <h1 className="mb-5 text-2xl text-indigo-300/100">{header}</h1>
         <a
@@ -41,34 +44,60 @@ const Projects: React.FC<{
           </svg>
         </a>
       </div>
-      <div className="flex flex-col justify-center gap-6 mb-5">
-        {img
-          ? img.map((element, idx) => {
-              return (
-                <div key={idx} className="max-w-full">
-                  <img
-                    className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
-                    src={prefix + element}
-                  />
-                </div>
-              );
-            })
-          : null}
-      </div>
-      <div className="mb-5 text-lg">
-        <p className="text-cyan-100">{description}</p>
-      </div>
-      <div>
-        Skills:
-        {list
-          ? list.map((element, idx) => {
-              return (
-                <span key={idx} className="ml-5">
-                  {element}
-                </span>
-              );
-            })
-          : null}
+      <div className="flex justify-center gap-5 mb-5 w-6/7">
+        <div className="flex flex-col justify-center gap-6 mb-5">
+          {img
+            ? img.map((element, idx) => {
+                return (
+                  <div
+                    key={idx}
+                    className="hover:scale-150 transition-all duration-500 cursor-pointer"
+                  >
+                    <Image
+                      alt="myimage"
+                      width={700}
+                      height={700}
+                      style={{ objectFit: "cover" }}
+                      // fill={true}
+                      // className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
+                      src={element}
+                    />
+                  </div>
+                );
+              })
+            : null}
+        </div>
+        <div>
+          <div className="mb-5 text-lg ml-5">
+            <p className="text-cyan-100">{description}</p>
+          </div>
+          <div className="px-6 pt-4 pb-2 flex flex-wrap">
+            {list
+              ? list.map((element, idx) => {
+                  return (
+                    <span
+                      className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                      key={idx}
+                    >
+                      {element}
+                    </span>
+                  );
+                })
+              : null}
+          </div>
+          {/* <div>
+            Skills:
+            {list
+              ? list.map((element, idx) => {
+                  return (
+                    <span key={idx} className="ml-5">
+                      {element}
+                    </span>
+                  );
+                })
+              : null}
+          </div> */}
+        </div>
       </div>
     </div>
   );

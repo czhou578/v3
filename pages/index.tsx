@@ -146,11 +146,11 @@ export default function Home() {
         companyLogo={EcoLogicalLogo}
         companyName="EcoLogical"
         position="Software Engineer Intern"
-        date="09/2023 - present"
+        date="09/2023 - 12/2023"
         location="Champaign, Illinois, United States (Remote)"
         description={[
           `Using Ant Design components to improve the front-end experience of the flagship web app.`,
-          `Set up 10 mutations and queries to AWS Amplify backend`,
+          `Set up 10 mutations and queries to AWS Amplify backend for the user signup workflow.`,
         ]}
       />
       <Experience
@@ -244,7 +244,7 @@ export default function Home() {
         date="08/2017 - 03/2020"
         location="Issaquah, Washington, United States"
         description={[
-          `Writing about history, and other topics, with over 25 million answer views since 2017.`,
+          `Writing about history, and other topics, with over 30 million answer views since 2017.`,
 
           `Managing own blog about futuristic technology, over 30k followers.`,
 
@@ -283,121 +283,91 @@ export default function Home() {
         Projects
       </h2>
       <div className="mx-auto p-8 w-3/12 md:w-11/12">
-        <div className="grid lg:grid-cols-2 skill-gap">
-          <Projects
-            header="DistanceCalc"
-            img={["/images/distancecalc1.png", "/images/distancecalc2.png"]}
-            list={[
-              "HTML/CSS",
-              "JavaScript",
-              "React.js",
-              "Material UI",
-              "React Router",
-              "Firebase",
-            ]}
-            description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
+        <Projects
+          header="DistanceCalc"
+          img={["/images/distancecalc1.png", "/images/distancecalc2.png"]}
+          list={[
+            "HTML/CSS",
+            "JavaScript",
+            "React.js",
+            "Material UI",
+            "React Router",
+            "Firebase",
+          ]}
+          description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
             in the United States, and calculate their distance and the travel time in minutes. After each request,
             the data will be logged in an external form, which I took from Material UI.`}
-            githubLink="https://github.com/czhou578/DistanceCalc"
-          />
-          <Projects
-            header="StreetFoodLove"
-            img={["/images/Sapp.png", "/images/Sapp2.png"]}
-            list={[
-              "HTML/CSS Modules",
-              "TypeScript",
-              "React.js",
-              "Semantic UI",
-              "AWS",
-              "Redux",
-            ]}
-            // description={"hello there"}
-            description={`For my senior year capstone project, I helped to create a Yelp-like app
+          githubLink="https://github.com/czhou578/DistanceCalc"
+        />
+        <Projects
+          header="StreetFoodLove"
+          img={["/images/Sapp.png", "/images/Sapp2.png"]}
+          list={[
+            "HTML/CSS",
+            "TypeScript",
+            "React.js",
+            "Semantic UI",
+            "AWS",
+            "Redux",
+          ]}
+          // description={"hello there"}
+          description={`For my senior year capstone project, I helped to create a Yelp-like app
             that will empower and enable food truck vendors to more easily attract customers and run their business.
             I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
             the initial mockups. `}
-            githubLink="https://github.com/bcfoodapp/streetfoodlove"
-          />
-          <Projects
-            header="Project Elpis App"
-            img={["/images/PE1.png", "/images/PE2.png"]}
-            list={[
-              "HTML/CSS Modules",
-              "TypeScript",
-              "React.js",
-              "Semantic UI",
-              "AWS",
-              "Redux",
-            ]}
-            description={`I helped create an educational web app that helps at risk high school 
+          githubLink="https://github.com/bcfoodapp/streetfoodlove"
+        />
+        <Projects
+          header="Project Elpis App"
+          img={["/images/PE1.png", "/images/PE2.png"]}
+          list={[
+            "HTML/CSS",
+            "TypeScript",
+            "React.js",
+            "Semantic UI",
+            "AWS",
+            "Redux",
+          ]}
+          description={`I helped create an educational web app that helps at risk high school 
               students track their future career goals. I utilized various front end technologies like React.js 
               along with backend tools like AWS for hosting. After the internship was completed, this app is now in
               beta testing in a high school of a couple hundred students in New York City.`}
-            githubLink="https://github.com/czhou578/Code-Samples-Project-Elpis"
-          />
-          <Projects
-            header="React Backend-Benchmarks"
-            img={["/images/benchmark1.png", "/images/benchmark2.png"]}
-            list={[
-              "TypeScript",
-              "React.js",
-              "Node.js",
-              "MySQL",
-              "Python / Flask",
-              "Golang",
-            ]}
-            description={`A web application with a React frontend and three backends written in different
+          githubLink="https://github.com/czhou578/Code-Samples-Project-Elpis"
+        />
+        <Projects
+          header="React Backend-Benchmarks"
+          img={["/images/benchmark1.png", "/images/benchmark2.png"]}
+          list={[
+            "TypeScript",
+            "React.js",
+            "Node.js",
+            "MySQL",
+            "Python / Flask",
+            "Golang",
+          ]}
+          description={`A web application with a React frontend and three backends written in different
               languages that are all connected to a common MySQL database. Users will be able to send repetitive queries to any
               backend that they choose and see how fast the server responds after the completed operation.`}
-            githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
-          />
-          <Projects
-            header="Wordament / Wordle"
-            img={["/images/W1.png", "/images/W2.png"]}
-            list={[
-              "HTML/CSS Modules",
-              "TypeScript",
-              "React.js",
-              "Express",
-              "MySQL",
-            ]}
-            description={`I created my own version of the popular Microsoft game Wordament. Users are to 
+          githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
+        />
+        <Projects
+          header="Wordament / Wordle"
+          img={["/images/W1.png", "/images/W2.png"]}
+          list={["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"]}
+          description={`I created my own version of the popular Microsoft game Wordament. Users are to 
               swipe with a mouse to create words using the provided alphabet letters, and are awarded a 
               specific amount of points depending on whether a guess results in a word.`}
-            githubLink="https://github.com/czhou578/Wordament-v2"
-          />
-          <Projects
-            header="Whitehouse.gov 2025"
-            img={["/images/whitehouse1.png", "/images/whitehouse2.png"]}
-            list={[
-              "HTML/CSS",
-              "JavaScript",
-              "React.js",
-              "Firebase",
-              "FEC / Google Civics API",
-            ]}
-            description={`This project was a playground for me to practice my designing skills while imagining
-          what a future of the whitehouse.gov website would look like if Andrew Yang got elected as the
-          US President in 2024.`}
-            githubLink="https://github.com/czhou578/AmericanScorecard"
-          />
-          <Projects
-            header="YouTubeBlocker"
-            img={["/images/YT.png", "/images/YT2.png"]}
-            list={["Google Chrome API", "CSS"]}
-            description={`A way to block distractions on YouTube. Using this blocker,
+          githubLink="https://github.com/czhou578/Wordament-v2"
+        />
+        <Projects
+          header="YouTubeBlocker"
+          img={["/images/YT.png", "/images/YT2.png"]}
+          list={["Google Chrome API", "CSS"]}
+          description={`A way to block distractions on YouTube. Using this blocker,
           users will be able to cover up the recommended videos section,
           allowing for less distractions and greater concentration on tasks.`}
-            githubLink="https://github.com/czhou578/YouTubeBlocker"
-          />
-          <Projects
-            header="Personal Website V2."
-            img={["/images/PWV2-1.png", "/images/PWV2-2.png"]}
-            list={["React", "TypeScript", "Next.js", "CSS Modules"]}
-            description={`The second version of my personal website, built with React, TypeScript, and Next.js`}
-            githubLink="https://github.com/czhou578/v2"
-          />
-        </div>
+          githubLink="https://github.com/czhou578/YouTubeBlocker"
+        />
       </div>
       <h2
         className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
@@ -501,10 +471,30 @@ export default function Home() {
             techUsed={["Java"]}
           />
           <NoteWorthyProjects
+            header="Whitehouse.gov 2025"
+            githubLink="https://github.com/czhou578/AmericanScorecard"
+            description="Whitehouse.gov website if Andrew Yang got elected as the
+            US President in 2024."
+            techUsed={[
+              "HTML",
+              "CSS",
+              "JS",
+              "React.js",
+              "Firebase",
+              "FEC / Google Civics API",
+            ]}
+          />
+          <NoteWorthyProjects
             header="Personal Website V1"
             githubLink="https://github.com/czhou578/Personal-Website"
             description="This is the very first version of my personal website, using basic front end technologies."
             techUsed={["HTML", "CSS", "JS"]}
+          />
+          <NoteWorthyProjects
+            header="Personal Website V2"
+            githubLink="https://github.com/czhou578/v2"
+            description="The second version of my personal website, built with React, TypeScript, and Next.js."
+            techUsed={["React", "TypeScript", "Next.js", "CSS Modules"]}
           />
           <NoteWorthyProjects
             header="Wordament V1"
@@ -541,7 +531,7 @@ export default function Home() {
           <Classwork
             header="Distributed System (Fall 2023)"
             githubLink="https://github.com/czhou578/CS425"
-            description="Work done for UIUC's Distributed Systems class"
+            description="Work done for UIUC's Distributed Systems class, where I built my own distributed system from scratch."
             techUsed={["Python", "Linux", "Shell Scripting", "Hadoop"]}
           />
           <Classwork
