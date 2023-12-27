@@ -25,7 +25,7 @@ const Projects: React.FC<{
   // const prefix = "/v3/public";
 
   return (
-    <div className="mt-3 mx-auto w-1/2  ">
+    <div className="mt-3 mx-auto w-1/2">
       <div className="flex items-baseline">
         <h1 className="mb-5 text-2xl text-indigo-300/100">{header}</h1>
         <a
@@ -53,13 +53,12 @@ const Projects: React.FC<{
                     key={idx}
                     className="hover:scale-150 transition-all duration-500 cursor-pointer"
                   >
-                    <Image
+                    <img
                       alt="myimage"
-                      width={700}
-                      height={700}
+                      width={300}
+                      height={300}
                       style={{ objectFit: "cover" }}
-                      // fill={true}
-                      // className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
+                      className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
                       src={prefix + element}
                     />
                   </div>

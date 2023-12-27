@@ -7,7 +7,7 @@ const Classwork: React.FC<{
   techUsed: string[];
 }> = ({ header, githubLink, techUsed, description }) => {
   return (
-    <div className="relative max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:dark:border-indigo-500/100">
+    <div className="relative max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:dark:border-violet-400/100">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2 dark:text-cyan-400">
           {header}

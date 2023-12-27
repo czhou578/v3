@@ -14,7 +14,7 @@ interface Props {
 
 export default function SkillsList(props: Props) {
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-500/100">
+    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-200/100">
       <div className="flex justify-evenly">
         {props.icon
           ? props.icon.map((element: any, idx: any) => {

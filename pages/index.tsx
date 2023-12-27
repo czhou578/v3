@@ -459,7 +459,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
+      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10 mt-10">
         Archive
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
@@ -523,7 +523,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
+      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10 mt-10">
         Classwork
       </h2>
       <div className="mx-auto p-8 w-4/12 md:w-8/12">
@@ -597,7 +597,7 @@ export default function Home() {
         </div>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10 mt-10"
         id="designs"
       >
         Designs
