@@ -62,19 +62,19 @@ export default function Home() {
         />
       </div>
       <div
-        className="mx-auto md:w-7/12 lg:w-7/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5 rounded-lg"
+        className="mx-auto md:w-5/12 lg:w-5/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5 rounded-lg"
         id="intro"
       >
         <p className="text-lg">
-          I am a UIUC CS Masters student. My passion is in web development,
-          using my knowledge of front end technologies to architect websites for
-          various for-good causes. As someone with experience in designing logos
-          and simple designs, I strive to bring some elements of the future into
-          my creations. In addition, I have many years of experience writing
-          online, allowing me to share my ideas and thinking to millions around
-          the world. My dream is to be able to help design and architect
-          platforms that would help problem solvers communicate their solutions
-          to a pressing problem to the world.
+          I am an aspiring software developer with experience in full stack web
+          development and cloud services. Previously, I graduated from UIUC with
+          a Masters in Computer Science, and obtained my bachelor's degree in
+          Computer Science from Bellevue College.
+          <br />
+          <br />
+          When I'm not sitting at the computer, you can find me solving Rubik's
+          Cubes of various sizes, practicing a difficult piano piece, or taking
+          long walks around my neighborhood.
         </p>
       </div>
       <h2
@@ -251,7 +251,7 @@ export default function Home() {
           `Admin and moderator of multiple blogs about finance and interesting information.`,
         ]}
       />
-      <Experience
+      {/* <Experience
         companyLogo={UpworkLogo}
         companyName="Upwork"
         position="Freelance Writer"
@@ -275,7 +275,7 @@ export default function Home() {
           `Helped tutor Cupertino High School sophomores with improving their writing.`,
           `Coordinated with high school/college teachers with tutoring progress.`,
         ]}
-      />
+      /> */}
       <h2
         className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="projects"
@@ -400,7 +400,7 @@ export default function Home() {
         </div>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="skills"
       >
         Skills
@@ -447,7 +447,7 @@ export default function Home() {
               <SiMongodb key="first" size="4em" />,
               <SiMysql key="second" size="4em" />,
             ]}
-            description="Learned about and interacted with databases throughout school classes."
+            description="Used MySQL during 2022 internship and senior year capstone project."
           />
           <SkillsList
             header="Git, Jira"
@@ -455,7 +455,7 @@ export default function Home() {
               <SiGit key="first" size="4em" />,
               <SiJira key="second" size="4em" />,
             ]}
-            description="Experienced with Jira in my 2021 internship as well as Github services."
+            description="Experienced with Jira in my 2021 internship as well as Github workflows."
           />
           <SkillsList
             header="Figma, AdobeXD"
@@ -483,14 +483,14 @@ export default function Home() {
             description="Familiar with skills that a 2020's programmer needs in order to gather more information more effectively."
           />
           <SkillsList
-            header="ChatGPT"
+            header="ChatGPT, Prompt Engineering"
             icon={[<SiOpenai key="first" size="4em" />]}
             description="Familiar with using prompt engineering in development workflows."
           />
         </div>
       </div>
       <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10">
-        Other Projects
+        Archive
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
         <div className="grid lg:grid-cols-3 skill-gap">
@@ -607,12 +607,17 @@ export default function Home() {
         </div>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-7/12 mb-10"
+        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
         id="designs"
       >
         Designs
       </h2>
       <div className="mx-auto p-8 w-fit">
+        <h4 className="text-cyan-100 font-medium text-base mb-10">
+          *These are several futuristic looking UI designs that I created for
+          fun, in early 2020, along with some UI wireframes from my various
+          internships.
+        </h4>
         <Designs />
       </div>
       <Footer />

@@ -26,11 +26,11 @@ export default function SkillsList(props: Props) {
             })
           : null}
       </div>
-      <a href="#">
+      <div>
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-cyan-400">
           {props.header}
         </h5>
-      </a>
+      </div>
       <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
         {props.description}
       </p>
