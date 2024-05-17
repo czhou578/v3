@@ -22,7 +22,6 @@ const Projects: React.FC<{
   hostingLink,
 }) => {
   const prefix = "/v3";
-  // const prefix = "/v3/public";
 
   return (
     <div className="mt-3 mx-auto w-1/2">
@@ -44,8 +43,8 @@ const Projects: React.FC<{
           </svg>
         </a>
       </div>
-      <div className="flex justify-center gap-5 mb-5 w-6/7">
-        <div className="flex flex-col justify-center gap-6 mb-5">
+      <div className="flex flex-col justify-center gap-5 mb-5 w-6/7">
+        <div className="flex justify-center gap-6 mb-5">
           {img
             ? img.map((element, idx) => {
                 return (
@@ -55,8 +54,8 @@ const Projects: React.FC<{
                   >
                     <img
                       alt="myimage"
-                      width={300}
-                      height={300}
+                      width={500}
+                      height={500}
                       style={{ objectFit: "cover" }}
                       className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
                       src={prefix + element}
