@@ -16,7 +16,7 @@ import EndevreLogo from "../public/images/endevreLogo.jpg";
 import PencilLogo from "../public/images/pencil.jpg";
 import QuoraLogo from "../public/images/QuoraLogo.png";
 import SelfEmployedLogo from "../public/images/SelfEmployedLogo.jpg";
-import UpworkLogo from "../public/images/upworkLogo.png";
+import PolicyEngineLogo from "../public/images/thepolicyengine_logo.jpg";
 import DemocracyLabLogo from "../public/images/democracyLab.jpg";
 import EcoLogicalLogo from "../public/images/ecological.jpg";
 import { ImHtmlFive, ImCss3 } from "react-icons/im";
@@ -142,6 +142,18 @@ export default function Home() {
       >
         Experience
       </h2>
+      <Experience
+        companyLogo={PolicyEngineLogo}
+        companyName="PolicyEngine"
+        position="Open Source Software Engineer"
+        date="03/2024 - present"
+        location="Issaquah, Washington, United States (Remote)"
+        description={[
+          `Worked with 3 contributors on PolicyEngine’s web app project on GitHub (over 600 visits monthly).`,
+          `Assisted in migrating the front end component library to the newest version of Ant Design. Streamlined 
+          150 Jest unit tests by refactoring 5 metadata API calls to occur in the beginning of testing runs.`,
+        ]}
+      />{" "}
       <Experience
         companyLogo={EcoLogicalLogo}
         companyName="EcoLogical"
