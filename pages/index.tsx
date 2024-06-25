@@ -78,7 +78,7 @@ export default function Home() {
         </p>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="education"
       >
         Education
@@ -91,12 +91,12 @@ export default function Home() {
           date="2022-2023"
           activities={["CS 411 Database Project Team Lead"]}
           relevantClasses={[
-            "User-Interface Design, ",
-            "Databases, ",
-            "Advanced Data Management, ",
-            "Human-Computer Interaction, ",
-            "Artificial Intelligence, ",
-            "Distributed Systems, ",
+            "User-Interface Design",
+            "Databases",
+            "Advanced Data Management",
+            "Human-Computer Interaction",
+            "Artificial Intelligence",
+            "Distributed Systems",
             "ML + Data Systems",
           ]}
         />
@@ -107,14 +107,14 @@ export default function Home() {
           date="2019-2022"
           activities={["CS Student Advisory Board Treasurer"]}
           relevantClasses={[
-            "Data Structures, ",
-            "Algorithms, ",
-            "Cloud Computing, ",
-            "Operating Systems, ",
-            "Software Engineering, ",
-            "Computer Networks, ",
-            "Linear Algebra, ",
-            "Discrete Math, ",
+            "Data Structures",
+            "Algorithms",
+            "Cloud Computing",
+            "Operating Systems",
+            "Software Engineering",
+            "Computer Networks",
+            "Linear Algebra",
+            "Discrete Math",
             "Calculus III",
           ]}
         />
@@ -124,20 +124,20 @@ export default function Home() {
           degreeLevel="High School Diploma"
           date="2015-2019"
           activities={[
-            "Speech and Debate Club Member, ",
+            "Speech and Debate Club Member",
             "Sophomore English Tutor",
           ]}
           relevantClasses={[
-            "AP Computer Science A, ",
-            "AP Statistics, ",
-            "AP Physics C: Mechanics, ",
-            "AP Chemistry, ",
+            "AP Computer Science A,",
+            "AP Statistics,",
+            "AP Physics C: Mechanics,",
+            "AP Chemistry,",
             "AP United States History",
           ]}
         />
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="experience"
       >
         Experience
@@ -289,7 +289,7 @@ export default function Home() {
         ]}
       /> */}
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="projects"
       >
         Projects
@@ -382,7 +382,7 @@ export default function Home() {
         />
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="skills"
       >
         Skills
@@ -471,7 +471,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10 mt-10">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
         Archive
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
@@ -535,7 +535,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10 mt-10">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
         Classwork
       </h2>
       <div className="mx-auto p-8 w-4/12 md:w-8/12">
@@ -609,13 +609,13 @@ export default function Home() {
         </div>
       </div>
       <h2
-        className="text-4xl font-extrabold dark:text-blue-300 mx-auto lg:w-6/12 mb-10 mt-10"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="designs"
       >
         Designs
       </h2>
       <div className="mx-auto p-8 w-fit">
-        <h4 className="text-cyan-100 font-medium text-base mb-10">
+        <h4 className="text-cyan-100 font-medium text-base mb-10 ml-10">
           *These are several futuristic looking UI designs that I created for
           fun, in early 2020, along with some UI wireframes from my various
           internships.

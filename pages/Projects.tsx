@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 
 const Projects: React.FC<{
@@ -10,91 +11,66 @@ const Projects: React.FC<{
   reactBenchmarks?: boolean;
   githubLink: string;
   hostingLink?: string;
-}> = ({
-  header,
-  img,
-  list,
-  description,
-  chromeBlocker,
-  projectElpis,
-  reactBenchmarks,
-  githubLink,
-  hostingLink,
-}) => {
+}> = ({ header, img, list, description, githubLink }) => {
   const prefix = "/v3";
 
   return (
-    <div className="mt-3 mx-auto w-1/2">
-      <div className="flex items-baseline">
-        <h1 className="mb-5 text-2xl text-indigo-300/100">{header}</h1>
-        <a
-          href={githubLink}
-          className="text-blue-600 hover:underline"
-          target="_blank"
-        >
-          <svg
-            className="w-5 h-5 ml-2"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-          </svg>
-        </a>
-      </div>
-      <div className="flex flex-col justify-center gap-5 mb-5 w-6/7">
-        <div className="flex justify-center gap-6 mb-5">
-          {img
-            ? img.map((element, idx) => {
-                return (
-                  <div
-                    key={idx}
-                    className="hover:scale-150 transition-all duration-500 cursor-pointer"
-                  >
-                    <img
-                      alt="myimage"
-                      width={500}
-                      height={500}
-                      style={{ objectFit: "cover" }}
-                      className="h-auto max-w-full rounded-lg transition-all duration-500 cursor-pointer"
-                      src={prefix + element}
-                    />
-                  </div>
-                );
-              })
-            : null}
-        </div>
-        <div>
-          <div className="mb-5 text-lg ml-5">
-            <p className="text-cyan-100">{description}</p>
+    <div className="mt-8 mx-auto w-full px-4 sm:px-6 md:px-8 max-w-4xl">
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div className="p-6">
+          <div className="flex items-baseline flex-wrap mb-4">
+            <h1 className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mr-2">
+              {header}
+            </h1>
+            <a
+              href={githubLink}
+              className="text-blue-600 hover:underline inline-flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+              </svg>
+            </a>
           </div>
-          <div className="px-6 pt-4 pb-2 flex flex-wrap">
-            {list
-              ? list.map((element, idx) => {
-                  return (
-                    <span
-                      className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                      key={idx}
-                    >
-                      {element}
-                    </span>
-                  );
-                })
-              : null}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+            {img?.map((element, idx) => (
+              <div
+                key={idx}
+                className="hover:scale-105 transition-all duration-300 cursor-pointer"
+              >
+                <Image
+                  alt={`Project image ${idx + 1}`}
+                  width={500}
+                  height={500}
+                  src={prefix + element}
+                  className="h-auto w-full rounded-lg object-cover"
+                />
+              </div>
+            ))}
           </div>
-          {/* <div>
-            Skills:
-            {list
-              ? list.map((element, idx) => {
-                  return (
-                    <span key={idx} className="ml-5">
-                      {element}
-                    </span>
-                  );
-                })
-              : null}
-          </div> */}
+
+          <div className="mb-6">
+            <p className="text-cyan-100 text-base sm:text-lg">{description}</p>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {list?.map((element, idx) => (
+              <span
+                key={idx}
+                className="inline-block bg-gray-700 text-gray-200 rounded-full px-3 py-1 text-xs sm:text-sm font-semibold"
+              >
+                {element}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

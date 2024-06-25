@@ -5,34 +5,34 @@ const NoteWorthyProjects: React.FC<{
   techUsed: string[];
 }> = ({ header, githubLink, techUsed, description }) => {
   return (
-    <div className="relative max-w-sm p-6 bg-white border rounded-lg shadow dark:bg-gray-800 dark:border-indigo-500/100">
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 dark:text-cyan-400">
+    <div className="relative w-full max-w-sm mx-auto p-4 sm:p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-indigo-500/100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="mb-4">
+        <h3 className="font-bold text-lg sm:text-xl mb-2 pr-8 dark:text-cyan-400">
           {header}
-        </div>
-        <p className="text-base">{description}</p>
+        </h3>
+        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
+          {description}
+        </p>
       </div>
-      <div className="px-6 pt-4 pb-2 flex flex-wrap">
-        {techUsed
-          ? techUsed.map((element, idx) => {
-              return (
-                <span
-                  className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                  key={idx}
-                >
-                  {element}
-                </span>
-              );
-            })
-          : null}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {techUsed?.map((element, idx) => (
+          <span
+            key={idx}
+            className="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-2 py-1 text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300"
+          >
+            {element}
+          </span>
+        ))}
       </div>
       <a
         href={githubLink}
-        className="text-blue-600 hover:underline absolute top-2 left-0"
+        className="absolute top-3 right-3 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300"
         target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View project on GitHub"
       >
         <svg
-          className="w-5 h-5 ml-2"
+          className="w-5 h-5 sm:w-6 sm:h-6"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"

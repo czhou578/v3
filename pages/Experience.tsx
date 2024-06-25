@@ -11,33 +11,36 @@ const Experience: React.FC<{
   description: string[];
 }> = ({ companyLogo, companyName, position, date, location, description }) => {
   return (
-    <div className="w-screen lg:max-w-full lg:flex flex justify-center max-w-fit overflow-x-hidden">
-      <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden mt-6">
-        <Image src={companyLogo} width="120" height="120" alt="pic" />
-      </div>
-      <div className="border-r border-b border-l lg:border-l-0 lg:border-t dark:border-transparent rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal w-2/5">
-        <div className="mb-8">
-          <div className="dark:text-cyan-400 font-bold text-xl mb-2">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="flex flex-col sm:flex-row bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+        <div className="w-full sm:w-48 flex justify-center items-center p-4 bg-gray-700">
+          <Image
+            src={companyLogo}
+            width={120}
+            height={120}
+            alt={`${companyName} logo`}
+            className="object-contain"
+          />
+        </div>
+        <div className="flex-1 p-4 sm:p-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-cyan-400 mb-2">
             {position}
-          </div>
-          <div className="text-lg">
-            <p className="text-gray-200 leading-none">{companyName}</p>
-            <p className="text-gray-200 mt-3">
-              {date}. {location}
+          </h3>
+          <div className="text-base sm:text-lg text-gray-200 mb-3">
+            <p>{companyName}</p>
+            <p className="mt-1">
+              {date} • {location}
             </p>
           </div>
-          {description
-            ? description.map((element, idx) => {
-                return (
-                  <p
-                    className="text-cyan-100 font-medium text-base mt-3"
-                    key={idx}
-                  >
-                    {element}
+          <div className="space-y-2">
+            {description
+              ? description.map((item, idx) => (
+                  <p key={idx} className="text-sm sm:text-base text-cyan-100">
+                    • {item}
                   </p>
-                );
-              })
-            : null}
+                ))
+              : null}
+          </div>
         </div>
       </div>
     </div>
