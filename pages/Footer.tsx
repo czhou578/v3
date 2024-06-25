@@ -33,13 +33,13 @@ export default function Footer() {
               <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
-              href="https://twitter.com/ZhouColin01"
+              href="https://x.com/ColinZhouUSA"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <i className="fa-brands fa-twitter"></i>
             </a>
             <a
-              href="https://www.instagram.com/colin.uiuc.pianist/"
+              href="https://www.instagram.com/colin.pianist/"
               className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
             >
               <i className="fa-brands fa-instagram"></i>
