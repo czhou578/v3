@@ -90,7 +90,7 @@ const Projects: React.FC<{
         >
           <div className="max-w-screen-2xl max-h-screen p-4">
             <Image
-              src={enlargedImage}
+              src={prefix + enlargedImage}
               alt="Enlarged project image"
               width={3600}
               height={3600}
