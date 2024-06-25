@@ -12,7 +12,7 @@ export default function Introduction() {
   }, [time]);
 
   return (
-    <div className="bg-gray-800 p-4 sm:p-8 flex items-center justify-center min-h-screen">
+    <div className="bg-gray-800 p-4 sm:p-8 flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-10 text-white">
           Hi! I am Colin Zhou.....

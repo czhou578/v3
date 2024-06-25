@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const Projects: React.FC<{
@@ -12,6 +12,7 @@ const Projects: React.FC<{
   githubLink: string;
   hostingLink?: string;
 }> = ({ header, img, list, description, githubLink }) => {
+  const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const prefix = "/v3";
 
   return (
@@ -44,15 +45,23 @@ const Projects: React.FC<{
             {img?.map((element, idx) => (
               <div
                 key={idx}
-                className="hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="relative group overflow-hidden rounded-lg"
               >
                 <Image
                   alt={`Project image ${idx + 1}`}
-                  width={500}
-                  height={500}
+                  width={800}
+                  height={800}
                   src={prefix + element}
-                  className="h-auto w-full rounded-lg object-cover"
+                  className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button
+                    onClick={() => setEnlargedImage(element)}
+                    className="bg-white text-gray-800 px-3 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-gray-200 transition-colors duration-200"
+                  >
+                    View Larger
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -73,6 +82,23 @@ const Projects: React.FC<{
           </div>
         </div>
       </div>
+
+      {enlargedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={() => setEnlargedImage(null)}
+        >
+          <div className="max-w-screen-2xl max-h-screen p-4">
+            <Image
+              src={enlargedImage}
+              alt="Enlarged project image"
+              width={3600}
+              height={3600}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
