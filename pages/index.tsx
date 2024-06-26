@@ -42,6 +42,7 @@ import {
   SiFigma,
   SiShell,
   SiLinux,
+  SiReact,
 } from "react-icons/si";
 import Projects from "./Projects";
 import Image from "next/image";
@@ -393,10 +394,24 @@ export default function Home() {
             header="HTML, CSS, TypeScript"
             icon={[
               <ImHtmlFive key="first" size="4em" />,
-              // <ImCss3 key="second" size="4em" />,
+              <ImCss3 key="second" size="4em" />,
               <SiTypescript key="third" size="4em" />,
             ]}
-            description="Familiar with front-end technologies to build responsive/dynamic websites."
+          />
+          <SkillsList
+            header="React, Node.js, GraphQL"
+            icon={[
+              <SiReact key="first" size="4em" />,
+              <SiNodedotjs key="second" size="4em" />,
+              <SiGraphql key="second" size="4em" />,
+            ]}
+          />
+          <SkillsList
+            header="MongoDB, MySQL"
+            icon={[
+              <SiMongodb key="first" size="4em" />,
+              <SiMysql key="second" size="4em" />,
+            ]}
           />
           <SkillsList
             header="AWS, GCP, Firebase"
@@ -405,7 +420,6 @@ export default function Home() {
               <SiGooglecloud key="second" size="4em" />,
               <SiFirebase key="third" size="4em" />,
             ]}
-            description="Used AWS and GCP to host personal and university projects in undergrad and grad."
           />
           <SkillsList
             header="Python, MapReduce"
@@ -413,23 +427,6 @@ export default function Home() {
               <SiPython key="first" size="4em" />,
               <SiApachehadoop key="second" size="4em" />,
             ]}
-            description="I have a general understanding of distributed systems and running jobs on frameworks like Apache Hadoop."
-          />
-          <SkillsList
-            header="Node.js, GraphQL"
-            icon={[
-              <SiNodedotjs key="first" size="4em" />,
-              <SiGraphql key="second" size="4em" />,
-            ]}
-            description="Used Node.js to connect to various databases and used GraphQL in my 2021 internship. "
-          />
-          <SkillsList
-            header="MongoDB, MySQL"
-            icon={[
-              <SiMongodb key="first" size="4em" />,
-              <SiMysql key="second" size="4em" />,
-            ]}
-            description="Used MySQL during 2022 internship and senior year capstone project."
           />
           <SkillsList
             header="Git, Jira"
@@ -437,7 +434,6 @@ export default function Home() {
               <SiGit key="first" size="4em" />,
               <SiJira key="second" size="4em" />,
             ]}
-            description="Experienced with Jira in my 2021 internship as well as Github workflows."
           />
           <SkillsList
             header="Figma, AdobeXD"
@@ -445,16 +441,14 @@ export default function Home() {
               <SiAdobexd key="first" size="4em" />,
               <SiFigma key="second" size="4em" />,
             ]}
-            description="Experienced with using designer tools through various collaborations with designers in past projects."
           />
           <SkillsList
-            header="LaTeX, Markdown"
+            header="LaTeX, Markdown, Linux"
             icon={[
               <SiLatex key="first" size="4em" />,
               <SiMarkdown key="second" size="4em" />,
               <SiLinux key="third" size="4em" />,
             ]}
-            description="Used markdown and LaTeX extensively in school projects to do project writeups. Used Linux extensively in distributed systems class."
           />
           <SkillsList
             header="Communication, Googling"
@@ -462,12 +456,10 @@ export default function Home() {
               <SiMessenger key="first" size="4em" />,
               <SiGoogle key="second" size="4em" />,
             ]}
-            description="Familiar with skills that a 2020's programmer needs in order to gather more information more effectively."
           />
           <SkillsList
-            header="ChatGPT, Prompt Engineering"
+            header="Prompt Engineering"
             icon={[<SiOpenai key="first" size="4em" />]}
-            description="Familiar with using prompt engineering in development workflows."
           />
         </div>
       </div>

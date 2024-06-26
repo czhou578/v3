@@ -9,7 +9,6 @@
 interface Props {
   header: string;
   icon: any;
-  description: string;
 }
 
 export default function SkillsList(props: Props) {
@@ -25,12 +24,9 @@ export default function SkillsList(props: Props) {
           </div>
         ))}
       </div>
-      <h5 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-semibold tracking-tight text-gray-900 dark:text-cyan-400 text-center sm:text-left">
+      <h5 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-semibold tracking-tight text-gray-900 dark:text-cyan-400 text-center">
         {props.header}
       </h5>
-      <p className="text-sm sm:text-base font-normal text-gray-500 dark:text-gray-400 text-center sm:text-left">
-        {props.description}
-      </p>
     </div>
   );
 }
