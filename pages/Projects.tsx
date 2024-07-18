@@ -13,6 +13,7 @@ const Projects: React.FC<{
   hostingLink?: string;
 }> = ({ header, img, list, description, githubLink }) => {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+  const prefix = "/v3";
 
   useEffect(() => {
     if (enlargedImage) {
@@ -62,7 +63,7 @@ const Projects: React.FC<{
                   alt={`Project image ${idx + 1}`}
                   width={800}
                   height={800}
-                  src={element}
+                  src={prefix + element}
                   className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -122,7 +123,7 @@ const Projects: React.FC<{
             <div className="bg-black rounded-lg overflow-hidden shadow-xl w-full h-full flex items-center justify-center">
               <div className="relative w-full h-full">
                 <Image
-                  src={enlargedImage}
+                  src={prefix + enlargedImage}
                   alt="Enlarged project image"
                   layout="fill"
                   objectFit="contain"
