@@ -33,9 +33,9 @@ const LazyLoad: FC<MyComponentProps> = ({ children }) => {
   }, []);
 
   return (
-    <div ref={ref} className="min-h-[200px]">
+    <div ref={ref} className="min-h-[200px] z-[0] relative">
       <div
-        className={`transition-all duration-1000 ease-out ${
+        className={`transition-all duration-1000 ease-out z-[0] relative ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >

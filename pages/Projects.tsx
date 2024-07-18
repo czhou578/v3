@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const Projects: React.FC<{
@@ -13,12 +13,23 @@ const Projects: React.FC<{
   hostingLink?: string;
 }> = ({ header, img, list, description, githubLink }) => {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-  const prefix = "/v3";
+
+  useEffect(() => {
+    if (enlargedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [enlargedImage]);
 
   return (
-    <div className="mt-8 mx-auto w-full px-4 sm:px-6 md:px-8 max-w-4xl">
-      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <div className="p-6">
+    <div className="mt-8 mx-auto w-full px-4 sm:px-6 md:px-8 max-w-4xl z-0 relative">
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative z-10">
+        <div className="p-6 z-20 relative">
           <div className="flex items-baseline flex-wrap mb-4">
             <h1 className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mr-2">
               {header}
@@ -51,7 +62,7 @@ const Projects: React.FC<{
                   alt={`Project image ${idx + 1}`}
                   width={800}
                   height={800}
-                  src={prefix + element}
+                  src={element}
                   className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -83,19 +94,41 @@ const Projects: React.FC<{
         </div>
       </div>
 
+      {/* Modal */}
+      {/* Modal */}
       {enlargedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={() => setEnlargedImage(null)}
-        >
-          <div className="max-w-screen-2xl max-h-screen p-4">
-            <Image
-              src={prefix + enlargedImage}
-              alt="Enlarged project image"
-              width={3600}
-              height={3600}
-              className="max-w-full max-h-full object-contain"
-            />
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black bg-opacity-75">
+          <div className="relative w-full h-full max-w-4xl max-h-[90vh] flex items-center justify-center">
+            <button
+              onClick={() => setEnlargedImage(null)}
+              className="absolute top-2 right-2 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+              aria-label="Close modal"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div className="bg-black rounded-lg overflow-hidden shadow-xl w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full">
+                <Image
+                  src={enlargedImage}
+                  alt="Enlarged project image"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
