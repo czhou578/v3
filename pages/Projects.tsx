@@ -53,29 +53,19 @@ const Projects: React.FC<{
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            {img?.map((element, idx) => (
-              <div
-                key={idx}
-                className="relative group overflow-hidden rounded-lg"
-              >
+          <div className="mb-6">
+            <div className="relative group overflow-hidden rounded-lg h-100">
+              {img && img.length > 0 ? (
                 <Image
-                  alt={`Project image ${idx + 1}`}
+                  alt={`Project image`}
                   width={800}
                   height={800}
-                  src={prefix + element}
+                  // src={img[0]}
+                  src={prefix + img[0]}
                   className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button
-                    onClick={() => setEnlargedImage(element)}
-                    className="bg-white text-gray-800 px-3 py-2 rounded-md text-sm sm:text-base font-semibold hover:bg-gray-200 transition-colors duration-200"
-                  >
-                    View Larger
-                  </button>
-                </div>
-              </div>
-            ))}
+              ) : null}
+            </div>
           </div>
 
           <div className="mb-6">
@@ -96,17 +86,16 @@ const Projects: React.FC<{
       </div>
 
       {/* Modal */}
-      {/* Modal */}
       {enlargedImage && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black bg-opacity-75">
-          <div className="relative w-full h-full max-w-4xl max-h-[90vh] flex items-center justify-center">
+        <div className="fixed inset-0 z-[9999] bg-black bg-opacity-75 flex items-center justify-center">
+          <div className="relative w-full h-[80vh] max-w-[90vw] bg-black">
             <button
               onClick={() => setEnlargedImage(null)}
               className="absolute top-2 right-2 text-white hover:text-gray-300 transition-colors duration-200 z-10"
               aria-label="Close modal"
             >
               <svg
-                className="w-6 h-6"
+                className="w-8 h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -120,15 +109,13 @@ const Projects: React.FC<{
                 />
               </svg>
             </button>
-            <div className="bg-black rounded-lg overflow-hidden shadow-xl w-full h-full flex items-center justify-center">
-              <div className="relative w-full h-full">
-                <Image
-                  src={prefix + enlargedImage}
-                  alt="Enlarged project image"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
+            <div className="w-full h-full">
+              <Image
+                src={enlargedImage}
+                alt="Enlarged project image"
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           </div>
         </div>

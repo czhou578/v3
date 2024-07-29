@@ -304,7 +304,7 @@ export default function Home() {
         <LazyLoad>
           <Projects
             header="DistanceCalc"
-            img={["/images/distancecalc1.png", "/images/distancecalc2.png"]}
+            img={["/images/distancecalc1.png"]}
             list={[
               "HTML/CSS",
               "JavaScript",
@@ -322,7 +322,7 @@ export default function Home() {
         <LazyLoad>
           <Projects
             header="StreetFoodLove"
-            img={["/images/Sapp.png", "/images/Sapp2.png"]}
+            img={["/images/Sapp.png"]}
             list={[
               "HTML/CSS",
               "TypeScript",
@@ -341,7 +341,7 @@ export default function Home() {
         <LazyLoad>
           <Projects
             header="Project Elpis App"
-            img={["/images/PE1.png", "/images/PE2.png"]}
+            img={["/images/PE1.png"]}
             list={[
               "HTML/CSS",
               "TypeScript",
@@ -357,10 +357,21 @@ export default function Home() {
             githubLink="https://github.com/czhou578/Code-Samples-Project-Elpis"
           />
         </LazyLoad>
+        {/* <LazyLoad>
+          <Projects
+            header="LLM God"
+            img={["/images/llm.png"]}
+            list={["JavaScript", "Node.js", "Electron.js"]}
+            description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
+              Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
+              an easy and convenient way to ask multiple LLM's at once, and it spawned this project.`}
+            githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
+          />
+        </LazyLoad> */}
         <LazyLoad>
           <Projects
             header="React Backend-Benchmarks"
-            img={["/images/benchmark1.png", "/images/benchmark2.png"]}
+            img={["/images/benchmark2.png"]}
             list={[
               "TypeScript",
               "React.js",
@@ -378,7 +389,7 @@ export default function Home() {
         <LazyLoad>
           <Projects
             header="Wordament / Wordle"
-            img={["/images/W1.png", "/images/W2.png"]}
+            img={["/images/W1.png"]}
             list={["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"]}
             description={`I created my own version of the popular Microsoft game Wordament. Users are to 
                 swipe with a mouse to create words using the provided alphabet letters, and are awarded a 
@@ -389,7 +400,7 @@ export default function Home() {
         <LazyLoad>
           <Projects
             header="YouTubeBlocker"
-            img={["/images/YT.png", "/images/YT2.png"]}
+            img={["/images/YT.png"]}
             list={["Google Chrome API", "CSS"]}
             description={`A way to block distractions on YouTube. Using this blocker,
             users will be able to cover up the recommended videos section,
