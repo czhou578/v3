@@ -357,17 +357,18 @@ export default function Home() {
             githubLink="https://github.com/czhou578/Code-Samples-Project-Elpis"
           />
         </LazyLoad>
-        {/* <LazyLoad>
+        <LazyLoad>
           <Projects
             header="LLM God"
-            img={["/images/llm.png"]}
-            list={["JavaScript", "Node.js", "Electron.js"]}
+            img={["/videos/llm.mp4"]}
+            list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
             description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
               Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
               an easy and convenient way to ask multiple LLM's at once, and it spawned this project.`}
-            githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
+            githubLink=""
+            isVideo
           />
-        </LazyLoad> */}
+        </LazyLoad>
         <LazyLoad>
           <Projects
             header="React Backend-Benchmarks"

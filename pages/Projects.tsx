@@ -11,7 +11,8 @@ const Projects: React.FC<{
   reactBenchmarks?: boolean;
   githubLink: string;
   hostingLink?: string;
-}> = ({ header, img, list, description, githubLink }) => {
+  isVideo?: boolean;
+}> = ({ header, img, list, description, githubLink, isVideo }) => {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const prefix = "/v3";
 
@@ -55,7 +56,7 @@ const Projects: React.FC<{
 
           <div className="mb-6">
             <div className="relative group overflow-hidden rounded-lg h-100">
-              {img && img.length > 0 ? (
+              {img && img.length > 0 && !isVideo ? (
                 <Image
                   alt={`Project image`}
                   width={800}
@@ -64,6 +65,10 @@ const Projects: React.FC<{
                   src={prefix + img[0]}
                   className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+              ) : img && img.length > 0 && isVideo ? (
+                <video autoPlay loop muted width={800} height={800}>
+                  <source src={prefix + img[0]} />
+                </video>
               ) : null}
             </div>
           </div>
