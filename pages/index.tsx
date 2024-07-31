@@ -315,7 +315,8 @@ export default function Home() {
             ]}
             description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
             in the United States, and calculate their distance and the travel time in minutes. After each request,
-            the data will be logged in an external form, which I took from Material UI.`}
+            the data will be logged in an external form, which I took from Material UI. This was one of my first projects
+            and helped me practice styling, HTML, and displaying data from API's, as well as using third party libraries.`}
             githubLink="https://github.com/czhou578/DistanceCalc"
           />
         </LazyLoad>
@@ -330,11 +331,13 @@ export default function Home() {
               "Semantic UI",
               "AWS",
               "Redux",
+              "SQL",
             ]}
-            description={`For my senior year capstone project, I helped to create a Yelp-like app
+            description={`For my senior year capstone project in undergraduate, I worked with three others to create a Yelp-like app
               that will empower and enable food truck vendors to more easily attract customers and run their business.
               I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
-              the initial mockups. `}
+              the initial mockups. On the backend, I helped with writing SQL queries and making sure the AWS services were
+              linked up seamlessly with the frontend.`}
             githubLink="https://github.com/bcfoodapp/streetfoodlove"
           />
         </LazyLoad>
@@ -350,7 +353,7 @@ export default function Home() {
               "AWS",
               "Redux",
             ]}
-            description={`I helped create an educational web app that helps at risk high school 
+            description={`In my first internship, I helped create an educational web app that helps at risk high school 
                 students track their future career goals. I utilized various front end technologies like React.js 
                 along with backend tools like AWS for hosting. After the internship was completed, this app is now in
                 beta testing in a high school of a couple hundred students in New York City.`}
@@ -364,7 +367,7 @@ export default function Home() {
             list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
             description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
               Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
-              an easy and convenient way to ask multiple LLM's at once, and it spawned this project.`}
+              an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
             githubLink=""
             isVideo
           />
@@ -403,7 +406,7 @@ export default function Home() {
             header="YouTubeBlocker"
             img={["/images/YT.png"]}
             list={["Google Chrome API", "CSS"]}
-            description={`A way to block distractions on YouTube. Using this blocker,
+            description={`A Google Chrome extension to block distractions on YouTube. Using this blocker,
             users will be able to cover up the recommended videos section,
             allowing for less distractions and greater concentration on tasks.`}
             githubLink="https://github.com/czhou578/YouTubeBlocker"
