@@ -47,6 +47,7 @@ import {
 import Projects from "./Projects";
 import Image from "next/image";
 import LazyLoad from "./LazyLoad";
+import Extras from "./Extras";
 
 const prefix = "/v3";
 
@@ -278,7 +279,7 @@ export default function Home() {
           ]}
         />
       </LazyLoad>
-      <LazyLoad>
+      {/* <LazyLoad>
         <Experience
           companyLogo={QuoraLogo}
           companyName="Quora"
@@ -293,7 +294,7 @@ export default function Home() {
             `Admin and moderator of multiple blogs about finance and interesting information.`,
           ]}
         />
-      </LazyLoad>
+      </LazyLoad> */}
       <h2
         className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="projects"
@@ -368,7 +369,7 @@ export default function Home() {
             description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
               Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
               an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
-            githubLink=""
+            githubLink="https://github.com/czhou578/llm-god"
             isVideo
           />
         </LazyLoad>
@@ -651,6 +652,17 @@ export default function Home() {
         </h4>
         <LazyLoad>
           <Designs />
+        </LazyLoad>
+      </div>
+      <div className="mx-auto p-8 w-7/12 md:w-8/12">
+        <h2
+          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
+          id="misc"
+        >
+          Miscellaneous
+        </h2>
+        <LazyLoad>
+          <Extras />
         </LazyLoad>
       </div>
       <Footer />
