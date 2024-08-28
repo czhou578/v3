@@ -393,6 +393,24 @@ export default function Home() {
         </LazyLoad>
         <LazyLoad>
           <Projects
+            header="iPhone Image-Classifier"
+            img={["/images/iphoneImg.png"]}
+            list={[
+              "PyTorch",
+              "Python",
+              "TypeScript",
+              "Sqlite 3",
+              "Next.js",
+              "Tailwind CSS",
+            ]}
+            description={`A full stack web application that utilizes PyTorch and the NLTK natural language processing framework
+              to classify and accept user prompts to search for images with a specific characteristic. Users will be able to query
+              for a label in images on the frontend and retrieve results.`}
+            githubLink="https://github.com/czhou578/iphone-img-classify"
+          />
+        </LazyLoad>
+        <LazyLoad>
+          <Projects
             header="Wordament / Wordle"
             img={["/images/W1.png"]}
             list={["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"]}
