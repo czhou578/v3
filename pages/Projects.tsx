@@ -29,10 +29,10 @@ const Projects: React.FC<{
   }, [enlargedImage]);
 
   return (
-    <div className="mt-8 mx-auto w-full px-4 sm:px-6 md:px-8 max-w-4xl z-0 relative">
-      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative z-10">
-        <div className="p-6 z-20 relative">
-          <div className="flex items-baseline flex-wrap mb-4">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative z-10 max-w-full">
+        <div className="p-6 z-20 relative max-w-full">
+          <div className="flex items-baseline flex-wrap mb-4 max-w-full">
             <h1 className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mr-2">
               {header}
             </h1>

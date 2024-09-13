@@ -65,7 +65,7 @@ export default function Home() {
         />
       </div>
       <div
-        className="mx-auto md:w-5/12 lg:w-5/12 mb-10 sm:w-5/12 border-4 border-indigo-500/100 p-5 rounded-lg"
+        className="mx-auto md:w-5/12 lg:w-5/12 mb-10 sm:w-5/12 w-8/12 border-4 border-indigo-500/100 p-5 rounded-lg"
         id="intro"
       >
         <p className="text-lg">
@@ -86,7 +86,7 @@ export default function Home() {
       >
         Education
       </h2>
-      <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
+      <div className="mx-auto md:w-6/12 w-8/12 mb-10">
         <LazyLoad>
           <Education
             logo={UIUCLogo}
@@ -301,7 +301,7 @@ export default function Home() {
       >
         Projects
       </h2>
-      <div className="mx-auto p-8 w-3/12 md:w-11/12">
+      <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
         <LazyLoad>
           <Projects
             header="DistanceCalc"
@@ -584,7 +584,7 @@ export default function Home() {
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
         Classwork
       </h2>
-      <div className="mx-auto p-8 w-4/12 md:w-8/12">
+      <div className="mx-auto p-8 w-7/12 md:w-8/12">
         <LazyLoad>
           <div className="grid lg:grid-cols-3 gap-3.5">
             <Classwork
