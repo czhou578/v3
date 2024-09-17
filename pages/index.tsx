@@ -393,6 +393,24 @@ export default function Home() {
         </LazyLoad>
         <LazyLoad>
           <Projects
+            header="Job Screener Extension"
+            img={["/images/job-screener.png"]}
+            list={[
+              "HTML/CSS",
+              "JavaScript",
+              "Google Chrome API",
+              "Google Sheets API",
+            ]}
+            description={`I created a Google Chrome Extension leveraging the Google Sheets API that allows me to quickly
+              identify the specific companies that I have already submitted job applications for. This was a response to a 
+              problem I had where after submitting 1000+ job applications, I would often apply mistakenly to companies twice.
+              This extension highlights companies that I have applied to in orange, which helps me streamline my job search
+              and become more efficient.`}
+            githubLink="https://github.com/czhou578/jobname-screener"
+          />
+        </LazyLoad>
+        <LazyLoad>
+          <Projects
             header="iPhone Image-Classifier"
             img={["/images/iphoneImg.png"]}
             list={[
