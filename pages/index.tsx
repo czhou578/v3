@@ -3,6 +3,7 @@ import HeaderBar from "./Headerbar";
 import Education from "./Education";
 import UIUCLogo from "../public/images/UIUC-Logo.jpg";
 import BCLogo from "../public/images/BellevueCollegeLogo.png";
+import NuclearnLogo from "../public/images/NuclearnLogo.png";
 import SkillsList from "./SkillsList";
 import Designs from "./Designs";
 import NoteWorthyProjects from "./NoteWorthyProjects";
@@ -70,14 +71,16 @@ export default function Home() {
       >
         <p className="text-lg">
           I am an aspiring software developer with experience in full stack web
-          development and cloud services. Previously, I graduated from UIUC with
-          a Masters in Computer Science, and obtained my bachelor's degree in
-          Computer Science from Bellevue College.
+          development and cloud services. Currently, I work at Nuclearn (nuclear
+          power startup) as a full stack engineer. Previously, I graduated from
+          UIUC with a Masters in Computer Science, and obtained my bachelor's
+          degree in Computer Science from Bellevue College.
           <br />
           <br />
           When I'm not sitting at the computer, you can find me solving Rubik's
-          Cubes of various sizes, practicing a difficult piano piece, or taking
-          long walks around my neighborhood.
+          Cubes of various sizes, practicing a difficult piano piece, doing 1000
+          piece jigsaw puzzles with my sister, or taking long walks around my
+          neighborhood.
         </p>
       </div>
       <h2
@@ -157,6 +160,16 @@ export default function Home() {
       </h2>
       <LazyLoad>
         <Experience
+          companyLogo={NuclearnLogo}
+          companyName="Nuclearn"
+          position="Software Engineer II"
+          date="12/2024 - present"
+          location="Phoenix, Arizona, United States (Remote)"
+          description={[`Working on both front and back end!`]}
+        />{" "}
+      </LazyLoad>
+      <LazyLoad>
+        <Experience
           companyLogo={PolicyEngineLogo}
           companyName="PolicyEngine"
           position="Open Source Software Engineer"
@@ -169,7 +182,6 @@ export default function Home() {
           ]}
         />{" "}
       </LazyLoad>
-
       <LazyLoad>
         <Experience
           companyLogo={EcoLogicalLogo}
