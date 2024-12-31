@@ -70,11 +70,11 @@ export default function Home() {
         id="intro"
       >
         <p className="text-lg">
-          I am an aspiring software developer with experience in full stack web
-          development and cloud services. Currently, I work at Nuclearn (nuclear
-          power startup) as a full stack engineer. Previously, I graduated from
-          UIUC with a Masters in Computer Science, and obtained my bachelor's
-          degree in Computer Science from Bellevue College.
+          I am a software developer with experience in full stack web
+          development and cloud services. Currently, I work at Nuclearn.ai
+          (nuclear power startup) as a full stack engineer. Previously, I
+          graduated from UIUC with a Masters in Computer Science, and obtained
+          my bachelor's degree in Computer Science from Bellevue College.
           <br />
           <br />
           When I'm not sitting at the computer, you can find me solving Rubik's
@@ -165,7 +165,9 @@ export default function Home() {
           position="Software Engineer II"
           date="12/2024 - present"
           location="Phoenix, Arizona, United States (Remote)"
-          description={[`Working on both front and back end!`]}
+          description={[
+            `Working with React on the frontend and PostgreSQL, Docker, and FastAPI / SQLAlchemy on the backend`,
+          ]}
         />{" "}
       </LazyLoad>
       <LazyLoad>
@@ -291,7 +293,7 @@ export default function Home() {
           ]}
         />
       </LazyLoad>
-      {/* <LazyLoad>
+      <LazyLoad>
         <Experience
           companyLogo={QuoraLogo}
           companyName="Quora"
@@ -306,7 +308,7 @@ export default function Home() {
             `Admin and moderator of multiple blogs about finance and interesting information.`,
           ]}
         />
-      </LazyLoad> */}
+      </LazyLoad>
       <h2
         className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="projects"
