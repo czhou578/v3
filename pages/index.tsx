@@ -31,7 +31,6 @@ import {
   SiGraphql,
   SiGit,
   SiMarkdown,
-  SiMessenger,
   SiGoogle,
   SiPython,
   SiApachehadoop,
@@ -41,9 +40,16 @@ import {
   SiLatex,
   SiAdobexd,
   SiFigma,
-  SiShell,
   SiLinux,
   SiReact,
+  SiVisualstudiocode,
+  SiPostgresql,
+  SiFastapi,
+  SiNpm,
+  SiYarn,
+  SiYaml,
+  SiWindows,
+  SiDocker,
 } from "react-icons/si";
 import Projects from "./Projects";
 import Image from "next/image";
@@ -490,10 +496,11 @@ export default function Home() {
               ]}
             />
             <SkillsList
-              header="MongoDB, MySQL"
+              header="MongoDB, MySQL, PostgreSQL"
               icon={[
                 <SiMongodb key="first" size="4em" />,
                 <SiMysql key="second" size="4em" />,
+                <SiPostgresql key="third" size="4em" />,
               ]}
             />
             <SkillsList
@@ -505,44 +512,60 @@ export default function Home() {
               ]}
             />
             <SkillsList
-              header="Python, MapReduce"
+              header="Python, FastAPI, MapReduce"
               icon={[
                 <SiPython key="first" size="4em" />,
+                <SiFastapi key="third" size="4em" />,
                 <SiApachehadoop key="second" size="4em" />,
               ]}
             />
             <SkillsList
-              header="Git, Jira"
+              header="Git, Jira, VSCode"
               icon={[
                 <SiGit key="first" size="4em" />,
                 <SiJira key="second" size="4em" />,
+                <SiVisualstudiocode key="third" size="4em" />,
               ]}
             />
             <SkillsList
               header="Figma, AdobeXD"
               icon={[
-                <SiAdobexd key="first" size="4em" />,
                 <SiFigma key="second" size="4em" />,
+                <SiAdobexd key="first" size="4em" />,
               ]}
             />
             <SkillsList
-              header="LaTeX, Markdown, Linux"
+              header="LaTeX, Markdown, YAML"
               icon={[
                 <SiLatex key="first" size="4em" />,
                 <SiMarkdown key="second" size="4em" />,
-                <SiLinux key="third" size="4em" />,
+                <SiYaml key="third" size="4em" />,
               ]}
             />
             <SkillsList
-              header="Communication, Googling"
+              header="Linux, Windows"
               icon={[
-                <SiMessenger key="first" size="4em" />,
-                <SiGoogle key="second" size="4em" />,
+                <SiLinux key="third" size="4em" />,
+                <SiWindows key="second" size="4em" />,
               ]}
             />
             <SkillsList
               header="Prompt Engineering"
-              icon={[<SiOpenai key="first" size="4em" />]}
+              icon={[
+                <SiOpenai key="first" size="4em" />,
+                <SiGoogle key="second" size="4em" />,
+              ]}
+            />
+            <SkillsList
+              header="NPM, Yarn"
+              icon={[
+                <SiNpm key="first" size="4em" />,
+                <SiYarn key="second" size="4em" />,
+              ]}
+            />
+            <SkillsList
+              header="Docker"
+              icon={[<SiDocker key="first" size="4em" />]}
             />
           </div>
         </LazyLoad>
