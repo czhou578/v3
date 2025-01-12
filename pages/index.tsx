@@ -71,6 +71,11 @@ export default function Home() {
           alt=""
         />
       </div>
+      <div className="mx-auto md:w-5/12 lg:w-3/12 mb-10 sm:w-5/12 w-8/12">
+        <span>
+          <em>*Me at Snoqualmie Falls, Washington State in April 2022</em>
+        </span>
+      </div>
       <div
         className="mx-auto md:w-5/12 lg:w-5/12 mb-10 sm:w-5/12 w-8/12 border-4 border-indigo-500/100 p-5 rounded-lg"
         id="intro"
