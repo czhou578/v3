@@ -329,6 +329,20 @@ export default function Home() {
       <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
         <LazyLoad>
           <Projects
+            header="PostureCam"
+            img={["/images/posturecam.png"]}
+            list={["Python", "OpenCV / MediaPipe"]}
+            description={`Using Python, I developed an interface that utilizes a computer's camera to detect whether a person
+                is slouching or has their face too close to a screen. This was done with the intention of making myself aware of
+                my daily computer ergonomics and also help me track how many times I had bad postures, which can have life changing
+                consequences if not fixed.`}
+            githubLink="https://github.com/czhou578/PostureCam"
+          />
+        </LazyLoad>
+      </div>
+      <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
+        <LazyLoad>
+          <Projects
             header="DistanceCalc"
             img={["/images/distancecalc1.png"]}
             list={[
