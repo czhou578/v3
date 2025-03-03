@@ -409,16 +409,18 @@ Cluster Analytics`,
           />
         </LazyLoad>
         <LazyLoad>
-          <Projects
-            header="LLM God"
-            img={["/videos/llm.mp4"]}
-            list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
-            description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
-              Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
-              an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
-            githubLink="https://github.com/czhou578/llm-god"
-            isVideo
-          />
+          <div id="llm">
+            <Projects
+              header="LLM God"
+              img={["/videos/llm.mp4"]}
+              list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
+              description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
+                Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
+                an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
+              githubLink="https://github.com/czhou578/llm-god"
+              isVideo
+            />
+          </div>
         </LazyLoad>
         <LazyLoad>
           <Projects
