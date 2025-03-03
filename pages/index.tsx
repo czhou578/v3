@@ -82,10 +82,10 @@ export default function Home() {
       >
         <p className="text-lg">
           I am a software developer with experience in full stack web
-          development and cloud services. Currently, I work at Nuclearn.ai
-          (nuclear power startup) as a full stack engineer. Previously, I
-          graduated from UIUC with a Masters in Computer Science, and obtained
-          my bachelor's degree in Computer Science from Bellevue College.
+          development and cloud services. Previously, I worked at Nuclearn.ai
+          (nuclear power startup) as a full stack engineer. I graduated from
+          UIUC with a Masters in Computer Science, and obtained my bachelor's
+          degree in Computer Science from Bellevue College.
           <br />
           <br />
           When I'm not sitting at the computer, you can find me solving Rubik's
@@ -174,10 +174,18 @@ export default function Home() {
           companyLogo={NuclearnLogo}
           companyName="Nuclearn"
           position="Software Engineer II"
-          date="12/2024 - present"
+          date="12/2024 - 02/2025"
           location="Phoenix, Arizona, United States (Remote)"
           description={[
-            `Working with React on the frontend and PostgreSQL, Docker, and FastAPI / SQLAlchemy on the backend`,
+            `Utilized FastAPI/SQLAlchemy to develop backend functionality for retrieving up to 25 most similar records in a
+dataset using 500+ embeddings generated through natural language techniques. Architected a back-end workflow
+with new SQLAlchemy datamodels to migrate 100+ YAML configurations across five config files into PostgreSQL,
+enabling dynamic updates via a React frontend, eliminating the need for Nuclearn’s developers to restart the web
+backend during development if such configurations were changed.`,
+            `Optimized markdown processing for artifacts displayed across 10+ tool calls in AtomAssist, Nuclearn’s proprietary
+AI chatbot. Implemented role-based access control with error handling for consumer, admin, and contributor roles,
+ensuring secure access to 10+ unique web app features on the frontend like Cap AI, AtomAssist, Capitalizer, and
+Cluster Analytics`,
           ]}
         />{" "}
       </LazyLoad>
@@ -401,16 +409,18 @@ export default function Home() {
           />
         </LazyLoad>
         <LazyLoad>
-          <Projects
-            header="LLM God"
-            img={["/videos/llm.mp4"]}
-            list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
-            description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
-              Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
-              an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
-            githubLink="https://github.com/czhou578/llm-god"
-            isVideo
-          />
+          <div id="llm">
+            <Projects
+              header="LLM God"
+              img={["/videos/llm.mp4"]}
+              list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
+              description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
+                Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
+                an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
+              githubLink="https://github.com/czhou578/llm-god"
+              isVideo
+            />
+          </div>
         </LazyLoad>
         <LazyLoad>
           <Projects

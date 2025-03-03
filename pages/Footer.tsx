@@ -57,8 +57,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-screen-xl px-4 py-6">
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0">
           <span className="text-sm text-gray-500 dark:text-gray-300 text-center sm:text-left">
-            © 2023-2024 <a href="https://flowbite.com/">Colin Zhou</a>. All
-            Rights Reserved.
+            © {new Date().getFullYear()} Colin Zhou. All Rights Reserved.
           </span>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {links.map((link, index) => (
