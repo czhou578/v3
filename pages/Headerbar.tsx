@@ -13,7 +13,11 @@ function HeaderBar() {
     { href: "#projects", text: "Projects" },
     { href: "#skills", text: "Skills" },
     { href: "#designs", text: "Designs" },
-    { href: `${prefix}/resume/resume.pdf`, text: "Resume", target: "_blank" },
+    {
+      href: `${prefix}/resume/colin_zhou_resume.pdf`,
+      text: "Resume",
+      target: "_blank",
+    },
   ];
 
   return (
