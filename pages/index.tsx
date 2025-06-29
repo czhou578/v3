@@ -4,57 +4,20 @@ import Education from "./Education";
 import UIUCLogo from "../public/images/UIUC-Logo.jpg";
 import BCLogo from "../public/images/BellevueCollegeLogo.png";
 import NuclearnLogo from "../public/images/NuclearnLogo.png";
-import SkillsList from "./SkillsList";
 import Designs from "./Designs";
-import NoteWorthyProjects from "./NoteWorthyProjects";
-import Classwork from "./Classwork";
 import Footer from "./Footer";
 import Experience from "./Experience";
 import IOIntel from "../public/images/IO_Intelligence.jpg";
 import BellevueCollegeLogo from "../public/images/BellevueCollegeLogo.png";
 import CHSLogo from "../public/images/CupertinoHighLogo.jpg";
-import EndevreLogo from "../public/images/endevreLogo.jpg";
 import PencilLogo from "../public/images/pencil.jpg";
 import QuoraLogo from "../public/images/QuoraLogo.png";
-import SelfEmployedLogo from "../public/images/SelfEmployedLogo.jpg";
 import PolicyEngineLogo from "../public/images/thepolicyengine_logo.jpg";
 import DemocracyLabLogo from "../public/images/democracyLab.jpg";
 import EcoLogicalLogo from "../public/images/ecological.jpg";
-import { ImHtmlFive, ImCss3 } from "react-icons/im";
-import {
-  SiTypescript,
-  SiAmazonaws,
-  SiGooglecloud,
-  SiMongodb,
-  SiMysql,
-  SiNodedotjs,
-  SiGraphql,
-  SiGit,
-  SiMarkdown,
-  SiGoogle,
-  SiPython,
-  SiApachehadoop,
-  SiFirebase,
-  SiOpenai,
-  SiJira,
-  SiLatex,
-  SiAdobexd,
-  SiFigma,
-  SiLinux,
-  SiReact,
-  SiVisualstudiocode,
-  SiPostgresql,
-  SiFastapi,
-  SiNpm,
-  SiYarn,
-  SiYaml,
-  SiWindows,
-  SiDocker,
-} from "react-icons/si";
 import Projects from "./Projects";
 import Image from "next/image";
 import LazyLoad from "./LazyLoad";
-import Extras from "./Extras";
 
 const prefix = "/v3";
 
@@ -89,9 +52,9 @@ export default function Home() {
           <br />
           <br />
           When I'm not sitting at the computer, you can find me solving Rubik's
-          Cubes of various sizes, practicing a difficult piano piece, doing 1000
-          piece jigsaw puzzles with my sister, or taking long walks around my
-          neighborhood.
+          Cubes of various sizes, practicing a difficult piano piece and posting
+          it on my Instagram, doing 1000 piece jigsaw puzzles with my sister, or
+          taking long walks around my neighborhood.
         </p>
       </div>
       <h2
@@ -250,22 +213,6 @@ Cluster Analytics`,
       </LazyLoad>
       <LazyLoad>
         <Experience
-          companyLogo={EndevreLogo}
-          companyName="Endevre Technologies"
-          position="Head of Marketing / Designer"
-          date="06/2017 - 05/2018"
-          location="Cupertino, California. United States"
-          description={[
-            `Promoted company products through emails, and by giving presentations at events.`,
-
-            `Secured sponsorships with multiple hackathon events at high schools throughout the Bay Area.`,
-
-            `Designed company websites and page layouts for products.`,
-          ]}
-        />
-      </LazyLoad>
-      <LazyLoad>
-        <Experience
           companyLogo={BellevueCollegeLogo}
           companyName="Bellevue College"
           position="CS Student Advisory Board Member"
@@ -297,23 +244,6 @@ Cluster Analytics`,
       </LazyLoad>
       <LazyLoad>
         <Experience
-          companyLogo={SelfEmployedLogo}
-          companyName="My House"
-          position="Hobbyist Designer / Web Developer"
-          date="08/2020 - present"
-          location="Issaquah, Washington, United States"
-          description={[
-            `Created websites / designs using technologies like React,
-                    UI frameworks like Semantic UI, and Typescript.`,
-
-            `Used the Google Chrome API to create a Google Chrome extension to block YouTube recommendations.`,
-
-            `Developed a replica of the popular Microsoft Wordament game using Typescript, and React.`,
-          ]}
-        />
-      </LazyLoad>
-      <LazyLoad>
-        <Experience
           companyLogo={QuoraLogo}
           companyName="Quora"
           position="Freelance Writer"
@@ -336,37 +266,18 @@ Cluster Analytics`,
       </h2>
       <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
         <LazyLoad>
-          <Projects
-            header="PostureCam"
-            img={["/images/posturecam.png"]}
-            list={["Python", "OpenCV / MediaPipe"]}
-            description={`Using Python, I developed an interface that utilizes a computer's camera to detect whether a person
-                is slouching or has their face too close to a screen. This was done with the intention of making myself aware of
-                my daily computer ergonomics and also help me track how many times I had bad postures, which can have life changing
-                consequences if not fixed.`}
-            githubLink="https://github.com/czhou578/PostureCam"
-          />
-        </LazyLoad>
-      </div>
-      <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
-        <LazyLoad>
-          <Projects
-            header="DistanceCalc"
-            img={["/images/distancecalc1.png"]}
-            list={[
-              "HTML/CSS",
-              "JavaScript",
-              "React.js",
-              "Material UI",
-              "React Router",
-              "Firebase",
-            ]}
-            description={`Using the React.js framework, I created a distance tracker that uses an external API to take two cities 
-            in the United States, and calculate their distance and the travel time in minutes. After each request,
-            the data will be logged in an external form, which I took from Material UI. This was one of my first projects
-            and helped me practice styling, HTML, and displaying data from API's, as well as using third party libraries.`}
-            githubLink="https://github.com/czhou578/DistanceCalc"
-          />
+          <div id="llm">
+            <Projects
+              header="LLM God"
+              img={["/videos/llm.mp4"]}
+              list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
+              description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
+                Claude, Perplexity, ChatGPT, and Gemini and more! As someone who uses LLM's a lot in my day to day life, I wanted
+                an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
+              githubLink="https://github.com/czhou578/llm-god"
+              isVideo
+            />
+          </div>
         </LazyLoad>
         <LazyLoad>
           <Projects
@@ -409,20 +320,6 @@ Cluster Analytics`,
           />
         </LazyLoad>
         <LazyLoad>
-          <div id="llm">
-            <Projects
-              header="LLM God"
-              img={["/videos/llm.mp4"]}
-              list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
-              description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
-                Claude, Llama 3.1, ChatGPT, and Gemini. As someone who uses LLM's a lot in my day to day life, I wanted
-                an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
-              githubLink="https://github.com/czhou578/llm-god"
-              isVideo
-            />
-          </div>
-        </LazyLoad>
-        <LazyLoad>
           <Projects
             header="React Backend-Benchmarks"
             img={["/images/benchmark2.png"]}
@@ -460,24 +357,6 @@ Cluster Analytics`,
         </LazyLoad>
         <LazyLoad>
           <Projects
-            header="iPhone Image-Classifier"
-            img={["/images/iphoneImg.png"]}
-            list={[
-              "PyTorch",
-              "Python",
-              "TypeScript",
-              "Sqlite 3",
-              "Next.js",
-              "Tailwind CSS",
-            ]}
-            description={`A full stack web application that utilizes PyTorch and the NLTK natural language processing framework
-              to classify and accept user prompts to search for images with a specific characteristic. Users will be able to query
-              for a label in images on the frontend and retrieve results.`}
-            githubLink="https://github.com/czhou578/iphone-img-classify"
-          />
-        </LazyLoad>
-        <LazyLoad>
-          <Projects
             header="Wordament / Wordle"
             img={["/images/W1.png"]}
             list={["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"]}
@@ -487,185 +366,102 @@ Cluster Analytics`,
             githubLink="https://github.com/czhou578/Wordament-v2"
           />
         </LazyLoad>
-        <LazyLoad>
-          <Projects
-            header="YouTubeBlocker"
-            img={["/images/YT.png"]}
-            list={["Google Chrome API", "CSS"]}
-            description={`A Google Chrome extension to block distractions on YouTube. Using this blocker,
-            users will be able to cover up the recommended videos section,
-            allowing for less distractions and greater concentration on tasks.`}
-            githubLink="https://github.com/czhou578/YouTubeBlocker"
-          />
-        </LazyLoad>
+      </div>
+      <div className="text-center mt-6">
+        <a
+          href="/FullProjectArchive"
+          className="text-white-500 underline hover:text-blue-700"
+        >
+          Show Full Project Archive
+        </a>
       </div>
       <h2
-        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center mt-10"
         id="skills"
       >
         Skills
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
         <LazyLoad>
-          <div className="grid lg:grid-cols-3 skill-gap">
-            <SkillsList
-              header="HTML, CSS, TypeScript"
-              icon={[
-                <ImHtmlFive key="first" size="4em" />,
-                <ImCss3 key="second" size="4em" />,
-                <SiTypescript key="third" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="React, Node.js, GraphQL"
-              icon={[
-                <SiReact key="first" size="4em" />,
-                <SiNodedotjs key="second" size="4em" />,
-                <SiGraphql key="second" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="MongoDB, MySQL, PostgreSQL"
-              icon={[
-                <SiMongodb key="first" size="4em" />,
-                <SiMysql key="second" size="4em" />,
-                <SiPostgresql key="third" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="AWS, GCP, Firebase"
-              icon={[
-                <SiAmazonaws key="first" size="4em" />,
-                <SiGooglecloud key="second" size="4em" />,
-                <SiFirebase key="third" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="Python, FastAPI, MapReduce"
-              icon={[
-                <SiPython key="first" size="4em" />,
-                <SiFastapi key="third" size="4em" />,
-                <SiApachehadoop key="second" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="Git, Jira, VSCode"
-              icon={[
-                <SiGit key="first" size="4em" />,
-                <SiJira key="second" size="4em" />,
-                <SiVisualstudiocode key="third" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="Figma, AdobeXD"
-              icon={[
-                <SiFigma key="second" size="4em" />,
-                <SiAdobexd key="first" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="LaTeX, Markdown, YAML"
-              icon={[
-                <SiLatex key="first" size="4em" />,
-                <SiMarkdown key="second" size="4em" />,
-                <SiYaml key="third" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="Linux, Windows"
-              icon={[
-                <SiLinux key="third" size="4em" />,
-                <SiWindows key="second" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="Prompt Engineering"
-              icon={[
-                <SiOpenai key="first" size="4em" />,
-                <SiGoogle key="second" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="NPM, Yarn"
-              icon={[
-                <SiNpm key="first" size="4em" />,
-                <SiYarn key="second" size="4em" />,
-              ]}
-            />
-            <SkillsList
-              header="Docker"
-              icon={[<SiDocker key="first" size="4em" />]}
-            />
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-200/100 p-6">
+              <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-cyan-400 text-center mb-4">
+                Frontend
+              </h5>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "HTML",
+                  "CSS",
+                  "TypeScript",
+                  "React",
+                  "GraphQL",
+                  "Figma",
+                  "AdobeXD",
+                ].map((skill, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-200/100 p-6">
+              <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-cyan-400 text-center mb-4">
+                Backend
+              </h5>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Node.js",
+                  "MongoDB",
+                  "MySQL",
+                  "PostgreSQL",
+                  "Python",
+                  "FastAPI",
+                  "MapReduce",
+                  "Docker",
+                ].map((skill, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-200/100 p-6">
+              <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-cyan-400 text-center mb-4">
+                Tools
+              </h5>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Git",
+                  "Jira",
+                  "VSCode",
+                  "LaTeX",
+                  "Markdown",
+                  "YAML",
+                  "Linux",
+                  "Windows",
+                  "Prompt Engineering",
+                  "NPM",
+                  "Yarn",
+                ].map((skill, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </LazyLoad>
       </div>
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
-        Archive
-      </h2>
-      <div className="mx-auto p-8 w-7/12 md:w-8/12">
-        <LazyLoad>
-          <div className="grid lg:grid-cols-3 skill-gap">
-            <NoteWorthyProjects
-              header="Morsecode Binary Tree"
-              githubLink="https://github.com/czhou578/MorseCodeBinaryTree"
-              description="Decoding morse code using binary trees, written in Java. This was for a class project."
-              techUsed={["Java"]}
-            />
-            <NoteWorthyProjects
-              header="Whitehouse.gov 2025"
-              githubLink="https://github.com/czhou578/AmericanScorecard"
-              description="Whitehouse.gov website if Andrew Yang got elected as the
-              US President in 2024."
-              techUsed={[
-                "HTML",
-                "CSS",
-                "JS",
-                "React.js",
-                "Firebase",
-                "FEC / Google Civics API",
-              ]}
-            />
-            <NoteWorthyProjects
-              header="Personal Website V1"
-              githubLink="https://github.com/czhou578/Personal-Website"
-              description="This is the very first version of my personal website, using basic front end technologies."
-              techUsed={["HTML", "CSS", "JS"]}
-            />
-            <NoteWorthyProjects
-              header="Personal Website V2"
-              githubLink="https://github.com/czhou578/v2"
-              description="The second version of my personal website, built with React, TypeScript, and Next.js."
-              techUsed={["React", "TypeScript", "Next.js", "CSS Modules"]}
-            />
-            <NoteWorthyProjects
-              header="Wordament V1"
-              githubLink="https://github.com/czhou578/Wordament"
-              description="This is the very first version of Wordament, using basic web technologies."
-              techUsed={["HTML", "CSS", "JS"]}
-            />
-            <NoteWorthyProjects
-              header="Doctors Orders"
-              githubLink="https://github.com/deekshacheruku/DoctorsOrders"
-              description="An Android app to help doctors and family track the medicine schedules of elderly patients."
-              techUsed={["Java", "Android Studio"]}
-            />
-            <NoteWorthyProjects
-              header="Country Database"
-              githubLink="https://github.com/cs411-alawini/fa22-cs411-Q-team044-OurSQL"
-              description="A web app that allows for querying various data about all the countries of the world."
-              techUsed={["JS", "React", "MySQL", "Node.js"]}
-            />
-            <NoteWorthyProjects
-              header="Crypto Website"
-              githubLink="https://github.com/czhou578/CryptoWebsiteMockup"
-              description="A mockup of a cryptocurrency website, which helped me practice
-              CSS animations."
-              techUsed={["HTML", "CSS", "JS", "Figma"]}
-            />
-          </div>
-        </LazyLoad>
-      </div>
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
+      {/* <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
         Classwork
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
@@ -739,7 +535,7 @@ Cluster Analytics`,
             />
           </div>
         </LazyLoad>
-      </div>
+      </div> */}
       <h2
         className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="designs"
@@ -754,17 +550,6 @@ Cluster Analytics`,
         </h4>
         <LazyLoad>
           <Designs />
-        </LazyLoad>
-      </div>
-      <div className="mx-auto p-8 w-7/12 md:w-8/12">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
-          id="misc"
-        >
-          Miscellaneous
-        </h2>
-        <LazyLoad>
-          <Extras />
         </LazyLoad>
       </div>
       <Footer />
