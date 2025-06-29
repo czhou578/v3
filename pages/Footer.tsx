@@ -32,11 +32,6 @@ export default function Footer() {
       name: "Instagram",
     },
     {
-      href: "https://leetcode.com/u/colizu2020/",
-      icon: "leetcode",
-      name: "LeetCode",
-    },
-    {
       href: "https://dribbble.com/colinzhou",
       icon: "fa-brands fa-dribbble",
       name: "Dribbble",
@@ -73,11 +68,7 @@ export default function Footer() {
                   aria-label={link.name}
                 >
                   <div className="bg-blue-100 p-2 sm:p-3 rounded-full flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
-                    {link.icon === "leetcode" ? (
-                      <SiLeetcode className="text-xl sm:text-2xl" />
-                    ) : (
-                      <i className={`${link.icon} text-xl sm:text-2xl`}></i>
-                    )}
+                    <i className={`${link.icon} text-xl sm:text-2xl`}></i>
                   </div>
                 </a>
                 {hoveredIndex === index && (
