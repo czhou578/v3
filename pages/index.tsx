@@ -46,9 +46,12 @@ export default function Home() {
         <p className="text-lg">
           I am a software developer with experience in full stack web
           development and cloud services. Previously, I worked at Nuclearn.ai
-          (nuclear power startup) as a full stack engineer. I graduated from
-          UIUC with a Masters in Computer Science, and obtained my bachelor's
-          degree in Computer Science from Bellevue College.
+          (nuclear power startup) as a full stack engineer, and did multiple
+          internships in the civics, telecom, environmental, and educational
+          sectors. I graduated from UIUC with a Masters in Computer Science, and
+          obtained my bachelor's degree in Computer Science from Bellevue
+          College. I was born in Canada, but grew up in the Bay Area and now
+          live near Seattle, Washington.
           <br />
           <br />
           When I'm not sitting at the computer, you can find me solving Rubik's
