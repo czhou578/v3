@@ -29,7 +29,7 @@ const Projects: React.FC<{
   }, [enlargedImage]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
       <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative z-10 max-w-full">
         <div className="p-6 z-20 relative max-w-full">
           <div className="flex items-baseline flex-wrap mb-4 max-w-full">
