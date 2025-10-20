@@ -18,6 +18,7 @@ import EcoLogicalLogo from "../public/images/ecological.jpg";
 import Projects from "./Projects";
 import Image from "next/image";
 import LazyLoad from "./LazyLoad";
+import Classwork from "./Classwork";
 
 const prefix = "/v3";
 
@@ -34,8 +35,8 @@ export default function Home() {
           alt=""
         />
       </div>
-      <div className="mx-auto md:w-5/12 lg:w-3/12 mb-10 sm:w-5/12 w-8/12">
-        <span>
+      <div className="mx-auto max-w-md mb-10 px-4 text-center">
+        <span className="text-sm sm:text-base">
           <em>*Me at Snoqualmie Falls, Washington State in April 2022</em>
         </span>
       </div>
@@ -275,7 +276,7 @@ Cluster Analytics`,
               img={["/videos/llm.mp4"]}
               list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
               description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
-                Claude, Perplexity, ChatGPT, and Gemini and more! As someone who uses LLM's a lot in my day to day life, I wanted
+                Claude, ChatGPT, and Gemini and more! As someone who uses LLM's a lot in my day to day life, I wanted
                 an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
               githubLink="https://github.com/czhou578/llm-god"
               isVideo
@@ -464,7 +465,7 @@ Cluster Analytics`,
           </div>
         </LazyLoad>
       </div>
-      {/* <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
         Classwork
       </h2>
       <div className="mx-auto p-8 w-7/12 md:w-8/12">
@@ -538,7 +539,7 @@ Cluster Analytics`,
             />
           </div>
         </LazyLoad>
-      </div> */}
+      </div>
       <h2
         className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
         id="designs"

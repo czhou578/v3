@@ -12,14 +12,19 @@ export default function Footer() {
       name: "GitHub",
     },
     {
-      href: "https://www.quora.com/profile/Colin-Zhou-6",
-      icon: "fa-brands fa-quora",
-      name: "Quora",
-    },
-    {
       href: "https://www.linkedin.com/in/colin-z-84a1a0137/",
       icon: "fa-brands fa-linkedin",
       name: "LinkedIn",
+    },
+    {
+      href: "https://medium.com/@colizu2020",
+      icon: "fa-brands fa-medium",
+      name: "Medium",
+    },
+    {
+      href: "https://www.quora.com/profile/Colin-Zhou-6",
+      icon: "fa-brands fa-quora",
+      name: "Quora",
     },
     {
       href: "https://x.com/ColinZhouUSA",
