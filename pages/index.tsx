@@ -284,6 +284,25 @@ Cluster Analytics`,
           </div>
         </LazyLoad>
         <LazyLoad>
+          <div id="img-classify">
+            <Projects
+              header="Caption Image Classifier"
+              img={["/videos/imgclassify.mp4"]}
+              list={[
+                "React",
+                "PyTorch",
+                "FastAPI",
+                "HuggingFace",
+                "WebSockets",
+              ]}
+              description={`A full stack web application that classifies images and generates captions; using my own pretrained PyTorch model based
+                on the CIFAR-100 dataset and leveraging HuggingFace's API to do image captioning using WebSockets.`}
+              githubLink="https://github.com/czhou578/cifar"
+              isVideo
+            />
+          </div>
+        </LazyLoad>
+        <LazyLoad>
           <Projects
             header="StreetFoodLove"
             img={["/images/Sapp.png"]}
