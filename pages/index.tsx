@@ -5,6 +5,7 @@ import UIUCLogo from "../public/images/UIUC-Logo.jpg";
 import BCLogo from "../public/images/BellevueCollegeLogo.png";
 import NuclearnLogo from "../public/images/NuclearnLogo.png";
 import Designs from "./Designs";
+import Hobbies from "./Hobbies";
 import Footer from "./Footer";
 import Experience from "./Experience";
 import IOIntel from "../public/images/IO_Intelligence.jpg";
@@ -45,14 +46,18 @@ export default function Home() {
         id="intro"
       >
         <p className="text-lg">
+          I graduated from UIUC with a Masters in Computer Science, and obtained
+          my bachelor's degree in Computer Science from Bellevue College. I was
+          born in Canada, but grew up in the Bay Area and now live near Seattle,
+          Washington.
+          <br />
+          <br />
           I am a software developer with experience in full stack web
           development and cloud services. Previously, I worked at Nuclearn.ai
           (nuclear power startup) as a full stack engineer, and did multiple
           internships in the civics, telecom, environmental, and educational
-          sectors. I graduated from UIUC with a Masters in Computer Science, and
-          obtained my bachelor's degree in Computer Science from Bellevue
-          College. I was born in Canada, but grew up in the Bay Area and now
-          live near Seattle, Washington.
+          sectors. I am broadly interested in integrating the latest AI into
+          useful products.
           <br />
           <br />
           When I'm not sitting at the computer, you can find me solving Rubik's
@@ -575,6 +580,15 @@ Cluster Analytics`,
           <Designs />
         </LazyLoad>
       </div>
+      <h2
+        className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
+        id="hobbies"
+      >
+        Hobbies
+      </h2>
+      <LazyLoad>
+        <Hobbies />
+      </LazyLoad>
       <Footer />
     </div>
   );
