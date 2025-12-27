@@ -37,6 +37,11 @@ export default function Footer() {
       name: "Instagram",
     },
     {
+      href: "https://www.tiktok.com/@colin.pianist",
+      icon: "fa-brands fa-tiktok",
+      name: "Tiktok",
+    },
+    {
       href: "https://dribbble.com/colinzhou",
       icon: "fa-brands fa-dribbble",
       name: "Dribbble",
