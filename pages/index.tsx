@@ -20,6 +20,7 @@ import Projects from "./Projects";
 import Image from "next/image";
 import LazyLoad from "./LazyLoad";
 import Classwork from "./Classwork";
+import Kaliber from "../public/images/kaliber.png";
 
 const prefix = "/v3";
 
@@ -143,9 +144,19 @@ export default function Home() {
       </h2>
       <LazyLoad>
         <Experience
+          companyLogo={Kaliber}
+          companyName="Kaliber Labs Inc."
+          position="Software Engineer"
+          date="01/2026 - present"
+          location="San Mateo, CA, United States (Onsite)"
+          description={[`Coming soon!`]}
+        />{" "}
+      </LazyLoad>
+      <LazyLoad>
+        <Experience
           companyLogo={NuclearnLogo}
           companyName="Nuclearn"
-          position="Software Engineer II"
+          position="Full Stack Software Engineer"
           date="12/2024 - 02/2025"
           location="Phoenix, Arizona, United States (Remote)"
           description={[
