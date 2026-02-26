@@ -1,0 +1,100 @@
+{
+    "projects": [
+        {
+            "name": "LLM God",
+            "description": "Desktop application to query multiple LLMs (Claude, ChatGPT, Gemini, etc.) at once for the same prompt.",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Node.js",
+                "Electron.js"
+            ],
+            "github": "https://github.com/czhou578/LLM-God",
+            "live": null,
+            "date": "2025"
+        },
+        {
+            "name": "Caption Image Classifier",
+            "description": "Full-stack web app: classify images (custom PyTorch CIFAR-100 model) + generate captions (HuggingFace via WebSockets).",
+            "technologies": [
+                "React",
+                "PyTorch",
+                "FastAPI",
+                "HuggingFace",
+                "WebSockets"
+            ],
+            "github": "https://github.com/czhou578",
+            "live": null,
+            "date": "2024–2025"
+        },
+        {
+            "name": "StreetFoodLove",
+            "description": "Yelp-style app for food truck vendors (senior capstone). UI with TypeScript/React, backend SQL + AWS integration.",
+            "technologies": [
+                "TypeScript",
+                "React.js",
+                "Semantic UI",
+                "AWS",
+                "Redux",
+                "SQL"
+            ],
+            "github": "https://github.com/czhou578/StreetFoodLove",
+            "live": null,
+            "date": "2022"
+        },
+        {
+            "name": "Job Screener Extension",
+            "description": "Chrome extension using Google Sheets API to highlight previously applied companies and avoid duplicates.",
+            "technologies": [
+                "JavaScript",
+                "HTML/CSS",
+                "Chrome API",
+                "Google Sheets API"
+            ],
+            "github": "https://github.com/czhou578",
+            "live": "Chrome Web Store",
+            "date": "2024"
+        },
+        {
+            "name": "Project Elpis",
+            "description": "Serverless web app that helps at-risk high school students in NYC track their career progress with teacher dashboards.",
+            "technologies": [
+                "React",
+                "TypeScript",
+                "GraphQL",
+                "AWS"
+            ],
+            "github": null,
+            "live": null,
+            "date": "2021"
+        },
+        {
+            "name": "Wordament/Wordle Clone",
+            "description": "Interactive word puzzle game implementing mechanics similar to Wordle and Wordament with state management.",
+            "technologies": [
+                "React",
+                "JavaScript",
+                "CSS",
+                "HTML"
+            ],
+            "github": "https://github.com/czhou578",
+            "live": null,
+            "date": "2023"
+        },
+        {
+            "name": "React Backend-Benchmarks",
+            "description": "A benchmarking suite to compare performance metrics of various backend frameworks (FastAPI, Express) interfacing with React.",
+            "technologies": [
+                "React",
+                "Node.js",
+                "Express",
+                "FastAPI",
+                "Python"
+            ],
+            "github": "https://github.com/czhou578/React-Backend-Benchmarks",
+            "live": null,
+            "date": "2023"
+        }
+    ]
+}
