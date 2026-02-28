@@ -14,7 +14,7 @@ const Projects: React.FC<{
   isVideo?: boolean;
 }> = ({ header, img, list, description, githubLink, isVideo }) => {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-  // const prefix = "/v3";
+  const prefix = "/v3";
 
   useEffect(() => {
     if (enlargedImage) {
@@ -61,15 +61,14 @@ const Projects: React.FC<{
                   alt={`Project image`}
                   width={800}
                   height={800}
-                  src={img[0]}
-                  // src={prefix + img[0]}
+                  // src={img[0]}
+                  src={prefix + img[0]}
                   className="w-full h-auto rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               ) : img && img.length > 0 && isVideo ? (
                 <video autoPlay loop muted className="w-full h-auto rounded-lg">
                   <source src={img[0]} />
-                  {/* <source src={prefix + img[0]} /> */}
-
+                  <source src={prefix + img[0]} />
                 </video>
               ) : null}
             </div>
