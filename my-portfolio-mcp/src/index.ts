@@ -151,25 +151,49 @@ export default {
         try {
             const body: any = await request.json();
 
-            // Basic JSON-RPC handler mapping
             if (body.method === "tools/list") {
-                const result = await server.request({ method: "tools/list" }, ListToolsRequestSchema);
                 return Response.json({
                     jsonrpc: "2.0",
                     id: body.id,
-                    result
+                    result: {
+                        tools: [
+                            {
+                                name: "get_experiences",
+                                description: "Gets the professional experiences from Colin's resume.",
+                                inputSchema: { type: "object", properties: {} },
+                            },
+                            {
+                                name: "get_projects",
+                                description: "Gets the list of Colin's past projects.",
+                                inputSchema: { type: "object", properties: {} },
+                            },
+                            {
+                                name: "match_job",
+                                description: "Reads a job description string and outputs matching technical skills from Colin's resume.",
+                                inputSchema: {
+                                    type: "object",
+                                    properties: {
+                                        job_description: { type: "string" },
+                                    },
+                                    required: ["job_description"],
+                                },
+                            },
+                        ]
+                    }
                 });
             } else if (body.method === "tools/call") {
-                const params = body.params;
-                const req = {
-                    method: "tools/call",
-                    params: params
-                };
-                const result = await server.request(req, CallToolRequestSchema);
+                const { name, arguments: args } = body.params;
+                let text = "";
+
+                if (name === "get_experiences") text = await getExperiences();
+                else if (name === "get_projects") text = await getProjects();
+                else if (name === "match_job") text = await matchJob(args.job_description);
+                else throw new Error(`Tool not found: ${name}`);
+
                 return Response.json({
                     jsonrpc: "2.0",
                     id: body.id,
-                    result
+                    result: { content: [{ type: "text", text }] }
                 });
             }
 
