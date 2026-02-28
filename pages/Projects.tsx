@@ -14,7 +14,7 @@ const Projects: React.FC<{
   isVideo?: boolean;
 }> = ({ header, img, list, description, githubLink, isVideo }) => {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-  const prefix = "/v3";
+  // const prefix = "/v3";
 
   useEffect(() => {
     if (enlargedImage) {
@@ -29,9 +29,9 @@ const Projects: React.FC<{
   }, [enlargedImage]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative z-10 max-w-full">
-        <div className="p-6 z-20 relative max-w-full">
+    <div className="w-full h-full mx-auto mb-8 transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col">
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden relative z-10 max-w-full flex flex-col flex-1">
+        <div className="p-4 sm:p-6 z-20 relative max-w-full flex flex-col flex-1">
           <div className="flex items-baseline flex-wrap mb-4 max-w-full">
             <h1 className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mr-2">
               {header}
@@ -54,20 +54,22 @@ const Projects: React.FC<{
             </a>
           </div>
 
-          <div className="mb-6">
-            <div className="relative group overflow-hidden rounded-lg h-100">
+          <div className="mb-6 flex-grow">
+            <div className="relative group overflow-hidden rounded-lg w-full">
               {img && img.length > 0 && !isVideo ? (
                 <Image
                   alt={`Project image`}
                   width={800}
                   height={800}
-                  // src={img[0]}
-                  src={prefix + img[0]}
-                  className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
+                  src={img[0]}
+                  // src={prefix + img[0]}
+                  className="w-full h-auto rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               ) : img && img.length > 0 && isVideo ? (
-                <video autoPlay loop muted width={800} height={800}>
-                  <source src={prefix + img[0]} />
+                <video autoPlay loop muted className="w-full h-auto rounded-lg">
+                  <source src={img[0]} />
+                  {/* <source src={prefix + img[0]} /> */}
+
                 </video>
               ) : null}
             </div>
