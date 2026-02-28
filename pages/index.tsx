@@ -48,10 +48,10 @@ export default function Home() {
           id="intro"
         >
           <p className="text-lg">
-            I graduated from UIUC with a Masters in Computer Science, and obtained
-            my bachelor's degree in Computer Science from Bellevue College. I was
-            born in Canada, but grew up in the Bay Area and now live near Seattle,
-            Washington and San Mateo, California.
+            I graduated from UIUC with a Masters in Computer Science, and
+            obtained my bachelor's degree in Computer Science from Bellevue
+            College. I was born in Canada, but grew up in the Bay Area and now
+            live near Seattle, Washington and San Mateo, California.
             <br />
             <br />
             I am a software developer with experience in full stack web
@@ -62,17 +62,15 @@ export default function Home() {
             useful products.
             <br />
             <br />
-            When I'm not sitting at the computer, you can find me solving Rubik's
-            Cubes of various sizes, practicing a difficult piano piece and posting
-            it on my Instagram, doing 1000 piece jigsaw puzzles with my sister, or
-            taking long walks around my neighborhood.
+            When I'm not sitting at the computer, you can find me solving
+            Rubik's Cubes of various sizes, practicing a difficult piano piece
+            and posting it on my Instagram, doing 1000 piece jigsaw puzzles with
+            my sister, or taking long walks around my neighborhood.
           </p>
         </div>
       </section>
       <section id="education" aria-label="Education">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
-        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Education
         </h2>
         <div className="mx-auto md:w-6/12 w-8/12 mb-10">
@@ -140,9 +138,7 @@ export default function Home() {
         </div>
       </section>
       <section id="experience" aria-label="Work Experience">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
-        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Experience
         </h2>
         <LazyLoad>
@@ -287,9 +283,7 @@ Cluster Analytics`,
         </LazyLoad>
       </section>
       <section id="projects" aria-label="Projects">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
-        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Projects
         </h2>
         <div className="mx-auto w-full px-4 sm:w-11/12 sm:px-0 md:w-11/12 lg:w-11/12 xl:w-10/12 mb-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -424,9 +418,7 @@ Cluster Analytics`,
         </div>
       </section>
       <section id="skills" aria-label="Technical Skills">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center mt-10"
-        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center mt-10">
           Skills
         </h2>
         <div className="mx-auto p-8 w-7/12 md:w-8/12">
@@ -588,9 +580,7 @@ Cluster Analytics`,
         </div>
       </section>
       <section id="designs" aria-label="UI Designs">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
-        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Designs
         </h2>
         <div className="mx-auto p-8 w-fit">
@@ -605,9 +595,7 @@ Cluster Analytics`,
         </div>
       </section>
       <section id="hobbies" aria-label="Hobbies and Interests">
-        <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center"
-        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Hobbies
         </h2>
         <LazyLoad>
@@ -670,6 +658,26 @@ Cluster Analytics`,
               All projects as structured JSON
             </span>
           </a>
+        </div>
+        <div className="mt-6 rounded-xl border border-purple-400/40 bg-gray-800 p-4 flex flex-col sm:flex-row items-center gap-3">
+          <span className="text-2xl">🔌</span>
+          <div className="text-center sm:text-left">
+            <p className="font-semibold text-white text-sm">
+              MCP Server Available
+            </p>
+            <p className="text-xs text-gray-400 mt-0.5">
+              Query this portfolio programmatically via the Model Context
+              Protocol at{" "}
+              <a
+                href="https://my-portfolio-mcp.colinzhou.workers.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-300 underline hover:text-purple-200"
+              >
+                my-portfolio-mcp.colinzhou.workers.dev
+              </a>
+            </p>
+          </div>
         </div>
         <p className="text-center text-xs text-gray-500 mt-6">
           Contact:{" "}
