@@ -1,0 +1,1 @@
+We are looking for a software engineer proficient in React, Python, and SQL. Experience with AWS is a huge plus. Must be familiar with git and github. Tailwind CSS is nice to have.

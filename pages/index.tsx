@@ -44,14 +44,14 @@ export default function Home() {
           </span>
         </div>
         <div
-          className="mx-auto md:w-5/12 lg:w-5/12 mb-10 sm:w-5/12 w-8/12 border-4 border-indigo-500/100 p-5 rounded-lg"
+          className="mx-auto w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 xl:w-7/12 mb-10 border-4 border-indigo-500/100 p-5 sm:p-8 rounded-lg"
           id="intro"
         >
           <p className="text-lg">
             I graduated from UIUC with a Masters in Computer Science, and obtained
             my bachelor's degree in Computer Science from Bellevue College. I was
             born in Canada, but grew up in the Bay Area and now live near Seattle,
-            Washington.
+            Washington and San Mateo, California.
             <br />
             <br />
             I am a software developer with experience in full stack web
@@ -292,9 +292,9 @@ Cluster Analytics`,
         >
           Projects
         </h2>
-        <div className="mx-auto md:w-6/12 lg:w-6/12 mb-10">
+        <div className="mx-auto w-full px-4 sm:w-11/12 sm:px-0 md:w-11/12 lg:w-11/12 xl:w-10/12 mb-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <LazyLoad>
-            <div id="llm">
+            <div id="llm" className="h-full flex flex-col">
               <Projects
                 header="LLM God"
                 img={["/videos/llm.mp4"]}
@@ -308,7 +308,7 @@ Cluster Analytics`,
             </div>
           </LazyLoad>
           <LazyLoad>
-            <div id="img-classify">
+            <div id="img-classify" className="h-full flex flex-col">
               <Projects
                 header="Caption Image Classifier"
                 img={["/videos/imgclassify.mp4"]}
