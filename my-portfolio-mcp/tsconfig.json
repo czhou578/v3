@@ -1,17 +1,13 @@
 {
-    "compilerOptions": {
-        "target": "es2022",
-        "module": "es2022",
-        "lib": [
-            "es2022"
-        ],
-        "types": [
-            "@cloudflare/workers-types"
-        ],
-        "moduleResolution": "node",
-        "strict": true,
-        "skipLibCheck": true,
-        "resolveJsonModule": true
-    },
-    "include": ["src/**/*"]
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "lib": ["es2022"],
+    "types": ["@cloudflare/workers-types"],
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"]
 }

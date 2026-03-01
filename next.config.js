@@ -2,7 +2,7 @@
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
-  output: 'export',
+  output: "export",
   reactStrictMode: true,
   assetPrefix: isProd ? "/v3" : "",
   images: {
@@ -10,10 +10,10 @@ const nextConfig = {
   },
 };
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 module.exports = withBundleAnalyzer(nextConfig);
 
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
+import("@opennextjs/cloudflare").then((m) => m.initOpenNextCloudflareForDev());

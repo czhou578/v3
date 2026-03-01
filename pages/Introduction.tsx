@@ -22,7 +22,7 @@ export default function Introduction() {
             onInit={(typewriter) => {
               typewriter
                 .typeString(
-                  '<strong class="text-sm sm:text-base md:text-lg lg:text-xl"> Montreal | Kitchener | Cupertino | Seattle | Champaign | San Mateo |? </strong>',
+                  '<strong class="text-sm sm:text-base md:text-lg lg:text-xl"> Montreal | Kitchener | Cupertino | Seattle | Champaign | San Mateo | ? </strong>'
                 )
                 .start();
             }}
