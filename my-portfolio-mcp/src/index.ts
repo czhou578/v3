@@ -1,5 +1,6 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+import openapiYaml from "../openapi.yaml";
 
 const server = new Server(
     {
@@ -144,8 +145,30 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 // we map the JSON-RPC specifically
 export default {
     async fetch(request: Request, env: any, ctx: any): Promise<Response> {
+        const url = new URL(request.url);
+
+        if (url.pathname === '/openapi.yaml') {
+            return new Response(openapiYaml, {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/yaml',
+                    'Access-Control-Allow-Origin': '*',
+                },
+            });
+        }
+
         if (request.method !== 'POST') {
-            return new Response("Portfolio MCP server is running. POST requests required.", { status: 200 });
+            return new Response(
+                'Colin Zhou Portfolio MCP Server\n' +
+                'POST / — JSON-RPC 2.0 (methods: tools/list, tools/call)\n' +
+                'GET /openapi.yaml — OpenAPI 3.0 specification\n\n' +
+                'Tools: get_experiences | get_projects | match_job\n' +
+                'Docs: https://czhou578.github.io/v3',
+                {
+                    status: 200,
+                    headers: { 'Content-Type': 'text/plain' },
+                }
+            );
         }
 
         try {

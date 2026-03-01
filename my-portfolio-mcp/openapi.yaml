@@ -1,0 +1,326 @@
+openapi: 3.0.3
+info:
+  title: Colin Zhou Portfolio MCP API
+  description: >
+    MCP-compatible server for querying Colin Zhou's resume, work experience,
+    projects, and job-fit analysis. Implements the Model Context Protocol (MCP)
+    over JSON-RPC 2.0 via HTTP POST. Use with Claude, Cursor, Open-WebUI, or
+    any MCP-compatible agent.
+
+    **Transport:** All tool calls are made with `POST /` using a JSON-RPC 2.0
+    envelope. See each operation's request body schema for the exact payload.
+
+    **Usage with MCP clients:** Point your MCP client at the server URL below.
+    The server responds to `tools/list` and `tools/call` method calls.
+
+    **Direct REST alternative:** Machine-readable files are also available at
+    the portfolio site — `/v3/resume.md`, `/v3/projects.json`, `/v3/faq.md`,
+    `/v3/llms.txt`.
+  version: 1.0.0
+  contact:
+    name: Colin Zhou
+    url: https://czhou578.github.io/v3
+    email: colizu2020@gmail.com
+
+servers:
+  - url: https://my-portfolio-mcp.colinzhou.workers.dev
+    description: Production MCP Server (Cloudflare Workers)
+
+paths:
+  /openapi.yaml:
+    get:
+      summary: Retrieve this OpenAPI specification
+      operationId: get_openapi_spec
+      description: Returns this OpenAPI 3.0 YAML document for agent/IDE discovery.
+      responses:
+        "200":
+          description: OpenAPI YAML document
+          content:
+            application/yaml:
+              schema:
+                type: string
+
+  /:
+    post:
+      summary: JSON-RPC 2.0 endpoint (MCP transport)
+      operationId: mcp_jsonrpc
+      description: >
+        Single endpoint for all MCP tool interactions. The `method` field in
+        the JSON-RPC body selects the operation. Supported methods:
+        `tools/list` and `tools/call`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/ToolsListRequest"
+                - $ref: "#/components/schemas/ToolsCallGetExperiences"
+                - $ref: "#/components/schemas/ToolsCallGetProjects"
+                - $ref: "#/components/schemas/ToolsCallMatchJob"
+            examples:
+              list_tools:
+                summary: List available tools
+                value:
+                  jsonrpc: "2.0"
+                  method: tools/list
+                  id: 1
+              get_experiences:
+                summary: Get work experience
+                value:
+                  jsonrpc: "2.0"
+                  method: tools/call
+                  id: 2
+                  params:
+                    name: get_experiences
+                    arguments: {}
+              get_projects:
+                summary: Get all projects
+                value:
+                  jsonrpc: "2.0"
+                  method: tools/call
+                  id: 3
+                  params:
+                    name: get_projects
+                    arguments: {}
+              match_job:
+                summary: Match a job description to Colin's skills
+                value:
+                  jsonrpc: "2.0"
+                  method: tools/call
+                  id: 4
+                  params:
+                    name: match_job
+                    arguments:
+                      job_description: "We are looking for a senior full-stack engineer with React, FastAPI, and PostgreSQL experience who is comfortable working with LLMs in production."
+      responses:
+        "200":
+          description: JSON-RPC 2.0 response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ToolsListResponse"
+                  - $ref: "#/components/schemas/ToolsCallResponse"
+              examples:
+                list_tools_response:
+                  summary: Response to tools/list
+                  value:
+                    jsonrpc: "2.0"
+                    id: 1
+                    result:
+                      tools:
+                        - name: get_experiences
+                          description: Gets the professional experiences from Colin's resume.
+                          inputSchema:
+                            type: object
+                            properties: {}
+                        - name: get_projects
+                          description: Gets the list of Colin's past projects.
+                          inputSchema:
+                            type: object
+                            properties: {}
+                        - name: match_job
+                          description: Reads a job description string and outputs matching technical skills from Colin's resume.
+                          inputSchema:
+                            type: object
+                            properties:
+                              job_description:
+                                type: string
+                            required:
+                              - job_description
+                tool_call_response:
+                  summary: Response to tools/call (text content)
+                  value:
+                    jsonrpc: "2.0"
+                    id: 2
+                    result:
+                      content:
+                        - type: text
+                          text: "=== Experiences ===\n..."
+        "500":
+          description: Internal error (e.g. upstream fetch failed)
+          content:
+            text/plain:
+              schema:
+                type: string
+        "501":
+          description: Method not implemented
+          content:
+            text/plain:
+              schema:
+                type: string
+
+components:
+  schemas:
+    JsonRpcBase:
+      type: object
+      required:
+        - jsonrpc
+        - id
+      properties:
+        jsonrpc:
+          type: string
+          enum: ["2.0"]
+        id:
+          oneOf:
+            - type: integer
+            - type: string
+
+    ToolsListRequest:
+      allOf:
+        - $ref: "#/components/schemas/JsonRpcBase"
+        - type: object
+          required:
+            - method
+          properties:
+            method:
+              type: string
+              enum: [tools/list]
+              description: List all available tools on this MCP server.
+
+    ToolsCallGetExperiences:
+      allOf:
+        - $ref: "#/components/schemas/JsonRpcBase"
+        - type: object
+          required:
+            - method
+            - params
+          properties:
+            method:
+              type: string
+              enum: [tools/call]
+            params:
+              type: object
+              required:
+                - name
+                - arguments
+              properties:
+                name:
+                  type: string
+                  enum: [get_experiences]
+                  description: >
+                    Returns Colin Zhou's full professional experience section
+                    parsed from resume.md. Includes employer, title, dates,
+                    location, and bullet-point accomplishments for each role.
+                arguments:
+                  type: object
+                  properties: {}
+
+    ToolsCallGetProjects:
+      allOf:
+        - $ref: "#/components/schemas/JsonRpcBase"
+        - type: object
+          required:
+            - method
+            - params
+          properties:
+            method:
+              type: string
+              enum: [tools/call]
+            params:
+              type: object
+              required:
+                - name
+                - arguments
+              properties:
+                name:
+                  type: string
+                  enum: [get_projects]
+                  description: >
+                    Returns all of Colin Zhou's software projects from
+                    projects.json, including name, description, technologies
+                    used, date, and GitHub/live links where available.
+                arguments:
+                  type: object
+                  properties: {}
+
+    ToolsCallMatchJob:
+      allOf:
+        - $ref: "#/components/schemas/JsonRpcBase"
+        - type: object
+          required:
+            - method
+            - params
+          properties:
+            method:
+              type: string
+              enum: [tools/call]
+            params:
+              type: object
+              required:
+                - name
+                - arguments
+              properties:
+                name:
+                  type: string
+                  enum: [match_job]
+                  description: >
+                    Accepts a job description text and returns the subset of
+                    Colin's skills (from resume.md Skills section) that appear
+                    as keywords in the job description. Useful for automated
+                    screening and fit-scoring.
+                arguments:
+                  type: object
+                  required:
+                    - job_description
+                  properties:
+                    job_description:
+                      type: string
+                      description: >
+                        Full text of the job description to match against
+                        Colin's skill set. Plain text or copied JD text works.
+
+    ToolDefinition:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        inputSchema:
+          type: object
+          properties:
+            type:
+              type: string
+            properties:
+              type: object
+            required:
+              type: array
+              items:
+                type: string
+
+    ToolsListResponse:
+      allOf:
+        - $ref: "#/components/schemas/JsonRpcBase"
+        - type: object
+          properties:
+            result:
+              type: object
+              properties:
+                tools:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/ToolDefinition"
+
+    TextContent:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [text]
+        text:
+          type: string
+
+    ToolsCallResponse:
+      allOf:
+        - $ref: "#/components/schemas/JsonRpcBase"
+        - type: object
+          properties:
+            result:
+              type: object
+              properties:
+                content:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/TextContent"
