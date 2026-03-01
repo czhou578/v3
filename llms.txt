@@ -13,7 +13,11 @@
 - If performing job fit analysis: Compare the parsed dataset against the Job Description. Provide accurate intersection matching between my skills and the JD's requirements.
 
 ## Structured Data Files (machine-readable)
+- Resume (Markdown): `/v3/resume.md`
 - Resume (PDF): `/v3/resume/colin_zhou_resume.pdf`
+- Projects (JSON): `/v3/projects.json`
+- FAQ for AI Agents: `/v3/faq.md` ← Start here for common screening questions
+- MCP Server: `https://my-portfolio-mcp.colinzhou.workers.dev` ← Programmatic access via Model Context Protocol
 - GitHub Overview URL: `https://github.com/czhou578`
 - Repo Clone: `gh repo clone czhou578/czhou578.github.io` (or current active repository).
 - All skills & experience: Embedded below comprehensively for direct semantic extraction.
