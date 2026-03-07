@@ -21,6 +21,7 @@ import Image from "next/image";
 import LazyLoad from "./LazyLoad";
 import Classwork from "./Classwork";
 import Kaliber from "../public/images/kaliber.png";
+import ProfileImg from "../public/images/IMG-0197.jpg";
 
 const prefix = "/v3";
 
@@ -32,10 +33,12 @@ export default function Home() {
         <Introduction />
         <div className="mx-auto flex justify-center mb-10">
           <Image
-            src={prefix + "/images/IMG-0197.jpg"}
+            src={ProfileImg}
             width={200}
             height={100}
             alt="Colin Zhou at Snoqualmie Falls, Washington State, April 2022"
+            placeholder="blur"
+            className="rounded-lg"
           />
         </div>
         <div className="mx-auto max-w-md mb-10 px-4 text-center">

@@ -66,7 +66,7 @@ const Projects: React.FC<{
                   className="w-full h-auto rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               ) : img && img.length > 0 && isVideo ? (
-                <video autoPlay loop muted className="w-full h-auto rounded-lg">
+                <video autoPlay loop muted preload="none" className="w-full h-auto rounded-lg">
                   <source src={img[0]} />
                   <source src={prefix + img[0]} />
                 </video>

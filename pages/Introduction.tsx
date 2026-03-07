@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TypewriterComponent from "typewriter-effect";
 
-export default function Introduction() {
+function Clock() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -9,8 +9,21 @@ export default function Introduction() {
       setTime(new Date());
     }, 1000);
     return () => clearInterval(intervalId);
-  }, [time]);
+  }, []);
 
+  return (
+    <div className="mt-6 sm:mt-10">
+      <h1
+        suppressHydrationWarning
+        className="text-sm sm:text-base md:text-lg lg:text-xl"
+      >
+        Local Time: {time.toLocaleString()}
+      </h1>
+    </div>
+  );
+}
+
+export default function Introduction() {
   return (
     <div className="bg-gray-800 p-4 sm:p-8 flex items-center justify-center">
       <div className="text-center">
@@ -28,14 +41,7 @@ export default function Introduction() {
             }}
           />
         </div>
-        <div className="mt-6 sm:mt-10">
-          <h1
-            suppressHydrationWarning
-            className="text-sm sm:text-base md:text-lg lg:text-xl"
-          >
-            Local Time: {time.toLocaleString()}
-          </h1>
-        </div>
+        <Clock />
       </div>
     </div>
   );
