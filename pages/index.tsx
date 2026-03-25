@@ -155,6 +155,8 @@ export default function Home() {
               `Rearchitected the Conversation Pipeline demo to be more modular and extendable to various
               medical skills, such as Speech Therapy / Patient Intake using FastAPI and React. Successfully
               orchestrated multiple model operations within one system (Qwen, GPT). `,
+              `Leveraged the Conversation System to create a data platform deployed on AWS for subject matter experts (SME's) situated
+              around the US to verify and collect data on doctor-like responses from the in-house medical AI.`,
             ]}
           />{" "}
         </LazyLoad>
