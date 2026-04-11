@@ -239,53 +239,6 @@ Cluster Analytics`,
             ]}
           />
         </LazyLoad>
-        <LazyLoad>
-          <Experience
-            companyLogo={BellevueCollegeLogo}
-            companyName="Bellevue College"
-            position="CS Student Advisory Board Member"
-            date="08/2021 - 06/2022"
-            location="Bellevue, Washington, United States"
-            description={[
-              `Met with 3 members of faculty to discuss how to grow Bellevue College CS (currently at 150 students).`,
-
-              `Helped facilitate constructive communication between faculty and students with regards to curriculum.`,
-
-              `Planned out $1000 budget for CS department use in 2023. Tracked all expenses using Microsoft Excel.`,
-            ]}
-          />
-        </LazyLoad>
-        <LazyLoad>
-          <Experience
-            companyLogo={DemocracyLabLogo}
-            companyName="DemocracyLab"
-            position="Open Source Web Developer"
-            date="05/2021 - 08/2021"
-            location="Issaquah, Washington, United States"
-            description={[
-              `Used Figma to design 3 wireframes for the CodePDX project, which is a web app that develops applications to improve the lives of people living in Portland, Oregon.`,
-              `Used React to redesign 5 components for the Accessibility Ratings Project, which aims to help users submit accessibility feedback to big tech companies
-                regarding their app offerings.`,
-              `Designed 3 wireframes for the iSeaTree mobile app project, which aims to help young kids explore the indigenous tree species of the Pacific Northwest.`,
-            ]}
-          />
-        </LazyLoad>
-        <LazyLoad>
-          <Experience
-            companyLogo={QuoraLogo}
-            companyName="Quora"
-            position="Freelance Writer"
-            date="08/2017 - 03/2020"
-            location="Issaquah, Washington, United States"
-            description={[
-              `Writing about history, and other topics, with over 30 million answer views since 2017.`,
-
-              `Managing own blog about futuristic technology, over 30k followers.`,
-
-              `Admin and moderator of multiple blogs about finance and interesting information.`,
-            ]}
-          />
-        </LazyLoad>
       </section>
       <section id="projects" aria-label="Projects">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
@@ -383,7 +336,7 @@ Cluster Analytics`,
               githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
             />
           </LazyLoad>
-          <LazyLoad>
+          {/* <LazyLoad>
             <Projects
               header="Job Screener Extension"
               img={["/images/job-screener.png"]}
@@ -411,7 +364,7 @@ Cluster Analytics`,
                   specific amount of points depending on whether a guess results in a word.`}
               githubLink="https://github.com/czhou578/Wordament-v2"
             />
-          </LazyLoad>
+          </LazyLoad> */}
         </div>
         <div className="text-center mt-6">
           <a
@@ -513,78 +466,82 @@ Cluster Analytics`,
         </h2>
         <div className="mx-auto px-4 py-8 w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
           <LazyLoad>
-            <div className="grid lg:grid-cols-3 gap-3.5">
+            <div className="flex flex-col gap-3">
               <Classwork
-                header="Distributed System (Fall 2023)"
+                header="Distributed System"
+                date="Fall 2023"
+                location="UIUC"
                 githubLink="https://github.com/czhou578/CS425"
-                description="Work done for UIUC's Distributed Systems class, where I built my own distributed system from scratch."
-                techUsed={["Python", "Linux", "Shell Scripting", "Hadoop"]}
+                techUsed={["Python", "Linux", "Hadoop"]}
               />
               <Classwork
-                header="Web Programming (Winter 2022)"
+                header="Web Programming"
+                date="Winter 2022"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/CS-380-Work"
-                description="Work done for Bellevue College's Web Programming class."
                 techUsed={["HTML/CSS", "JS", "React"]}
               />
               <Classwork
-                header="Internet of Things (Winter 2022)"
+                header="Internet of Things"
+                date="Winter 2022"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/IoT-work"
-                description="Code for Bellevue College's IOT class. The class used Arduino."
                 techUsed={["C++", "C"]}
               />
               <Classwork
-                header="Operating Systems (Fall 2021)"
+                header="Operating Systems"
+                date="Fall 2021"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/CS360-Work"
-                description="Code that I wrote for Bellevue College's Operating Systems class using Linux OS and C. "
                 techUsed={["C"]}
               />
               <Classwork
-                header="Data Structures / Databases (Fall 2020)"
+                header="Data Structures / Databases"
+                date="Fall 2020"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/Fall-2020-Work"
-                description="Data Structures and databases work from Bellevue College"
                 techUsed={["Java", "C++"]}
               />
               <Classwork
-                header="Programming Lang. (Winter 2021)"
+                header="Programming Languages"
+                date="Winter 2021"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/Winter-2021-Quarter-Work"
-                description="Learned regular expressions, and parsing."
                 techUsed={["Java", "Python"]}
               />
               <Classwork
-                header="Fundamentals of CS II (Winter 2020)"
+                header="Fundamentals of CS II"
+                date="Winter 2020"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/CS-211-Work"
-                description="Work from my second ever CS class at Bellevue College"
                 techUsed={["Java"]}
               />
               <Classwork
-                header="Artificial Intelligence (Spring 2023)"
+                header="Artificial Intelligence"
+                date="Spring 2023"
+                location="UIUC"
                 githubLink="https://github.com/czhou578/AI-Class-Work"
-                description="Work from my artificial intelligence class at UIUC"
                 techUsed={["Python"]}
               />
               <Classwork
-                header="Cloud Computing (Spring 2022)"
+                header="Cloud Computing"
+                date="Spring 2022"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/Cloud-Computing-Work"
-                description="Work from my cloud computing class at Bellevue College, involving AWS services"
                 techUsed={["C#"]}
               />
               <Classwork
-                header="Artificial Intelligence (Spring 2023)"
-                githubLink="https://github.com/czhou578/AI-Class-Work"
-                description="Work from my artificial intelligence class at UIUC, involving Python"
-                techUsed={["Python"]}
-              />
-              <Classwork
-                header="Spring 2021 Bellevue College Work"
+                header="Spring 2021 Bellevue Work"
+                date="Fall 2021"
+                location="Bellevue"
                 githubLink="https://github.com/czhou578/Spring-Quarter-2021"
-                description="Work from my Fall 2021 quarter at Bellevue College, involving Java"
                 techUsed={["Java"]}
               />
             </div>
           </LazyLoad>
         </div>
       </section>
-      <section id="designs" aria-label="UI Designs">
+      {/* <section id="designs" aria-label="UI Designs">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Designs
         </h2>
@@ -598,7 +555,7 @@ Cluster Analytics`,
             <Designs />
           </LazyLoad>
         </div>
-      </section>
+      </section> */}
       <section id="hobbies" aria-label="Hobbies and Interests">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Hobbies

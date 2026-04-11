@@ -12,7 +12,6 @@ function HeaderBar() {
     { href: "#experience", text: "Experience" },
     { href: "#projects", text: "Projects" },
     { href: "#skills", text: "Skills" },
-    { href: "#designs", text: "Designs" },
     {
       href: `${prefix}/resume/colin_zhou_resume.pdf`,
       text: "Resume",
