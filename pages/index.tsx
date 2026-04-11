@@ -424,7 +424,7 @@ Cluster Analytics`,
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center mt-10">
           Skills
         </h2>
-        <div className="mx-auto p-8 w-7/12 md:w-8/12">
+        <div className="mx-auto px-4 py-8 w-full sm:w-11/12 md:w-10/12 lg:w-8/12">
           <LazyLoad>
             <div className="grid lg:grid-cols-3 gap-6">
               <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-indigo-200/100 p-6">
@@ -509,7 +509,7 @@ Cluster Analytics`,
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold dark:text-blue-300 mx-auto w-full px-4 sm:px-6 md:px-8 lg:w-9/12 xl:w-6/12 mb-6 sm:mb-8 md:mb-10 text-center">
           Classwork
         </h2>
-        <div className="mx-auto p-8 w-7/12 md:w-8/12">
+        <div className="mx-auto px-4 py-8 w-full sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12">
           <LazyLoad>
             <div className="grid lg:grid-cols-3 gap-3.5">
               <Classwork
