@@ -53,22 +53,30 @@ export default function Home() {
           <p className="text-lg">
             I graduated from UIUC with a Masters in Computer Science, and
             obtained my bachelor's degree in Computer Science from Bellevue
-            College. I was born in Canada, but grew up in the Bay Area and now
-            live near Seattle, Washington and San Mateo, California.
+            College. I was born in Canada, but grew up in the Bay Area, lived near Seattle, Washington for 6 years, and am now in San Mateo, California.
             <br />
             <br />
-            I am a software developer with experience in full stack web
-            development and cloud services. Previously, I worked at Nuclearn.ai
+            I am currently a software engineer at Kaliber Labs, helping integrate multimodal LLM's into consumer products in the healthcare space. Previously, I worked at Nuclearn.ai
             (nuclear power startup) as a full stack engineer, and did multiple
             internships in the civics, telecom, environmental, and educational
             sectors. I am broadly interested in integrating the latest AI into
-            useful products.
+            useful products and how state of the art machine learning inference systems serve tokens to millions of customers.
             <br />
             <br />
             When I'm not sitting at the computer, you can find me solving
             Rubik's Cubes of various sizes, practicing a difficult piano piece
             and posting it on my Instagram, doing 1000 piece jigsaw puzzles with
-            my sister, or taking long walks around my neighborhood.
+            my sister, or taking long walks around my neighborhood. You can also find
+            me writing technical articles at my{" "}
+            <a
+              href="https://czhou578.github.io/blog/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-400 underline hover:text-indigo-300"
+            >
+              blog
+            </a>
+            .
           </p>
         </div>
       </section>
