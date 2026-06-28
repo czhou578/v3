@@ -261,28 +261,28 @@ Cluster Analytics`,
                 list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
                 description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
                   Claude, ChatGPT, and Gemini and more! As someone who uses LLM's a lot in my day to day life, I wanted
-                  an easy and convenient way to ask multiple LLM's at once, and it resulted in this project.`}
+                  an easy and convenient way to ask multiple LLM's at once, and it resulted in this project. It achieved over 270 stars
+                  on GitHub.`}
                 githubLink="https://github.com/czhou578/llm-god"
                 isVideo
               />
             </div>
           </LazyLoad>
           <LazyLoad>
-            <div id="img-classify" className="h-full flex flex-col">
+            <div id="nanoGPT" className="h-full flex flex-col">
               <Projects
-                header="Caption Image Classifier"
-                img={["/videos/imgclassify.mp4"]}
+                header="nanoGPT Inference Optimizations"
+                img={["/images/nanoGPT.png"]}
                 list={[
-                  "React",
+                  "Python",
                   "PyTorch",
                   "FastAPI",
-                  "HuggingFace",
-                  "WebSockets",
+                  "React / Vite",
                 ]}
-                description={`A full stack web application that classifies images and generates captions; using my own pretrained PyTorch model based
-                  on the CIFAR-100 dataset and leveraging HuggingFace's API to do image captioning using WebSockets.`}
-                githubLink="https://github.com/czhou578/cifar"
-                isVideo
+                description={`Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill,
+                  Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an 
+                  interactive frontend / backend that demonstrates the main differences and performance gains.`}
+                githubLink="https://github.com/czhou578/nanoGPT-inference"
               />
             </div>
           </LazyLoad>
@@ -344,35 +344,25 @@ Cluster Analytics`,
               githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
             />
           </LazyLoad>
-          {/* <LazyLoad>
-            <Projects
-              header="Job Screener Extension"
-              img={["/images/job-screener.png"]}
-              list={[
-                "HTML/CSS",
-                "JavaScript",
-                "Google Chrome API",
-                "Google Sheets API",
-              ]}
-              description={`I created a Google Chrome Extension leveraging the Google Sheets API that allows me to quickly
-                identify the specific companies that I have already submitted job applications for. This was a response to a 
-                problem I had where after submitting 1000+ job applications, I would often apply mistakenly to companies twice.
-                This extension highlights companies that I have applied to in orange, which helps me streamline my job search
-                and become more efficient.`}
-              githubLink="https://github.com/czhou578/jobname-screener"
-            />
-          </LazyLoad>
           <LazyLoad>
-            <Projects
-              header="Wordament / Wordle"
-              img={["/images/W1.png"]}
-              list={["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"]}
-              description={`I created my own version of the popular Microsoft game Wordament. Users are to 
-                  swipe with a mouse to create words using the provided alphabet letters, and are awarded a 
-                  specific amount of points depending on whether a guess results in a word.`}
-              githubLink="https://github.com/czhou578/Wordament-v2"
-            />
-          </LazyLoad> */}
+            <div id="img-classify" className="h-full flex flex-col">
+              <Projects
+                header="Caption Image Classifier"
+                img={["/videos/imgclassify.mp4"]}
+                list={[
+                  "React",
+                  "PyTorch",
+                  "FastAPI",
+                  "HuggingFace",
+                  "WebSockets",
+                ]}
+                description={`A full stack web application that classifies images and generates captions; using my own pretrained PyTorch model based
+                  on the CIFAR-100 dataset and leveraging HuggingFace's API to do image captioning using WebSockets.`}
+                githubLink="https://github.com/czhou578/cifar"
+                isVideo
+              />
+            </div>
+          </LazyLoad>
         </div>
         <div className="text-center mt-6">
           <a

@@ -6,6 +6,29 @@ const FullProjectArchive = () => {
     <div className="mx-auto p-8 w-7/12 md:w-8/12">
       <div className="grid lg:grid-cols-3 skill-gap">
         <NoteWorthyProjects
+          header="Jobname Screener"
+          githubLink="https://github.com/czhou578/jobname-screener"
+          description={`I created a Google Chrome Extension leveraging the Google Sheets API that allows me to quickly
+            identify the specific companies that I have already submitted job applications for. This was a response to a 
+            problem I had where after submitting 1000+ job applications, I would often apply mistakenly to companies twice.
+            This extension highlights companies that I have applied to in orange, which helps me streamline my job search
+            and become more efficient.`}
+          techUsed={[
+            "HTML/CSS",
+            "JavaScript",
+            "Google Chrome API",
+            "Google Sheets API",
+          ]}
+        />
+        <NoteWorthyProjects
+          header="Wordament / Wordle"
+          githubLink="https://github.com/czhou578/Wordament-v2"
+          description={`I created my own version of the popular Microsoft game Wordament. Users are to 
+            swipe with a mouse to create words using the provided alphabet letters, and are awarded a 
+            specific amount of points depending on whether a guess results in a word.`}
+          techUsed={["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"]}
+        />
+        <NoteWorthyProjects
           header="iPhone Image-Classifier"
           githubLink="https://github.com/czhou578/iphone-img-classify"
           description="A full stack web application that utilizes PyTorch and the NLTK natural language processing framework
