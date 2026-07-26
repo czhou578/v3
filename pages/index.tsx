@@ -366,7 +366,7 @@ Cluster Analytics`,
         </div>
         <div className="text-center mt-6">
           <a
-            href="/FullProjectArchive"
+            href="/v3/FullProjectArchive"
             className="text-white-500 underline hover:text-blue-700"
           >
             Show Full Project Archive
