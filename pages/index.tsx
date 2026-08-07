@@ -4,17 +4,13 @@ import Education from "./Education";
 import UIUCLogo from "../public/images/UIUC-Logo.jpg";
 import BCLogo from "../public/images/BellevueCollegeLogo.png";
 import NuclearnLogo from "../public/images/NuclearnLogo.png";
-import Designs from "./Designs";
 import Hobbies from "./Hobbies";
 import Footer from "./Footer";
 import Experience from "./Experience";
 import IOIntel from "../public/images/IO_Intelligence.jpg";
-import BellevueCollegeLogo from "../public/images/BellevueCollegeLogo.png";
 import CHSLogo from "../public/images/CupertinoHighLogo.jpg";
 import PencilLogo from "../public/images/pencil.jpg";
-import QuoraLogo from "../public/images/QuoraLogo.png";
 import PolicyEngineLogo from "../public/images/thepolicyengine_logo.jpg";
-import DemocracyLabLogo from "../public/images/democracyLab.jpg";
 import EcoLogicalLogo from "../public/images/ecological.jpg";
 import Projects from "./Projects";
 import Image from "next/image";
@@ -22,8 +18,6 @@ import LazyLoad from "./LazyLoad";
 import Classwork from "./Classwork";
 import Kaliber from "../public/images/kaliber.png";
 import ProfileImg from "../public/images/IMG-0197.jpg";
-
-const prefix = "/v3";
 
 export default function Home() {
   return (
@@ -286,6 +280,22 @@ Cluster Analytics`,
               />
             </div>
           </LazyLoad>
+          <LazyLoad>
+            <div id="nanoGPT" className="h-full flex flex-col">
+              <Projects
+                header="Local Model Benchmarks"
+                img={["/images/model-benchmarks.png"]}
+                list={[
+                  "Python",
+                  "PyTorch",
+                ]}
+                description={`Implemented 10 comprehensive custom benchmarks using Python to measure local LLM performance on my DGX Spark. The tests
+                  cover prefill, decode, concurrency, tool calling, deep context, latency, and FLOPS performance. I used this to benchmark three different
+                  versions of Qwen3.6 35B A3B configurations from Unsloth, Nvidia and RedHat under heavy workloads.`}
+                githubLink="https://github.com/czhou578/model-benchmarks"
+              />
+            </div>
+          </LazyLoad>          
           <LazyLoad>
             <Projects
               header="StreetFoodLove"

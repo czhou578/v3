@@ -21,6 +21,18 @@ const FullProjectArchive = () => {
           ]}
         />
         <NoteWorthyProjects
+          header="Token Tracker"
+          githubLink="https://github.com/czhou578/token-tracker"
+          description={`A token tracker that allows me to track my total LLM token usage from my locally running models. Gives me breakdowns
+            across time intervals, and specific models like DeepSeek and Qwen.`}
+          techUsed={[
+            "HTML/CSS",
+            "JavaScript",
+            "Python",
+            "SQLite"
+          ]}
+          />
+        <NoteWorthyProjects
           header="Wordament / Wordle"
           githubLink="https://github.com/czhou578/Wordament-v2"
           description={`I created my own version of the popular Microsoft game Wordament. Users are to 
