@@ -6,7 +6,13 @@ const nextConfig = {
   reactStrictMode: true,
   assetPrefix: isProd ? "/v3" : "",
   images: {
-    unoptimized: true,
+    // Static export cannot use the on-demand optimizer, so images are
+    // pre-resized by scripts/optimize-images.mjs and resolved by this loader.
+    loader: "custom",
+    loaderFile: "./lib/imageLoader.ts",
+    // Must match WIDTHS in scripts/optimize-images.mjs and lib/imageLoader.ts.
+    deviceSizes: [640, 960, 1280, 1600],
+    imageSizes: [128, 256, 400],
   },
 };
 
