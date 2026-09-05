@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useEffect, useRef } from "react";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import imageLoader from "@/lib/imageLoader";
 
 // At lg the grid is two columns inside a max-w-5xl container; below that it
@@ -81,11 +81,11 @@ export default function Projects({
   return (
     <article
       id={id}
-      className="flex h-full flex-col overflow-hidden rounded-lg bg-gray-800 shadow-lg ring-1 ring-white/5 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl motion-reduce:transition-none"
+      className="card flex h-full flex-col overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl motion-reduce:transition-none"
     >
       <div className="flex flex-1 flex-col p-4 sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-2">
-          <h3 className="text-xl font-medium text-indigo-300 sm:text-2xl">
+          <h3 className="text-xl font-semibold text-white sm:text-2xl">
             {header}
           </h3>
           <a
@@ -93,12 +93,9 @@ export default function Projects({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${header} on GitHub`}
-            className="-mr-2 -mt-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded text-blue-400 transition-colors hover:text-white"
+            className="-mr-2 -mt-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-indigo-400 transition-colors hover:bg-white/5 hover:text-indigo-200"
           >
-            <FaArrowUpRightFromSquare
-              className="h-4 w-4 sm:h-5 sm:w-5"
-              aria-hidden="true"
-            />
+            <FaGithub className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
           </a>
         </div>
 
@@ -107,24 +104,21 @@ export default function Projects({
             src={image}
             alt={`Screenshot of ${header}`}
             sizes={IMAGE_SIZES}
-            className="mb-6 h-auto w-full rounded-lg"
+            className="mb-6 h-auto w-full rounded-lg ring-1 ring-white/10"
           />
         ) : video ? (
-          <div className="mb-6">
+          <div className="mb-6 overflow-hidden rounded-lg ring-1 ring-white/10">
             <ProjectVideo src={video.src} poster={video.poster} title={header} />
           </div>
         ) : null}
 
-        <p className="mb-6 flex-1 text-base text-cyan-100 sm:text-lg">
+        <p className="mb-6 flex-1 text-base text-gray-300 sm:text-lg">
           {description}
         </p>
 
         <ul className="flex flex-wrap gap-2">
           {list.map((element) => (
-            <li
-              key={element}
-              className="rounded-full bg-gray-700 px-3 py-1 text-xs font-semibold text-gray-200 sm:text-sm"
-            >
+            <li key={element} className="chip">
               {element}
             </li>
           ))}

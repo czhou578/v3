@@ -83,24 +83,18 @@ const AGENT_FILES = [
     emoji: "📄",
     name: "llms.txt",
     blurb: "Full-site index & instructions for AI agents",
-    border: "border-indigo-400/40 hover:border-indigo-400",
-    hover: "group-hover:text-indigo-300",
   },
   {
     href: withPrefix("/resume.md"),
     emoji: "📝",
     name: "resume.md",
     blurb: "Full resume in clean Markdown format",
-    border: "border-cyan-400/40 hover:border-cyan-400",
-    hover: "group-hover:text-cyan-300",
   },
   {
     href: withPrefix("/projects.json"),
     emoji: "🗂️",
     name: "projects.json",
     blurb: "All projects as structured JSON",
-    border: "border-green-400/40 hover:border-green-400",
-    hover: "group-hover:text-green-300",
   },
 ];
 
@@ -136,7 +130,7 @@ export default function Home() {
 
             <div
               id="intro"
-              className="mx-auto mt-10 max-w-3xl scroll-mt-6 rounded-lg border-4 border-indigo-500 p-5 sm:p-8"
+              className="card mx-auto mt-10 max-w-3xl scroll-mt-6 p-5 sm:p-8"
             >
               <p className="text-base leading-relaxed sm:text-lg">
                 I graduated from UIUC with a Masters in Computer Science, and
@@ -167,7 +161,7 @@ export default function Home() {
                   href="https://czhou578.github.io/blog/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-indigo-400 underline hover:text-indigo-300"
+                  className="text-indigo-300 underline hover:text-indigo-200"
                 >
                   blog
                 </a>
@@ -451,7 +445,7 @@ export default function Home() {
           <p className="mt-8 text-center">
             <a
               href={withPrefix("/FullProjectArchive")}
-              className="inline-block py-2 text-indigo-300 underline hover:text-white"
+              className="inline-flex min-h-[44px] items-center rounded-lg bg-indigo-500/15 px-5 font-medium text-indigo-200 ring-1 ring-indigo-400/30 transition-colors hover:bg-indigo-500/25 hover:text-white"
             >
               Show Full Project Archive
             </a>
@@ -467,19 +461,13 @@ export default function Home() {
           <Reveal>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
               {SKILL_GROUPS.map((group) => (
-                <div
-                  key={group.title}
-                  className="rounded-lg border border-indigo-200 bg-gray-800 p-6 shadow"
-                >
-                  <h3 className="mb-4 text-center text-xl font-semibold tracking-tight text-cyan-400">
+                <div key={group.title} className="card p-6">
+                  <h3 className="mb-4 text-center text-xl font-semibold tracking-tight text-white">
                     {group.title}
                   </h3>
                   <ul className="flex flex-wrap gap-2">
                     {group.skills.map((skill) => (
-                      <li
-                        key={skill}
-                        className="rounded-full bg-gray-700 px-3 py-1 text-sm text-gray-300"
-                      >
+                      <li key={skill} className="chip">
                         {skill}
                       </li>
                     ))}
@@ -522,7 +510,7 @@ export default function Home() {
           className="section-container mt-16 scroll-mt-6"
         >
           <div className="mx-auto max-w-2xl">
-            <h2 className="mb-2 text-center text-2xl font-extrabold text-blue-300 sm:text-3xl">
+            <h2 className="mb-2 text-center text-2xl font-extrabold text-indigo-300 sm:text-3xl">
               🤖 For AI Agents
             </h2>
             <p className="mb-6 text-center text-sm text-gray-400">
@@ -536,14 +524,12 @@ export default function Home() {
                   href={file.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group flex flex-col items-center gap-2 rounded-xl border bg-gray-800 p-5 transition-all duration-200 hover:bg-gray-700 ${file.border}`}
+                  className="card group flex flex-col items-center gap-2 p-5 transition-colors hover:bg-gray-700/60 hover:ring-indigo-400/40"
                 >
                   <span className="text-3xl" aria-hidden="true">
                     {file.emoji}
                   </span>
-                  <span
-                    className={`font-semibold text-white transition-colors ${file.hover}`}
-                  >
+                  <span className="font-semibold text-white transition-colors group-hover:text-indigo-200">
                     {file.name}
                   </span>
                   <span className="text-center text-xs text-gray-400">
@@ -552,7 +538,7 @@ export default function Home() {
                 </a>
               ))}
             </div>
-            <div className="mt-6 flex flex-col items-center gap-3 rounded-xl border border-purple-400/40 bg-gray-800 p-4 sm:flex-row">
+            <div className="card mt-6 flex flex-col items-center gap-3 p-4 sm:flex-row">
               <span className="text-2xl" aria-hidden="true">
                 🔌
               </span>
@@ -567,7 +553,7 @@ export default function Home() {
                     href="https://my-portfolio-mcp.colinzhou.workers.dev"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-purple-300 underline hover:text-purple-200"
+                    className="text-indigo-300 underline hover:text-indigo-200"
                   >
                     my-portfolio-mcp.colinzhou.workers.dev
                   </a>

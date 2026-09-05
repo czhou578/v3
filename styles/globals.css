@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* The site is dark-only. Every card and panel hardcodes a dark surface, so
-   the palette is defined once here instead of via prefers-color-scheme. */
+/* The site is dark-only. The page sits on gray-900 and every card on
+   gray-800, which is what separates cards from the page. Indigo is the one
+   accent color; everything else is a neutral gray. */
 :root {
   color-scheme: dark;
   --foreground-rgb: 243, 244, 246; /* gray-100 */
-  --background-rgb: 31, 41, 55; /* gray-800 */
+  --background-rgb: 17, 24, 39; /* gray-900 */
 }
 
 html {
@@ -34,7 +35,17 @@ body {
   }
 
   .section-heading {
-    @apply mb-6 text-center text-2xl font-extrabold text-blue-300 sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl;
+    @apply mb-6 text-center text-2xl font-extrabold text-indigo-300 sm:mb-8 sm:text-3xl md:mb-10 md:text-4xl;
+  }
+
+  /* Card surface shared by every panel on the site. */
+  .card {
+    @apply rounded-xl bg-gray-800 shadow-lg ring-1 ring-white/10;
+  }
+
+  /* Small label chip for skills and tech lists. */
+  .chip {
+    @apply rounded-full bg-gray-700 px-3 py-1 text-xs font-medium text-gray-200 sm:text-sm;
   }
 }
 
@@ -58,5 +69,52 @@ body {
       animation-timeline: view();
       animation-range: entry 0% entry 40%;
     }
+  }
+}
+
+/* Print: light page, no chrome, no media, cards outlined instead of filled. */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  * {
+    color: #111 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  nav,
+  footer,
+  video,
+  #hobbies,
+  #for-agents,
+  .print-hidden {
+    display: none !important;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .card,
+  article {
+    border: 1px solid #bbb;
+    break-inside: avoid;
+  }
+  .chip {
+    border: 1px solid #bbb;
+  }
+  section {
+    margin-top: 1.5rem !important;
+  }
+  h2,
+  h3 {
+    break-after: avoid;
   }
 }

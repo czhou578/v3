@@ -34,7 +34,7 @@ function Clock() {
   }, []);
 
   return (
-    <p className="mt-4 min-h-[1.75em] text-sm text-gray-200 sm:text-base md:text-lg lg:text-xl">
+    <p className="mt-4 min-h-[1.75em] text-sm text-gray-400 sm:text-base md:text-lg">
       Local Time:{" "}
       {time ? (
         <time dateTime={time.toISOString()}>{time.toLocaleString()}</time>
@@ -47,21 +47,28 @@ export default function Introduction() {
   const typed = useTypewriter(PLACES);
 
   return (
-    <div className="bg-gray-800 px-4 py-10 text-center sm:py-14">
-      <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
-        Hi! I am Colin Zhou.....
-      </h1>
-      <p className="mt-6 text-sm font-bold text-white sm:mt-8 sm:text-base md:text-lg lg:text-xl">
-        <span className="sr-only">{PLACES}</span>
-        <span aria-hidden="true">{typed}</span>
-        <span
-          aria-hidden="true"
-          className="animate-pulse motion-reduce:animate-none"
-        >
-          |
-        </span>
-      </p>
-      <Clock />
+    <div className="relative overflow-hidden px-4 py-14 text-center sm:py-20">
+      {/* Soft indigo glow behind the heading so the hero reads as its own band. */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_0%,rgba(99,102,241,0.22),transparent)]"
+        aria-hidden="true"
+      />
+      <div className="relative">
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          Hi! I am Colin Zhou.....
+        </h1>
+        <p className="mt-6 text-sm font-semibold text-indigo-200 sm:mt-8 sm:text-base md:text-lg">
+          <span className="sr-only">{PLACES}</span>
+          <span aria-hidden="true">{typed}</span>
+          <span
+            aria-hidden="true"
+            className="print-hidden animate-pulse motion-reduce:animate-none"
+          >
+            |
+          </span>
+        </p>
+        <Clock />
+      </div>
     </div>
   );
 }

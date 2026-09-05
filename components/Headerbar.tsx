@@ -19,7 +19,7 @@ export default function HeaderBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="border-b border-white/5 bg-gray-800" aria-label="Main">
+    <nav className="border-b border-white/10 bg-gray-900" aria-label="Main">
       <div className="section-container flex flex-wrap items-center justify-between py-3 sm:py-4">
         <a
           href={withPrefix("/")}
@@ -33,7 +33,7 @@ export default function HeaderBar() {
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-expanded={isMenuOpen}
           aria-controls="site-menu"
-          className="inline-flex h-11 w-11 items-center justify-center rounded border border-gray-400 text-gray-200 transition hover:border-white hover:text-white lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-gray-300 ring-1 ring-white/15 transition hover:bg-white/5 hover:text-white md:hidden"
         >
           <span className="sr-only">
             {isMenuOpen ? "Close menu" : "Open menu"}
@@ -47,11 +47,11 @@ export default function HeaderBar() {
 
         <div
           id="site-menu"
-          className={`w-full lg:flex lg:w-auto lg:items-center ${
+          className={`w-full md:flex md:w-auto md:items-center ${
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <ul className="flex flex-col pt-2 lg:flex-row lg:gap-1 lg:pt-0">
+          <ul className="flex flex-col pt-2 md:flex-row md:gap-1 md:pt-0">
             {navItems.map((item) => (
               <li key={item.text}>
                 <a
@@ -59,7 +59,7 @@ export default function HeaderBar() {
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noopener noreferrer" : undefined}
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex min-h-[44px] items-center rounded px-3 text-sm text-indigo-300 transition hover:bg-white/5 hover:text-white"
+                  className="flex min-h-[44px] items-center rounded-lg px-3 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-white"
                 >
                   {item.text}
                 </a>

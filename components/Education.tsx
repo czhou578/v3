@@ -42,18 +42,18 @@ export default function Education({
       ref={ref}
       className="reveal relative pb-10 pl-16 last:pb-0 sm:pl-20"
     >
-      {/* Gray rail, plus a yellow line that grows once the entry is in view. */}
+      {/* Gray rail, plus an indigo line that grows once the entry is in view. */}
       <div
-        className="absolute bottom-0 left-[23px] top-0 w-0.5 bg-gray-600 sm:left-[27px]"
+        className="absolute bottom-0 left-[23px] top-0 w-0.5 bg-gray-700 sm:left-[27px]"
         aria-hidden="true"
       />
       <div
-        className={`absolute bottom-0 left-[23px] top-0 w-0.5 origin-top bg-yellow-400 transition-transform duration-[2000ms] ease-out motion-reduce:transition-none sm:left-[27px] ${
+        className={`absolute bottom-0 left-[23px] top-0 w-0.5 origin-top bg-indigo-400 transition-transform duration-[2000ms] ease-out motion-reduce:transition-none sm:left-[27px] ${
           inView ? "scale-y-100" : "scale-y-0"
         }`}
         aria-hidden="true"
       />
-      <span className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-blue-900 ring-8 ring-gray-800 sm:h-14 sm:w-14">
+      <span className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gray-800 ring-8 ring-gray-900 sm:h-14 sm:w-14">
         <Image
           src={logo}
           alt=""
@@ -64,10 +64,10 @@ export default function Education({
       </span>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-        <h3 className="text-lg font-semibold text-cyan-400 sm:text-xl">
+        <h3 className="text-lg font-semibold text-white sm:text-xl">
           {school}
         </h3>
-        <span className="self-start whitespace-nowrap rounded bg-blue-900 px-2.5 py-0.5 text-xs font-medium text-blue-300 sm:text-sm">
+        <span className="self-start whitespace-nowrap rounded-full bg-indigo-500/15 px-2.5 py-0.5 text-xs font-medium text-indigo-200 ring-1 ring-indigo-400/30 sm:text-sm">
           {degreeLevel}
         </span>
       </div>

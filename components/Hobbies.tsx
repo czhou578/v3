@@ -1,6 +1,6 @@
 import Image from "next/image";
-import igProfile from "../public/images/ig-profile.png";
-import tiktokProfile from "../public/images/tiktok-profile.png";
+import igProfile from "../public/images/ig-profile.jpg";
+import tiktokProfile from "../public/images/tiktok-profile.jpg";
 import YouTubeFacade from "./YouTubeFacade";
 
 // Two columns inside a max-w-5xl container from md up, one column below.
@@ -15,7 +15,7 @@ export default function Hobbies() {
           href="https://www.instagram.com/colin.pianist/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block overflow-hidden rounded-lg shadow-lg transition-opacity hover:opacity-80"
+          className="card block overflow-hidden transition-opacity hover:opacity-80"
         >
           <Image
             src={igProfile}
@@ -28,7 +28,7 @@ export default function Hobbies() {
           href="https://www.tiktok.com/@colin.pianist"
           target="_blank"
           rel="noopener noreferrer"
-          className="block overflow-hidden rounded-lg shadow-lg transition-opacity hover:opacity-80"
+          className="card block overflow-hidden transition-opacity hover:opacity-80"
         >
           <Image
             src={tiktokProfile}

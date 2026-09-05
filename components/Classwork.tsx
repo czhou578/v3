@@ -1,4 +1,4 @@
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 
 export default function Classwork({
   header,
@@ -14,11 +14,11 @@ export default function Classwork({
   techUsed: string[];
 }) {
   return (
-    <article className="rounded-xl border border-white/5 bg-zinc-800/80 p-4 shadow-sm transition-colors hover:bg-zinc-800 sm:flex sm:items-center sm:gap-4 sm:px-5 sm:py-3.5">
+    <article className="card p-4 transition-colors hover:bg-gray-700/60 sm:flex sm:items-center sm:gap-4 sm:px-5 sm:py-3.5">
       {/* On phones the title and the link share the first row; at sm this
           wrapper dissolves and its children become direct flex items. */}
       <div className="flex items-center justify-between gap-3 sm:contents">
-        <h3 className="text-lg font-semibold text-blue-400 sm:text-[17px]">
+        <h3 className="text-lg font-semibold text-white sm:text-[17px]">
           {header}
         </h3>
         <a
@@ -26,9 +26,9 @@ export default function Classwork({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${header} on GitHub`}
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-zinc-900/80 text-gray-400 transition-colors hover:bg-zinc-700 hover:text-gray-200 sm:order-last"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gray-900/60 text-indigo-400 transition-colors hover:bg-gray-900 hover:text-indigo-200 sm:order-last"
         >
-          <FaArrowUpRightFromSquare className="h-4 w-4" aria-hidden="true" />
+          <FaGithub className="h-5 w-5" aria-hidden="true" />
         </a>
       </div>
 
@@ -38,10 +38,7 @@ export default function Classwork({
         </span>
         <ul className="flex flex-wrap gap-2">
           {techUsed.map((element) => (
-            <li
-              key={element}
-              className="rounded-full border border-white/5 bg-zinc-900 px-3 py-0.5 text-xs font-medium text-gray-300"
-            >
+            <li key={element} className="chip">
               {element}
             </li>
           ))}

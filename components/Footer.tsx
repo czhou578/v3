@@ -45,9 +45,9 @@ const links: { href: string; Icon: IconType; name: string }[] = [
 
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-white/5 bg-gray-900">
+    <footer className="mt-16 border-t border-white/10 bg-gray-950">
       <div className="section-container flex flex-col items-center gap-4 py-6 sm:flex-row sm:justify-between">
-        <span className="text-sm text-gray-300">
+        <span className="text-sm text-gray-400">
           © {new Date().getFullYear()} Colin Zhou. All Rights Reserved.
         </span>
         <ul className="flex flex-wrap justify-center gap-2 sm:gap-3">
@@ -58,9 +58,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={name}
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-100 text-gray-700 transition-colors hover:bg-white hover:text-black sm:h-12 sm:w-12"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-800 text-gray-300 ring-1 ring-white/10 transition-colors hover:bg-indigo-500 hover:text-white sm:h-12 sm:w-12"
               >
-                <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
+                <Icon className="h-5 w-5" aria-hidden="true" />
               </a>
               <span
                 role="tooltip"
