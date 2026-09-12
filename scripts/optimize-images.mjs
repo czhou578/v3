@@ -25,9 +25,25 @@ async function newerThan(target, source) {
   }
 }
 
+// Removes variants whose source image no longer exists, so deleting a file
+// from public/images does not leave its WebP copies in the deploy.
+async function pruneStale(sources) {
+  const names = new Set(sources.map(baseName));
+  let removed = 0;
+  for (const f of await fs.readdir(OUT_DIR)) {
+    const m = f.match(/^(.+)-\d+\.webp$/);
+    if (m && !names.has(m[1])) {
+      await fs.unlink(path.join(OUT_DIR, f));
+      removed++;
+    }
+  }
+  return removed;
+}
+
 async function main() {
   await fs.mkdir(OUT_DIR, { recursive: true });
   const files = (await fs.readdir(SRC_DIR)).filter(isSource);
+  const pruned = await pruneStale(files);
   let written = 0;
   let skipped = 0;
   const start = Date.now();
@@ -63,7 +79,7 @@ async function main() {
 
   const secs = ((Date.now() - start) / 1000).toFixed(1);
   console.log(
-    `optimize-images: ${files.length} sources, ${written} variants written, ${skipped} up to date (${secs}s)`
+    `optimize-images: ${files.length} sources, ${written} variants written, ${skipped} up to date, ${pruned} stale removed (${secs}s)`
   );
 }
 
