@@ -29,7 +29,7 @@
     "@types/react": "18.3.27",
     "@types/react-dom": "18.3.7",
     "autoprefixer": "10.4.14",
-    "next": "15.5.22",
+    "next": "15.5.25",
     "pdf-parse": "^2.4.5",
     "postcss": "8.5.23",
     "prettier": "^2.8.8",
