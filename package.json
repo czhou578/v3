@@ -8,6 +8,7 @@
   "scripts": {
     "images": "node scripts/optimize-images.mjs",
     "videos": "bash scripts/optimize-videos.sh",
+    "icons": "node scripts/render-icons.mjs",
     "predev": "npm run images",
     "dev": "next dev",
     "prebuild": "npm run images",
@@ -28,14 +29,14 @@
     "@types/react": "18.3.27",
     "@types/react-dom": "18.3.7",
     "autoprefixer": "10.4.14",
-    "next": "15.5.22",
+    "next": "15.5.25",
     "pdf-parse": "^2.4.5",
     "postcss": "8.5.23",
     "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.5.0",
-    "sharp": "^0.35.0",
+    "sharp": "^0.35.4",
     "tailwindcss": "3.3.1"
   },
   "devDependencies": {

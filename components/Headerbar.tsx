@@ -8,6 +8,7 @@ const navItems = [
   { href: withPrefix("/#experience"), text: "Experience" },
   { href: withPrefix("/#projects"), text: "Projects" },
   { href: withPrefix("/#skills"), text: "Skills" },
+  { href: "https://czhou578.github.io/blog/", text: "Blog", external: true },
   {
     href: withPrefix("/resume/colin_zhou_resume.pdf"),
     text: "Resume",

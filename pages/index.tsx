@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "@/components/Seo";
 import Image from "next/image";
 import HeaderBar from "@/components/Headerbar";
 import Introduction from "@/components/Introduction";
@@ -74,7 +74,7 @@ const CLASSWORK = [
   { header: "Fundamentals of CS II", date: "Winter 2020", location: "Bellevue", githubLink: "https://github.com/czhou578/CS-211-Work", techUsed: ["Java"] },
   { header: "Artificial Intelligence", date: "Spring 2023", location: "UIUC", githubLink: "https://github.com/czhou578/AI-Class-Work", techUsed: ["Python"] },
   { header: "Cloud Computing", date: "Spring 2022", location: "Bellevue", githubLink: "https://github.com/czhou578/Cloud-Computing-Work", techUsed: ["C#"] },
-  { header: "Spring 2021 Bellevue Work", date: "Fall 2021", location: "Bellevue", githubLink: "https://github.com/czhou578/Spring-Quarter-2021", techUsed: ["Java"] },
+  { header: "Spring 2021 Bellevue Work", date: "Spring 2021", location: "Bellevue", githubLink: "https://github.com/czhou578/Spring-Quarter-2021", techUsed: ["Java"] },
 ];
 
 const AGENT_FILES = [
@@ -101,13 +101,7 @@ const AGENT_FILES = [
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Colin Zhou | Software Engineer</title>
-        <meta
-          name="description"
-          content="Portfolio of Colin Zhou, a software engineer in San Mateo, CA working on AI integration and production systems."
-        />
-      </Head>
+      <Seo />
       <HeaderBar />
       <main>
         <section id="about" aria-label="About Colin Zhou" className="scroll-mt-6">

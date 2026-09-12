@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useEffect, useRef } from "react";
-import { FaGithub } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import imageLoader from "@/lib/imageLoader";
 
 // At lg the grid is two columns inside a max-w-5xl container; below that it
@@ -67,6 +67,7 @@ export default function Projects({
   description,
   list,
   githubLink,
+  liveLink,
   image,
   video,
 }: {
@@ -75,6 +76,8 @@ export default function Projects({
   description: string;
   list: string[];
   githubLink: string;
+  /** Hosted demo or store listing, shown as a "Live" button when present. */
+  liveLink?: string;
   image?: StaticImageData;
   video?: { src: string; poster: StaticImageData };
 }) {
@@ -123,6 +126,20 @@ export default function Projects({
             </li>
           ))}
         </ul>
+
+        {liveLink ? (
+          <div className="mt-5">
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-indigo-500/15 px-4 text-sm font-medium text-indigo-200 ring-1 ring-indigo-400/30 transition-colors hover:bg-indigo-500/25 hover:text-white"
+            >
+              View live
+              <FaArrowUpRightFromSquare className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          </div>
+        ) : null}
       </div>
     </article>
   );
