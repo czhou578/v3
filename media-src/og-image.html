@@ -1,0 +1,87 @@
+<!doctype html>
+<!--
+  Source for public/og-image.png, the 1200x630 card shown when a link to the
+  site is shared. To regenerate: open this file in a browser with a 1200x630
+  viewport and screenshot it, or run `npm run icons` (uses headless Chrome).
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #111827;
+        font-family: Inter, system-ui, sans-serif;
+        color: #f3f4f6;
+      }
+      .glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 55% 80% at 18% 50%,
+          rgba(99, 102, 241, 0.35),
+          transparent
+        );
+      }
+      .card {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        padding: 0 96px;
+      }
+      .photo {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: 50% 15%;
+        box-shadow: 0 0 0 8px #1f2937, 0 0 0 10px rgba(129, 140, 248, 0.5);
+        flex-shrink: 0;
+      }
+      h1 {
+        margin: 0;
+        font-size: 76px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        color: #fff;
+      }
+      .role {
+        margin: 20px 0 0;
+        font-size: 34px;
+        font-weight: 600;
+        color: #c7d2fe;
+      }
+      .meta {
+        margin: 28px 0 0;
+        font-size: 24px;
+        font-weight: 500;
+        color: #9ca3af;
+      }
+      .meta span {
+        color: #a5b4fc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="card">
+      <img class="photo" src="../public/images/IMG-0197.jpg" alt="" />
+      <div>
+        <h1>Colin Zhou</h1>
+        <p class="role">Software Engineer · AI products &amp; production systems</p>
+        <p class="meta">San Mateo, CA &nbsp;·&nbsp; <span>czhou578.github.io/v3</span></p>
+      </div>
+    </div>
+  </body>
+</html>

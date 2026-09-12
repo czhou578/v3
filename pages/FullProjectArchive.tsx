@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "@/components/Seo";
 import HeaderBar from "@/components/Headerbar";
 import Footer from "@/components/Footer";
 import NoteWorthyProjects from "@/components/NoteWorthyProjects";
@@ -112,9 +112,11 @@ const ARCHIVE = [
 export default function FullProjectArchive() {
   return (
     <>
-      <Head>
-        <title>Project Archive | Colin Zhou</title>
-      </Head>
+      <Seo
+        title="Project Archive | Colin Zhou"
+        description="Every side project, class project, and experiment Colin Zhou has published on GitHub."
+        path="/FullProjectArchive"
+      />
       <HeaderBar />
       <main className="section-container mt-10">
         <h1 className="section-heading">Full Project Archive</h1>

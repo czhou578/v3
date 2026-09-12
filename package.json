@@ -8,6 +8,7 @@
   "scripts": {
     "images": "node scripts/optimize-images.mjs",
     "videos": "bash scripts/optimize-videos.sh",
+    "icons": "node scripts/render-icons.mjs",
     "predev": "npm run images",
     "dev": "next dev",
     "prebuild": "npm run images",
