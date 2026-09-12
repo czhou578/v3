@@ -24,6 +24,15 @@ function useTypewriter(text: string, speedMs = 55) {
   return typed;
 }
 
+// Colin's local time in San Mateo, regardless of where the visitor is.
+const PACIFIC = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Los_Angeles",
+  weekday: "short",
+  hour: "numeric",
+  minute: "2-digit",
+  timeZoneName: "short",
+});
+
 function Clock() {
   const [time, setTime] = useState<Date | null>(null);
 
@@ -35,9 +44,9 @@ function Clock() {
 
   return (
     <p className="mt-4 min-h-[1.75em] text-sm text-gray-400 sm:text-base md:text-lg">
-      Local Time:{" "}
+      My time in San Mateo:{" "}
       {time ? (
-        <time dateTime={time.toISOString()}>{time.toLocaleString()}</time>
+        <time dateTime={time.toISOString()}>{PACIFIC.format(time)}</time>
       ) : null}
     </p>
   );

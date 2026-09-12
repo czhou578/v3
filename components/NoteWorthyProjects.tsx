@@ -1,13 +1,16 @@
-import { FaGithub } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 
 export default function NoteWorthyProjects({
   header,
   githubLink,
+  liveLink,
   techUsed,
   description,
 }: {
   header: string;
   githubLink: string;
+  /** Hosted demo or store listing, shown as a "Live" button when present. */
+  liveLink?: string;
   description: string;
   techUsed: string[];
 }) {
@@ -24,6 +27,19 @@ export default function NoteWorthyProjects({
           </li>
         ))}
       </ul>
+      {liveLink ? (
+        <div className="mt-4">
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[40px] items-center gap-2 rounded-lg bg-indigo-500/15 px-3 text-sm font-medium text-indigo-200 ring-1 ring-indigo-400/30 transition-colors hover:bg-indigo-500/25 hover:text-white"
+          >
+            View live
+            <FaArrowUpRightFromSquare className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
+        </div>
+      ) : null}
       <a
         href={githubLink}
         target="_blank"

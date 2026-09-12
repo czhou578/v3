@@ -16,7 +16,7 @@ const ARCHIVE = [
   },
   {
     header: "Wordament / Wordle",
-    githubLink: "https://github.com/czhou578/Wordament-v2",
+    githubLink: "https://github.com/czhou578/Wordament-Wordle-v2",
     description: `I created my own version of the popular Microsoft game Wordament. Users are to
       swipe with a mouse to create words using the provided alphabet letters, and are awarded a
       specific amount of points depending on whether a guess results in a word.`,
@@ -53,7 +53,7 @@ const ARCHIVE = [
   },
   {
     header: "Whitehouse.gov 2025",
-    githubLink: "https://github.com/czhou578/AmericanScorecard",
+    githubLink: "https://github.com/czhou578/Whitehouse.gov-2025",
     description:
       "Whitehouse.gov website if Andrew Yang got elected as the US President in 2024.",
     techUsed: ["HTML", "CSS", "JS", "React.js", "Firebase", "FEC / Google Civics API"],
@@ -61,6 +61,7 @@ const ARCHIVE = [
   {
     header: "Personal Website V1",
     githubLink: "https://github.com/czhou578/Personal-Website",
+    liveLink: "https://czhou578.github.io/",
     description:
       "This is the very first version of my personal website, using basic front end technologies.",
     techUsed: ["HTML", "CSS", "JS"],
@@ -68,6 +69,7 @@ const ARCHIVE = [
   {
     header: "Personal Website V2",
     githubLink: "https://github.com/czhou578/v2",
+    liveLink: "https://czhou578.github.io/v2/",
     description:
       "The second version of my personal website, built with React, TypeScript, and Next.js.",
     techUsed: ["React", "TypeScript", "Next.js", "CSS Modules"],
