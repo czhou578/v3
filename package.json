@@ -9,9 +9,9 @@
     "images": "node scripts/optimize-images.mjs",
     "videos": "bash scripts/optimize-videos.sh",
     "icons": "node scripts/render-icons.mjs",
-    "predev": "npm run images",
+    "predev": "npm run images && npm run agent-files",
     "dev": "next dev",
-    "prebuild": "npm run images",
+    "prebuild": "npm run images && npm run agent-files",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -20,7 +20,8 @@
     "preview": "npm run images && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "npm run images && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "npm run images && opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "agent-files": "node scripts/generate-agent-files.mjs"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^15.2.3",

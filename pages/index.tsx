@@ -10,6 +10,8 @@ import Hobbies from "@/components/Hobbies";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { withPrefix } from "@/lib/prefix";
+import { featuredProjects, liveUrl } from "@/lib/projects";
+import projectMedia from "@/lib/projectMedia";
 
 import ProfileImg from "../public/images/IMG-0197.jpg";
 import UIUCLogo from "../public/images/UIUC-Logo.jpg";
@@ -21,12 +23,6 @@ import PolicyEngineLogo from "../public/images/thepolicyengine_logo.jpg";
 import EcoLogicalLogo from "../public/images/ecological.jpg";
 import IOIntel from "../public/images/IO_Intelligence.jpg";
 import PencilLogo from "../public/images/pencil.jpg";
-import nanoGPTImg from "../public/images/nanoGPT.png";
-import sappImg from "../public/images/Sapp.png";
-import pe1Img from "../public/images/PE1.png";
-import benchmarkImg from "../public/images/benchmark2.png";
-import llmPoster from "../public/images/llm-poster.jpg";
-import imgClassifyPoster from "../public/images/imgclassify-poster.jpg";
 
 const SKILL_GROUPS = [
   {
@@ -338,103 +334,27 @@ export default function Home() {
         >
           <h2 className="section-heading">Projects</h2>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-            <Reveal className="h-full">
-              <Projects
-                id="llm"
-                header="LLM God"
-                video={{ src: withPrefix("/videos/llm.mp4"), poster: llmPoster }}
-                list={["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"]}
-                description={`A desktop application that allows you to query 4 LLM's at once for a single input. Supports
-                  Claude, ChatGPT, and Gemini and more! As someone who uses LLM's a lot in my day to day life, I wanted
-                  an easy and convenient way to ask multiple LLM's at once, and it resulted in this project. It achieved over 270 stars
-                  on GitHub.`}
-                githubLink="https://github.com/czhou578/llm-god"
-              />
-            </Reveal>
-            <Reveal className="h-full">
-              <Projects
-                id="nanoGPT"
-                header="nanoGPT Inference Optimizations"
-                image={nanoGPTImg}
-                list={["Python", "PyTorch", "FastAPI", "React / Vite"]}
-                description={`Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill,
-                  Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an
-                  interactive frontend / backend that demonstrates the main differences and performance gains.`}
-                githubLink="https://github.com/czhou578/nanoGPT-inference"
-              />
-            </Reveal>
-            <Reveal className="h-full">
-              <Projects
-                header="StreetFoodLove"
-                image={sappImg}
-                list={[
-                  "HTML/CSS",
-                  "TypeScript",
-                  "React.js",
-                  "Semantic UI",
-                  "AWS",
-                  "Redux",
-                  "SQL",
-                ]}
-                description={`For my senior year capstone project in undergraduate, I worked with three others to create a Yelp-like app
-                  that will empower and enable food truck vendors to more easily attract customers and run their business.
-                  I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for
-                  the initial mockups. On the backend, I helped with writing SQL queries and making sure the AWS services were
-                  linked up seamlessly with the frontend.`}
-                githubLink="https://github.com/bcfoodapp/streetfoodlove"
-              />
-            </Reveal>
-            <Reveal className="h-full">
-              <Projects
-                header="Project Elpis App"
-                image={pe1Img}
-                list={[
-                  "HTML/CSS",
-                  "TypeScript",
-                  "React.js",
-                  "Semantic UI",
-                  "AWS",
-                  "Redux",
-                ]}
-                description={`In my first internship, I helped create an educational web app that helps at risk high school
-                  students track their future career goals. I utilized various front end technologies like React.js
-                  along with backend tools like AWS for hosting. After the internship was completed, this app is now in
-                  beta testing in a high school of a couple hundred students in New York City.`}
-                githubLink="https://github.com/czhou578/Code-Samples-Project-Elpis"
-              />
-            </Reveal>
-            <Reveal className="h-full">
-              <Projects
-                header="React Backend-Benchmarks"
-                image={benchmarkImg}
-                list={[
-                  "TypeScript",
-                  "React.js",
-                  "Node.js",
-                  "MySQL",
-                  "Python / Flask",
-                  "Golang",
-                ]}
-                description={`A web application with a React frontend and three backends written in different
-                  languages that are all connected to a common MySQL database. Users will be able to send repetitive queries to any
-                  backend that they choose and see how fast the server responds after the completed operation.`}
-                githubLink="https://github.com/czhou578/React-Backend-Benchmarks"
-              />
-            </Reveal>
-            <Reveal className="h-full">
-              <Projects
-                id="img-classify"
-                header="Caption Image Classifier"
-                video={{
-                  src: withPrefix("/videos/imgclassify.mp4"),
-                  poster: imgClassifyPoster,
-                }}
-                list={["React", "PyTorch", "FastAPI", "HuggingFace", "WebSockets"]}
-                description={`A full stack web application that classifies images and generates captions; using my own pretrained PyTorch model based
-                  on the CIFAR-100 dataset and leveraging HuggingFace's API to do image captioning using WebSockets.`}
-                githubLink="https://github.com/czhou578/cifar"
-              />
-            </Reveal>
+            {featuredProjects.map((project) => {
+              const media = project.media;
+              return (
+                <Reveal key={project.name} className="h-full">
+                  <Projects
+                    id={project.anchor}
+                    header={project.name}
+                    description={project.description}
+                    list={project.technologies}
+                    githubLink={project.github ?? undefined}
+                    liveLink={liveUrl(project)}
+                    image={media?.type === "image" ? projectMedia(media.image) : undefined}
+                    video={
+                      media?.type === "video"
+                        ? { src: withPrefix(media.src), poster: projectMedia(media.poster) }
+                        : undefined
+                    }
+                  />
+                </Reveal>
+              );
+            })}
           </div>
           <p className="mt-8 text-center">
             <a

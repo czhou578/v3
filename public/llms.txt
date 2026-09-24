@@ -194,7 +194,6 @@ In addition to the premier projects above, I have actively developed and maintai
 - **Personal Website V2**: Architected entirely on React and Next.js implementing rigorous CSS Modules. (https://github.com/czhou578/v2)
 - **Wordament V1**: The preceding build of my later full-stack clone, created rigidly with naked Javascript. (https://github.com/czhou578/Wordament)
 - **Doctors Orders**: Integrated deeply with Android Studio and Android Java components resolving notification schedules specifically targeted toward caretaking elderly geriatrics patients. (https://github.com/deekshacheruku/DoctorsOrders)
-- **Country Database**: Explored dynamic UI filtering methodologies routing queries through Node.js endpoints tracking planetary boundaries natively on MySQL records. (https://github.com/cs411-alawini/fa22-cs411-Q-team044-OurSQL)
 - **Crypto Website Mockup**: Frontend focused engineering pushing maximum capacities of unopinionated CSS implementations generating highly polished animations across native browser APIs. (https://github.com/czhou578/CryptoWebsiteMockup)
 - **YouTubeBlocker**: Intercepted browser rendering cycles blocking specific distraction elements targeting specifically the YouTube recommendation grid algorithm. (https://github.com/czhou578/YouTubeBlocker)
 

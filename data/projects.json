@@ -1,0 +1,179 @@
+{
+  "projects": [
+    {
+      "name": "LLM God",
+      "anchor": "llm",
+      "featured": true,
+      "date": "2025",
+      "summary": "Desktop application to query multiple LLMs (Claude, ChatGPT, Gemini, etc.) at once for the same prompt.",
+      "description": "A desktop application that allows you to query 4 LLM's at once for a single input. Supports Claude, ChatGPT, and Gemini and more! As someone who uses LLM's a lot in my day to day life, I wanted an easy and convenient way to ask multiple LLM's at once, and it resulted in this project. It achieved over 270 stars on GitHub.",
+      "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"],
+      "github": "https://github.com/czhou578/llm-god",
+      "live": null,
+      "media": { "type": "video", "src": "/videos/llm.mp4", "poster": "llm-poster" }
+    },
+    {
+      "name": "nanoGPT Inference Optimizations",
+      "anchor": "nanoGPT",
+      "featured": true,
+      "date": "2026",
+      "summary": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
+      "description": "Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill, Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an interactive frontend / backend that demonstrates the main differences and performance gains.",
+      "technologies": ["Python", "PyTorch", "FastAPI", "React / Vite"],
+      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "live": null,
+      "media": { "type": "image", "image": "nanoGPT" }
+    },
+    {
+      "name": "StreetFoodLove",
+      "featured": true,
+      "date": "2022",
+      "summary": "Yelp-style app for food truck vendors (senior capstone). UI with TypeScript/React, backend SQL + AWS integration.",
+      "description": "For my senior year capstone project in undergraduate, I worked with three others to create a Yelp-like app that will empower and enable food truck vendors to more easily attract customers and run their business. I worked with mostly Typescript and React.js on the front end for developing the UI and used Adobe XD for the initial mockups. On the backend, I helped with writing SQL queries and making sure the AWS services were linked up seamlessly with the frontend.",
+      "technologies": ["HTML/CSS", "TypeScript", "React.js", "Semantic UI", "AWS", "Redux", "SQL"],
+      "github": "https://github.com/bcfoodapp/streetfoodlove",
+      "live": null,
+      "media": { "type": "image", "image": "Sapp" }
+    },
+    {
+      "name": "Project Elpis App",
+      "featured": true,
+      "date": "2021",
+      "summary": "Serverless web app that helps at-risk high school students in NYC track their career progress with teacher dashboards.",
+      "description": "In my first internship, I helped create an educational web app that helps at risk high school students track their future career goals. I utilized various front end technologies like React.js along with backend tools like AWS for hosting. After the internship was completed, this app is now in beta testing in a high school of a couple hundred students in New York City.",
+      "technologies": ["HTML/CSS", "TypeScript", "React.js", "Semantic UI", "AWS", "Redux"],
+      "github": "https://github.com/czhou578/Code-Samples-Project-Elpis",
+      "live": null,
+      "media": { "type": "image", "image": "PE1" }
+    },
+    {
+      "name": "React Backend-Benchmarks",
+      "featured": true,
+      "date": "2023",
+      "summary": "React frontend that sends repeated queries to three backends (Node.js, Python/Flask, Go) sharing one MySQL database and compares their response times.",
+      "description": "A web application with a React frontend and three backends written in different languages that are all connected to a common MySQL database. Users will be able to send repetitive queries to any backend that they choose and see how fast the server responds after the completed operation.",
+      "technologies": ["TypeScript", "React.js", "Node.js", "MySQL", "Python / Flask", "Golang"],
+      "github": "https://github.com/czhou578/React-Backend-Benchmarks",
+      "live": null,
+      "media": { "type": "image", "image": "benchmark2" }
+    },
+    {
+      "name": "Caption Image Classifier",
+      "anchor": "img-classify",
+      "featured": true,
+      "date": "2024–2025",
+      "summary": "Full-stack web app: classify images (custom PyTorch CIFAR-100 model) + generate captions (HuggingFace via WebSockets).",
+      "description": "A full stack web application that classifies images and generates captions; using my own pretrained PyTorch model based on the CIFAR-100 dataset and leveraging HuggingFace's API to do image captioning using WebSockets.",
+      "technologies": ["React", "PyTorch", "FastAPI", "HuggingFace", "WebSockets"],
+      "github": "https://github.com/czhou578/cifar",
+      "live": null,
+      "media": { "type": "video", "src": "/videos/imgclassify.mp4", "poster": "imgclassify-poster" }
+    },
+    {
+      "name": "Jobname Screener",
+      "date": "2024",
+      "summary": "Chrome extension using Google Sheets API to highlight previously applied companies and avoid duplicates.",
+      "description": "I created a Google Chrome Extension leveraging the Google Sheets API that allows me to quickly identify the specific companies that I have already submitted job applications for. This was a response to a problem I had where after submitting 1000+ job applications, I would often apply mistakenly to companies twice. This extension highlights companies that I have applied to in orange, which helps me streamline my job search and become more efficient.",
+      "technologies": ["HTML/CSS", "JavaScript", "Google Chrome API", "Google Sheets API"],
+      "github": "https://github.com/czhou578/jobname-screener",
+      "live": "Chrome Web Store"
+    },
+    {
+      "name": "Wordament / Wordle",
+      "date": "2023",
+      "summary": "Interactive word puzzle game implementing mechanics similar to Wordle and Wordament with state management.",
+      "description": "I created my own version of the popular Microsoft game Wordament. Users are to swipe with a mouse to create words using the provided alphabet letters, and are awarded a specific amount of points depending on whether a guess results in a word.",
+      "technologies": ["HTML/CSS", "TypeScript", "React.js", "Express", "MySQL"],
+      "github": "https://github.com/czhou578/Wordament-Wordle-v2",
+      "live": null
+    },
+    {
+      "name": "iPhone Image-Classifier",
+      "date": "2024",
+      "description": "A full stack web application that utilizes PyTorch and the NLTK natural language processing framework to classify and accept user prompts to search for images with a specific characteristic. Users will be able to query for a label in images on the frontend and retrieve results.",
+      "technologies": ["PyTorch", "Python", "TypeScript", "Sqlite 3", "Next.js", "Tailwind CSS"],
+      "github": "https://github.com/czhou578/iphone-img-classify",
+      "live": null
+    },
+    {
+      "name": "Distance Calc",
+      "date": "2021",
+      "description": "A simple web app that calculates the distance between two points on a map and logs it to a MUI form.",
+      "technologies": ["HTML", "CSS", "JS", "React.js", "Material UI", "React Router", "Firebase"],
+      "github": "https://github.com/czhou578/DistanceCalc",
+      "live": null
+    },
+    {
+      "name": "PostureCam",
+      "date": "2025",
+      "description": "A Python and OpenCV application that detects and tracks your posture using your webcam.",
+      "technologies": ["Python", "OpenCV"],
+      "github": "https://github.com/czhou578/PostureCam",
+      "live": null
+    },
+    {
+      "name": "Morsecode Binary Tree",
+      "date": "2020",
+      "description": "Decoding morse code using binary trees, written in Java. This was for a class project.",
+      "technologies": ["Java"],
+      "github": "https://github.com/czhou578/MorseCodeBinaryTree",
+      "live": null
+    },
+    {
+      "name": "Whitehouse.gov 2025",
+      "date": "2021",
+      "description": "Whitehouse.gov website if Andrew Yang got elected as the US President in 2024.",
+      "technologies": ["HTML", "CSS", "JS", "React.js", "Firebase", "FEC / Google Civics API"],
+      "github": "https://github.com/czhou578/Whitehouse.gov-2025",
+      "live": null
+    },
+    {
+      "name": "Personal Website V1",
+      "date": "2021",
+      "description": "This is the very first version of my personal website, using basic front end technologies.",
+      "technologies": ["HTML", "CSS", "JS"],
+      "github": "https://github.com/czhou578/Personal-Website",
+      "live": "https://czhou578.github.io/"
+    },
+    {
+      "name": "Personal Website V2",
+      "date": "2022",
+      "description": "The second version of my personal website, built with React, TypeScript, and Next.js.",
+      "technologies": ["React", "TypeScript", "Next.js", "CSS Modules"],
+      "github": "https://github.com/czhou578/v2",
+      "live": "https://czhou578.github.io/v2/"
+    },
+    {
+      "name": "Wordament V1",
+      "date": "2020",
+      "description": "This is the very first version of Wordament, using basic web technologies.",
+      "technologies": ["HTML", "CSS", "JS"],
+      "github": "https://github.com/czhou578/Wordament",
+      "live": null
+    },
+    {
+      "name": "Doctors Orders",
+      "date": "2022",
+      "description": "An Android app to help doctors and family track the medicine schedules of elderly patients.",
+      "technologies": ["Java", "Android Studio"],
+      "github": "https://github.com/deekshacheruku/DoctorsOrders",
+      "live": null
+    },
+    {
+      "name": "Crypto Website",
+      "date": "2021",
+      "description": "A mockup of a cryptocurrency website, which helped me practice CSS animations.",
+      "technologies": ["HTML", "CSS", "JS", "Figma"],
+      "github": "https://github.com/czhou578/CryptoWebsiteMockup",
+      "live": null
+    },
+    {
+      "name": "YouTubeBlocker",
+      "date": "2020",
+      "description": "A Google Chrome extension to block distractions on YouTube. Using this blocker, users will be able to cover up the recommended videos section, allowing for less distractions and greater concentration on tasks.",
+      "technologies": ["Google Chrome API", "CSS"],
+      "github": "https://github.com/czhou578/YouTubeBlocker",
+      "live": null
+    }
+  ]
+}

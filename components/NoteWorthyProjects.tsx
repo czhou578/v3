@@ -8,7 +8,7 @@ export default function NoteWorthyProjects({
   description,
 }: {
   header: string;
-  githubLink: string;
+  githubLink?: string;
   /** Hosted demo or store listing, shown as a "Live" button when present. */
   liveLink?: string;
   description: string;
@@ -40,15 +40,17 @@ export default function NoteWorthyProjects({
           </a>
         </div>
       ) : null}
-      <a
-        href={githubLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${header} on GitHub`}
-        className="absolute right-1 top-1 inline-flex h-11 w-11 items-center justify-center rounded-lg text-indigo-400 transition-colors hover:bg-white/5 hover:text-indigo-200"
-      >
-        <FaGithub className="h-5 w-5" aria-hidden="true" />
-      </a>
+      {githubLink ? (
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${header} on GitHub`}
+          className="absolute right-1 top-1 inline-flex h-11 w-11 items-center justify-center rounded-lg text-indigo-400 transition-colors hover:bg-white/5 hover:text-indigo-200"
+        >
+          <FaGithub className="h-5 w-5" aria-hidden="true" />
+        </a>
+      ) : null}
     </article>
   );
 }

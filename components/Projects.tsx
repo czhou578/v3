@@ -75,7 +75,7 @@ export default function Projects({
   header: string;
   description: string;
   list: string[];
-  githubLink: string;
+  githubLink?: string;
   /** Hosted demo or store listing, shown as a "Live" button when present. */
   liveLink?: string;
   image?: StaticImageData;
@@ -91,15 +91,17 @@ export default function Projects({
           <h3 className="text-xl font-semibold text-white sm:text-2xl">
             {header}
           </h3>
-          <a
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${header} on GitHub`}
-            className="-mr-2 -mt-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-indigo-400 transition-colors hover:bg-white/5 hover:text-indigo-200"
-          >
-            <FaGithub className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
-          </a>
+          {githubLink ? (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${header} on GitHub`}
+              className="-mr-2 -mt-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-indigo-400 transition-colors hover:bg-white/5 hover:text-indigo-200"
+            >
+              <FaGithub className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
+            </a>
+          ) : null}
         </div>
 
         {image ? (
