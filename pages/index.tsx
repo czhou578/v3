@@ -18,6 +18,7 @@ import UIUCLogo from "../public/images/UIUC-Logo.jpg";
 import BCLogo from "../public/images/BellevueCollegeLogo.png";
 import CHSLogo from "../public/images/CupertinoHighLogo.jpg";
 import Kaliber from "../public/images/kaliber.png";
+import MovendiLogo from "../public/images/movendi.png";
 import NuclearnLogo from "../public/images/NuclearnLogo.png";
 import PolicyEngineLogo from "../public/images/thepolicyengine_logo.jpg";
 import EcoLogicalLogo from "../public/images/ecological.jpg";
@@ -235,10 +236,27 @@ export default function Home() {
           <div className="mx-auto max-w-4xl">
             <Reveal>
               <Experience
+                companyLogo={MovendiLogo}
+                companyName="Movendi"
+                companyNote="A Kaliber Labs company, formerly Vitesse"
+                position="Full Stack Software Engineer"
+                date="08/2026 - present"
+                location="San Mateo, CA, United States (Onsite)"
+                description={[
+                  `Used TypeScript and Go to connect the historian microservice to the frontend, allowing users to 
+                  query and download historical data from PLC controllers within a specified time interval and visualize the changes.`,
+                  `Implemented organizational RBAC controls over the integrations side of the platform`,
+                  `Used Go to implement functionality allowing users to replay SCXML statecharts with data from historian, helping factory
+                  owners test an SCXML diagram before deploying to edge devices on the factory floor.`
+                ]}
+              />
+            </Reveal>          
+            <Reveal>
+              <Experience
                 companyLogo={Kaliber}
                 companyName="Kaliber Labs Inc."
                 position="Software Engineer"
-                date="01/2026 - present"
+                date="01/2026 - 08/2026"
                 location="San Mateo, CA, United States (Onsite)"
                 description={[
                   `Rearchitected the Conversation Pipeline demo to be more modular and extendable to various
@@ -258,14 +276,16 @@ export default function Home() {
                 location="Phoenix, Arizona, United States (Remote)"
                 description={[
                   `Utilized FastAPI/SQLAlchemy to develop backend functionality for retrieving up to 25 most similar records in a
-                  dataset using 500+ embeddings generated through natural language techniques. Architected a back-end workflow
+                  dataset using 500+ embeddings generated through natural language techniques.`,
+                  `Architected a back-end workflow
                   with new SQLAlchemy datamodels to migrate 100+ YAML configurations across five config files into PostgreSQL,
                   enabling dynamic updates via a React frontend, eliminating the need for Nuclearn's developers to restart the web
                   backend during development if such configurations were changed.`,
                   `Optimized markdown processing for artifacts displayed across 10+ tool calls in AtomAssist, Nuclearn's proprietary
-                  AI chatbot. Implemented role-based access control with error handling for consumer, admin, and contributor roles,
+                  AI chatbot.`,
+                  `Implemented role-based access control with error handling for consumer, admin, and contributor roles,
                   ensuring secure access to 10+ unique web app features on the frontend like Cap AI, AtomAssist, Capitalizer, and
-                  Cluster Analytics`,
+                  Cluster Analytics`
                 ]}
               />
             </Reveal>
@@ -291,7 +311,7 @@ export default function Home() {
                 date="09/2023 - 12/2023"
                 location="Champaign, Illinois, United States (Remote)"
                 description={[
-                  `Using Ant Design components to improve the front-end experience of the flagship web app.`,
+                  `Using Ant Design components to improve the front-end experience of the flagship web app for small businesses to track their carbon footprint.`,
                   `Set up 10 mutations and queries to AWS Amplify backend for the user signup workflow.`,
                 ]}
               />

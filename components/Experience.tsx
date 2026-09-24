@@ -4,6 +4,7 @@ import type { StaticImageData } from "next/image";
 export default function Experience({
   companyLogo,
   companyName,
+  companyNote,
   position,
   date,
   location,
@@ -11,6 +12,9 @@ export default function Experience({
 }: {
   companyLogo: StaticImageData;
   companyName: string;
+  /** Short context about the company, e.g. its parent company. Shown as its
+      own label, apart from the dates and the bullet points. */
+  companyNote?: string;
   position: string;
   date: string;
   location: string;
@@ -48,6 +52,13 @@ export default function Experience({
             <p className="text-base text-indigo-200 sm:text-lg">{companyName}</p>
           </div>
         </div>
+        {companyNote ? (
+          <p className="mt-3">
+            <span className="inline-flex rounded-full bg-indigo-500/15 px-3 py-0.5 text-xs font-medium text-indigo-200 ring-1 ring-indigo-400/30 sm:text-sm">
+              {companyNote}
+            </span>
+          </p>
+        ) : null}
         <p className="mt-2 text-sm text-gray-400 sm:text-base">
           {date} • {location}
         </p>
