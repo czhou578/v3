@@ -33,11 +33,13 @@ const SKILL_GROUPS = [
   {
     title: "Backend",
     skills: [
+      "Python",
+      "Apache Parquet",
+      "Go",
       "Node.js",
       "MongoDB",
       "MySQL",
       "PostgreSQL",
-      "Python",
       "FastAPI",
       "MapReduce",
       "Docker",
@@ -55,8 +57,10 @@ const SKILL_GROUPS = [
       "Linux",
       "Windows",
       "Prompt Engineering",
+      "AI Agents",
       "NPM",
       "Yarn",
+      "SCXML"
     ],
   },
 ];
@@ -112,6 +116,7 @@ export default function Home() {
                 alt="Colin Zhou at Snoqualmie Falls, Washington State, April 2022"
                 placeholder="blur"
                 priority
+                fetchPriority="high"
                 className="mx-auto rounded-lg"
               />
               <figcaption className="mt-4 text-sm italic text-gray-300 sm:text-base">

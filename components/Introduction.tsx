@@ -68,12 +68,17 @@ export default function Introduction() {
         </h1>
         <p className="mt-6 text-sm font-semibold text-indigo-200 sm:mt-8 sm:text-base md:text-lg">
           <span className="sr-only">{PLACES}</span>
-          <span aria-hidden="true">{typed}</span>
-          <span
-            aria-hidden="true"
-            className="print-hidden animate-pulse motion-reduce:animate-none"
-          >
-            |
+          {/* Both layers share one grid cell. The invisible full string
+              reserves the final height (two lines on phones), so the hero
+              never shrinks or grows while the visible text types out. */}
+          <span aria-hidden="true" className="grid">
+            <span className="invisible col-start-1 row-start-1">{PLACES}|</span>
+            <span className="col-start-1 row-start-1">
+              {typed}
+              <span className="print-hidden animate-pulse motion-reduce:animate-none">
+                |
+              </span>
+            </span>
           </span>
         </p>
         <Clock />
