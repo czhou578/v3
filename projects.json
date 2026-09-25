@@ -1,12 +1,83 @@
 {
+  "_note": "Generated from data/projects.json by scripts/generate-agent-files.mjs. Edit the source, not this file.",
   "projects": [
     {
       "name": "LLM God",
       "description": "Desktop application to query multiple LLMs (Claude, ChatGPT, Gemini, etc.) at once for the same prompt.",
-      "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "Electron.js"],
-      "github": "https://github.com/czhou578/LLM-God",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Electron.js"
+      ],
+      "github": "https://github.com/czhou578/llm-god",
       "live": null,
-      "date": "2025"
+      "date": "2025",
+      "featured": true
+    },
+    {
+      "name": "nanoGPT Inference Optimizations",
+      "description": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
+      "technologies": [
+        "Python",
+        "PyTorch",
+        "FastAPI",
+        "React / Vite"
+      ],
+      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "live": null,
+      "date": "2026",
+      "featured": true
+    },
+    {
+      "name": "StreetFoodLove",
+      "description": "Yelp-style app for food truck vendors (senior capstone). UI with TypeScript/React, backend SQL + AWS integration.",
+      "technologies": [
+        "HTML/CSS",
+        "TypeScript",
+        "React.js",
+        "Semantic UI",
+        "AWS",
+        "Redux",
+        "SQL"
+      ],
+      "github": "https://github.com/bcfoodapp/streetfoodlove",
+      "live": null,
+      "date": "2022",
+      "featured": true
+    },
+    {
+      "name": "Project Elpis App",
+      "description": "Serverless web app that helps at-risk high school students in NYC track their career progress with teacher dashboards.",
+      "technologies": [
+        "HTML/CSS",
+        "TypeScript",
+        "React.js",
+        "Semantic UI",
+        "AWS",
+        "Redux"
+      ],
+      "github": "https://github.com/czhou578/Code-Samples-Project-Elpis",
+      "live": null,
+      "date": "2021",
+      "featured": true
+    },
+    {
+      "name": "React Backend-Benchmarks",
+      "description": "React frontend that sends repeated queries to three backends (Node.js, Python/Flask, Go) sharing one MySQL database and compares their response times.",
+      "technologies": [
+        "TypeScript",
+        "React.js",
+        "Node.js",
+        "MySQL",
+        "Python / Flask",
+        "Golang"
+      ],
+      "github": "https://github.com/czhou578/React-Backend-Benchmarks",
+      "live": null,
+      "date": "2023",
+      "featured": true
     },
     {
       "name": "Caption Image Classifier",
@@ -18,61 +89,189 @@
         "HuggingFace",
         "WebSockets"
       ],
-      "github": "https://github.com/czhou578",
+      "github": "https://github.com/czhou578/cifar",
       "live": null,
-      "date": "2024–2025"
+      "date": "2024–2025",
+      "featured": true
     },
     {
-      "name": "StreetFoodLove",
-      "description": "Yelp-style app for food truck vendors (senior capstone). UI with TypeScript/React, backend SQL + AWS integration.",
-      "technologies": [
-        "TypeScript",
-        "React.js",
-        "Semantic UI",
-        "AWS",
-        "Redux",
-        "SQL"
-      ],
-      "github": "https://github.com/czhou578/StreetFoodLove",
-      "live": null,
-      "date": "2022"
-    },
-    {
-      "name": "Job Screener Extension",
+      "name": "Jobname Screener",
       "description": "Chrome extension using Google Sheets API to highlight previously applied companies and avoid duplicates.",
       "technologies": [
-        "JavaScript",
         "HTML/CSS",
-        "Chrome API",
+        "JavaScript",
+        "Google Chrome API",
         "Google Sheets API"
       ],
-      "github": "https://github.com/czhou578",
+      "github": "https://github.com/czhou578/jobname-screener",
       "live": "Chrome Web Store",
-      "date": "2024"
+      "date": "2024",
+      "featured": false
     },
     {
-      "name": "Project Elpis",
-      "description": "Serverless web app that helps at-risk high school students in NYC track their career progress with teacher dashboards.",
-      "technologies": ["React", "TypeScript", "GraphQL", "AWS"],
-      "github": null,
-      "live": null,
-      "date": "2021"
-    },
-    {
-      "name": "Wordament/Wordle Clone",
+      "name": "Wordament / Wordle",
       "description": "Interactive word puzzle game implementing mechanics similar to Wordle and Wordament with state management.",
-      "technologies": ["React", "JavaScript", "CSS", "HTML"],
-      "github": "https://github.com/czhou578",
+      "technologies": [
+        "HTML/CSS",
+        "TypeScript",
+        "React.js",
+        "Express",
+        "MySQL"
+      ],
+      "github": "https://github.com/czhou578/Wordament-Wordle-v2",
       "live": null,
-      "date": "2023"
+      "date": "2023",
+      "featured": false
     },
     {
-      "name": "React Backend-Benchmarks",
-      "description": "A benchmarking suite to compare performance metrics of various backend frameworks (FastAPI, Express) interfacing with React.",
-      "technologies": ["React", "Node.js", "Express", "FastAPI", "Python"],
-      "github": "https://github.com/czhou578/React-Backend-Benchmarks",
+      "name": "iPhone Image-Classifier",
+      "description": "A full stack web application that utilizes PyTorch and the NLTK natural language processing framework to classify and accept user prompts to search for images with a specific characteristic. Users will be able to query for a label in images on the frontend and retrieve results.",
+      "technologies": [
+        "PyTorch",
+        "Python",
+        "TypeScript",
+        "Sqlite 3",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "github": "https://github.com/czhou578/iphone-img-classify",
       "live": null,
-      "date": "2023"
+      "date": "2024",
+      "featured": false
+    },
+    {
+      "name": "Distance Calc",
+      "description": "A simple web app that calculates the distance between two points on a map and logs it to a MUI form.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JS",
+        "React.js",
+        "Material UI",
+        "React Router",
+        "Firebase"
+      ],
+      "github": "https://github.com/czhou578/DistanceCalc",
+      "live": null,
+      "date": "2021",
+      "featured": false
+    },
+    {
+      "name": "PostureCam",
+      "description": "A Python and OpenCV application that detects and tracks your posture using your webcam.",
+      "technologies": [
+        "Python",
+        "OpenCV"
+      ],
+      "github": "https://github.com/czhou578/PostureCam",
+      "live": null,
+      "date": "2025",
+      "featured": false
+    },
+    {
+      "name": "Morsecode Binary Tree",
+      "description": "Decoding morse code using binary trees, written in Java. This was for a class project.",
+      "technologies": [
+        "Java"
+      ],
+      "github": "https://github.com/czhou578/MorseCodeBinaryTree",
+      "live": null,
+      "date": "2020",
+      "featured": false
+    },
+    {
+      "name": "Whitehouse.gov 2025",
+      "description": "Whitehouse.gov website if Andrew Yang got elected as the US President in 2024.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JS",
+        "React.js",
+        "Firebase",
+        "FEC / Google Civics API"
+      ],
+      "github": "https://github.com/czhou578/Whitehouse.gov-2025",
+      "live": null,
+      "date": "2021",
+      "featured": false
+    },
+    {
+      "name": "Personal Website V1",
+      "description": "This is the very first version of my personal website, using basic front end technologies.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "github": "https://github.com/czhou578/Personal-Website",
+      "live": "https://czhou578.github.io/",
+      "date": "2021",
+      "featured": false
+    },
+    {
+      "name": "Personal Website V2",
+      "description": "The second version of my personal website, built with React, TypeScript, and Next.js.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "CSS Modules"
+      ],
+      "github": "https://github.com/czhou578/v2",
+      "live": "https://czhou578.github.io/v2/",
+      "date": "2022",
+      "featured": false
+    },
+    {
+      "name": "Wordament V1",
+      "description": "This is the very first version of Wordament, using basic web technologies.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "github": "https://github.com/czhou578/Wordament",
+      "live": null,
+      "date": "2020",
+      "featured": false
+    },
+    {
+      "name": "Doctors Orders",
+      "description": "An Android app to help doctors and family track the medicine schedules of elderly patients.",
+      "technologies": [
+        "Java",
+        "Android Studio"
+      ],
+      "github": "https://github.com/deekshacheruku/DoctorsOrders",
+      "live": null,
+      "date": "2022",
+      "featured": false
+    },
+    {
+      "name": "Crypto Website",
+      "description": "A mockup of a cryptocurrency website, which helped me practice CSS animations.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JS",
+        "Figma"
+      ],
+      "github": "https://github.com/czhou578/CryptoWebsiteMockup",
+      "live": null,
+      "date": "2021",
+      "featured": false
+    },
+    {
+      "name": "YouTubeBlocker",
+      "description": "A Google Chrome extension to block distractions on YouTube. Using this blocker, users will be able to cover up the recommended videos section, allowing for less distractions and greater concentration on tasks.",
+      "technologies": [
+        "Google Chrome API",
+        "CSS"
+      ],
+      "github": "https://github.com/czhou578/YouTubeBlocker",
+      "live": null,
+      "date": "2020",
+      "featured": false
     }
   ]
 }
