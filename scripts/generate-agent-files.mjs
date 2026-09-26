@@ -10,8 +10,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const read = async (p) => JSON.parse(await fs.readFile(path.join(ROOT, p), "utf8"));
+const ROOT = path.resolve(
+  path.dirname(new URL(import.meta.url).pathname),
+  ".."
+);
+const read = async (p) =>
+  JSON.parse(await fs.readFile(path.join(ROOT, p), "utf8"));
 
 const site = await read("data/site.json");
 const { projects } = await read("data/projects.json");
@@ -33,7 +37,9 @@ const agentProjects = {
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...site.pages.map((p) => `  <url><loc>${site.url}${p === "/" ? "/" : p}</loc></url>`),
+  ...site.pages.map(
+    (p) => `  <url><loc>${site.url}${p === "/" ? "/" : p}</loc></url>`
+  ),
   "</urlset>",
   "",
 ].join("\n");

@@ -153,7 +153,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 // Since the MCP sdk doesn't officially expose a synchronous HTTP router for Workers,
 // we map the JSON-RPC specifically
-export default {
+const worker = {
   async fetch(request: Request, env: any, ctx: any): Promise<Response> {
     const url = new URL(request.url);
 
@@ -239,3 +239,5 @@ export default {
     }
   },
 };
+
+export default worker;

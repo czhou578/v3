@@ -30,6 +30,10 @@ jobs:
       # The MCP server reads public/projects.json from main, so fail fast if
       # data/projects.json was edited without regenerating and committing it.
       - run: node scripts/generate-agent-files.mjs --check
+      - name: Lint
+        run: npm run lint
+      - name: Check formatting
+        run: npm run format:check
       - run: npm run build --if-present
         env:
           # Repository variable; analytics are skipped when it is unset.

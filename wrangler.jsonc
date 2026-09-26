@@ -6,18 +6,18 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
   },
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "app"
-    }
+      "service": "app",
+    },
   ],
   "images": {
-    "binding": "IMAGES"
+    "binding": "IMAGES",
   },
   "observability": {
-    "enabled": true
-  }
+    "enabled": true,
+  },
 }

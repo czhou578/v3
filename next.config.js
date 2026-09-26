@@ -5,6 +5,10 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   assetPrefix: isProd ? "/v3" : "",
+  eslint: {
+    // CI runs `npm run lint` as its own step, so the build does not repeat it.
+    ignoreDuringBuilds: true,
+  },
   images: {
     // Static export cannot use the on-demand optimizer, so images are
     // pre-resized by scripts/optimize-images.mjs and resolved by this loader.

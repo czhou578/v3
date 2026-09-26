@@ -30,5 +30,7 @@ for (const { src, out, box } of CROPS) {
     .resize({ width: 1600, withoutEnlargement: true })
     .jpeg({ quality: 90, mozjpeg: true })
     .toFile(target);
-  console.log(`${src} -> ${out} ${info.width}x${info.height} (${Math.round(info.size / 1024)} KB)`);
+  console.log(
+    `${src} -> ${out} ${info.width}x${info.height} (${Math.round(info.size / 1024)} KB)`
+  );
 }

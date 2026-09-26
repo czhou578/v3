@@ -49,7 +49,9 @@ export default function Experience({
             <h3 className="text-xl font-semibold text-white sm:text-2xl">
               {position}
             </h3>
-            <p className="text-base text-indigo-200 sm:text-lg">{companyName}</p>
+            <p className="text-base text-indigo-200 sm:text-lg">
+              {companyName}
+            </p>
           </div>
         </div>
         {companyNote ? (

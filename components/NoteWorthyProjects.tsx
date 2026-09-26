@@ -36,7 +36,10 @@ export default function NoteWorthyProjects({
             className="inline-flex min-h-[40px] items-center gap-2 rounded-lg bg-indigo-500/15 px-3 text-sm font-medium text-indigo-200 ring-1 ring-indigo-400/30 transition-colors hover:bg-indigo-500/25 hover:text-white"
           >
             View live
-            <FaArrowUpRightFromSquare className="h-3.5 w-3.5" aria-hidden="true" />
+            <FaArrowUpRightFromSquare
+              className="h-3.5 w-3.5"
+              aria-hidden="true"
+            />
           </a>
         </div>
       ) : null}

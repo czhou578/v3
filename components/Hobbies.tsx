@@ -58,9 +58,9 @@ export default function Hobbies() {
 
       <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed sm:text-lg">
         I am a fan of Rubik&apos;s Cube speedsolving and have participated in
-        multiple official competitions since 2014. My best time in a
-        competition was 12.92 seconds. Here is a video of myself solving a 3x3
-        cube in under 14 seconds at a Bay Area event in 2015.
+        multiple official competitions since 2014. My best time in a competition
+        was 12.92 seconds. Here is a video of myself solving a 3x3 cube in under
+        14 seconds at a Bay Area event in 2015.
       </p>
     </div>
   );

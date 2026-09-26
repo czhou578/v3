@@ -1,0 +1,21 @@
+# Build output and caches
+node_modules
+.next
+out
+.open-next
+.wrangler
+*.tsbuildinfo
+next-env.d.ts
+
+# Generated files: their exact bytes are checked by other tools
+package-lock.json
+public/projects.json
+public/sitemap.xml
+public/images/opt
+
+# Hand-tuned templates for the icon and preview-card renderer
+media-src
+
+# Long-form text the AI-agent files are copied from verbatim
+public/*.md
+public/*.txt

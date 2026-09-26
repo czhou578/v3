@@ -28,7 +28,15 @@ import PencilLogo from "../public/images/pencil.jpg";
 const SKILL_GROUPS = [
   {
     title: "Frontend",
-    skills: ["HTML", "CSS", "TypeScript", "React", "GraphQL", "Figma", "AdobeXD"],
+    skills: [
+      "HTML",
+      "CSS",
+      "TypeScript",
+      "React",
+      "GraphQL",
+      "Figma",
+      "AdobeXD",
+    ],
   },
   {
     title: "Backend",
@@ -60,22 +68,82 @@ const SKILL_GROUPS = [
       "AI Agents",
       "NPM",
       "Yarn",
-      "SCXML"
+      "SCXML",
     ],
   },
 ];
 
 const CLASSWORK = [
-  { header: "Distributed System", date: "Fall 2023", location: "UIUC", githubLink: "https://github.com/czhou578/CS425", techUsed: ["Python", "Linux", "Hadoop"] },
-  { header: "Web Programming", date: "Winter 2022", location: "Bellevue", githubLink: "https://github.com/czhou578/CS-380-Work", techUsed: ["HTML/CSS", "JS", "React"] },
-  { header: "Internet of Things", date: "Winter 2022", location: "Bellevue", githubLink: "https://github.com/czhou578/IoT-work", techUsed: ["C++", "C"] },
-  { header: "Operating Systems", date: "Fall 2021", location: "Bellevue", githubLink: "https://github.com/czhou578/CS360-Work", techUsed: ["C"] },
-  { header: "Data Structures / Databases", date: "Fall 2020", location: "Bellevue", githubLink: "https://github.com/czhou578/Fall-2020-Work", techUsed: ["Java", "C++"] },
-  { header: "Programming Languages", date: "Winter 2021", location: "Bellevue", githubLink: "https://github.com/czhou578/Winter-2021-Quarter-Work", techUsed: ["Java", "Python"] },
-  { header: "Fundamentals of CS II", date: "Winter 2020", location: "Bellevue", githubLink: "https://github.com/czhou578/CS-211-Work", techUsed: ["Java"] },
-  { header: "Artificial Intelligence", date: "Spring 2023", location: "UIUC", githubLink: "https://github.com/czhou578/AI-Class-Work", techUsed: ["Python"] },
-  { header: "Cloud Computing", date: "Spring 2022", location: "Bellevue", githubLink: "https://github.com/czhou578/Cloud-Computing-Work", techUsed: ["C#"] },
-  { header: "Spring 2021 Bellevue Work", date: "Spring 2021", location: "Bellevue", githubLink: "https://github.com/czhou578/Spring-Quarter-2021", techUsed: ["Java"] },
+  {
+    header: "Distributed System",
+    date: "Fall 2023",
+    location: "UIUC",
+    githubLink: "https://github.com/czhou578/CS425",
+    techUsed: ["Python", "Linux", "Hadoop"],
+  },
+  {
+    header: "Web Programming",
+    date: "Winter 2022",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/CS-380-Work",
+    techUsed: ["HTML/CSS", "JS", "React"],
+  },
+  {
+    header: "Internet of Things",
+    date: "Winter 2022",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/IoT-work",
+    techUsed: ["C++", "C"],
+  },
+  {
+    header: "Operating Systems",
+    date: "Fall 2021",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/CS360-Work",
+    techUsed: ["C"],
+  },
+  {
+    header: "Data Structures / Databases",
+    date: "Fall 2020",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/Fall-2020-Work",
+    techUsed: ["Java", "C++"],
+  },
+  {
+    header: "Programming Languages",
+    date: "Winter 2021",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/Winter-2021-Quarter-Work",
+    techUsed: ["Java", "Python"],
+  },
+  {
+    header: "Fundamentals of CS II",
+    date: "Winter 2020",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/CS-211-Work",
+    techUsed: ["Java"],
+  },
+  {
+    header: "Artificial Intelligence",
+    date: "Spring 2023",
+    location: "UIUC",
+    githubLink: "https://github.com/czhou578/AI-Class-Work",
+    techUsed: ["Python"],
+  },
+  {
+    header: "Cloud Computing",
+    date: "Spring 2022",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/Cloud-Computing-Work",
+    techUsed: ["C#"],
+  },
+  {
+    header: "Spring 2021 Bellevue Work",
+    date: "Spring 2021",
+    location: "Bellevue",
+    githubLink: "https://github.com/czhou578/Spring-Quarter-2021",
+    techUsed: ["Java"],
+  },
 ];
 
 const AGENT_FILES = [
@@ -105,7 +173,11 @@ export default function Home() {
       <Seo />
       <HeaderBar />
       <main>
-        <section id="about" aria-label="About Colin Zhou" className="scroll-mt-6">
+        <section
+          id="about"
+          aria-label="About Colin Zhou"
+          className="scroll-mt-6"
+        >
           <Introduction />
           <div className="section-container mt-10">
             <figure className="mx-auto max-w-md text-center">
@@ -252,10 +324,10 @@ export default function Home() {
                   query and download historical data from PLC controllers within a specified time interval and visualize the changes.`,
                   `Implemented organizational RBAC controls over the integrations side of the platform`,
                   `Used Go to implement functionality allowing users to replay SCXML statecharts with data from historian, helping factory
-                  owners test an SCXML diagram before deploying to edge devices on the factory floor.`
+                  owners test an SCXML diagram before deploying to edge devices on the factory floor.`,
                 ]}
               />
-            </Reveal>          
+            </Reveal>
             <Reveal>
               <Experience
                 companyLogo={Kaliber}
@@ -290,7 +362,7 @@ export default function Home() {
                   AI chatbot.`,
                   `Implemented role-based access control with error handling for consumer, admin, and contributor roles,
                   ensuring secure access to 10+ unique web app features on the frontend like Cap AI, AtomAssist, Capitalizer, and
-                  Cluster Analytics`
+                  Cluster Analytics`,
                 ]}
               />
             </Reveal>
@@ -370,10 +442,17 @@ export default function Home() {
                     list={project.technologies}
                     githubLink={project.github ?? undefined}
                     liveLink={liveUrl(project)}
-                    image={media?.type === "image" ? projectMedia(media.image) : undefined}
+                    image={
+                      media?.type === "image"
+                        ? projectMedia(media.image)
+                        : undefined
+                    }
                     video={
                       media?.type === "video"
-                        ? { src: withPrefix(media.src), poster: projectMedia(media.poster) }
+                        ? {
+                            src: withPrefix(media.src),
+                            poster: projectMedia(media.poster),
+                          }
                         : undefined
                     }
                   />

@@ -113,7 +113,11 @@ export default function Projects({
           />
         ) : video ? (
           <div className="mb-6 overflow-hidden rounded-lg ring-1 ring-white/10">
-            <ProjectVideo src={video.src} poster={video.poster} title={header} />
+            <ProjectVideo
+              src={video.src}
+              poster={video.poster}
+              title={header}
+            />
           </div>
         ) : null}
 
@@ -138,7 +142,10 @@ export default function Projects({
               className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-indigo-500/15 px-4 text-sm font-medium text-indigo-200 ring-1 ring-indigo-400/30 transition-colors hover:bg-indigo-500/25 hover:text-white"
             >
               View live
-              <FaArrowUpRightFromSquare className="h-3.5 w-3.5" aria-hidden="true" />
+              <FaArrowUpRightFromSquare
+                className="h-3.5 w-3.5"
+                aria-hidden="true"
+              />
             </a>
           </div>
         ) : null}

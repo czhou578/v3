@@ -19,9 +19,22 @@ export default function Document() {
         ) : null}
         {/* The site is served under a path prefix, so the icon must be linked
             explicitly; browsers only look for /favicon.ico at the domain root. */}
-        <link rel="icon" href={withPrefix("/favicon.ico")} sizes="16x16 32x32 48x48" />
-        <link rel="icon" type="image/png" sizes="32x32" href={withPrefix("/favicon-32.png")} />
-        <link rel="apple-touch-icon" sizes="180x180" href={withPrefix("/apple-touch-icon.png")} />
+        <link
+          rel="icon"
+          href={withPrefix("/favicon.ico")}
+          sizes="16x16 32x32 48x48"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={withPrefix("/favicon-32.png")}
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={withPrefix("/apple-touch-icon.png")}
+        />
         <meta name="theme-color" content="#111827" />
         <script
           type="application/ld+json"

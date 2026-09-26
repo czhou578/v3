@@ -38,10 +38,7 @@ export default function Education({
   }, []);
 
   return (
-    <li
-      ref={ref}
-      className="reveal relative pb-10 pl-16 last:pb-0 sm:pl-20"
-    >
+    <li ref={ref} className="reveal relative pb-10 pl-16 last:pb-0 sm:pl-20">
       {/* Gray rail, plus an indigo line that grows once the entry is in view. */}
       <div
         className="absolute bottom-0 left-[23px] top-0 w-0.5 bg-gray-700 sm:left-[27px]"

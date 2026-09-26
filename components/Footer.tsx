@@ -35,7 +35,11 @@ const links: { href: string; Icon: IconType; name: string }[] = [
     Icon: FaTiktok,
     name: "TikTok",
   },
-  { href: "https://dribbble.com/colinzhou", Icon: FaDribbble, name: "Dribbble" },
+  {
+    href: "https://dribbble.com/colinzhou",
+    Icon: FaDribbble,
+    name: "Dribbble",
+  },
   {
     href: "https://www.worldcubeassociation.org/persons/2014ZHOU16",
     Icon: FaCube,
