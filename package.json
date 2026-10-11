@@ -27,6 +27,9 @@
     "mcp:typecheck": "tsc -p my-portfolio-mcp --noEmit",
     "agent-files": "node scripts/generate-agent-files.mjs"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "@next/bundle-analyzer": "^15.5.27",
     "@opennextjs/cloudflare": "^1.20.9",
@@ -40,7 +43,7 @@
     "@cloudflare/workers-types": "^5.20260925.1",
     "@eslint/eslintrc": "^3.3.7",
     "@modelcontextprotocol/sdk": "^1.32.1",
-    "@types/node": "18.19.130",
+    "@types/node": "^22.20.5",
     "@types/react": "18.3.27",
     "@types/react-dom": "18.3.7",
     "autoprefixer": "10.6.1",
