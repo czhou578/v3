@@ -11,6 +11,11 @@ updates:
       timezone: "America/Los_Angeles"
     commit-message:
       prefix: "deps"
+    # A release must be a week old before it is proposed, which leaves time
+    # for a hijacked release to be found and yanked before dependabot-merge
+    # ships it. Security updates are not delayed by this.
+    cooldown:
+      default-days: 7
     groups:
       # One PR a week for everything that is not a breaking change.
       npm-minor-patch:
@@ -39,6 +44,11 @@ updates:
       timezone: "America/Los_Angeles"
     commit-message:
       prefix: "ci"
+    # A release must be a week old before it is proposed, which leaves time
+    # for a hijacked release to be found and yanked before dependabot-merge
+    # ships it. Security updates are not delayed by this.
+    cooldown:
+      default-days: 7
     groups:
       github-actions:
         patterns: ["*"]

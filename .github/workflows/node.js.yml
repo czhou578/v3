@@ -22,23 +22,31 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Runs every check and builds the site. It holds only a read-only token and
+  # installs with --ignore-scripts: this is the job that executes third-party
+  # package code (including on Dependabot PRs), so nothing it runs may be able
+  # to push to the repository.
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pages: write
+      contents: read
     strategy:
       matrix:
         node-version: [22.x]
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Do not leave the token in .git/config for later steps to read.
+          persist-credentials: false
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm ci
+      # Native tools (esbuild, sharp, workerd) ship prebuilt binaries as
+      # optional dependencies, so no install script is needed.
+      - run: npm ci --ignore-scripts
       # The MCP server reads public/projects.json from main, so fail fast if
       # data/projects.json was edited without regenerating and committing it.
       - run: node scripts/generate-agent-files.mjs --check
@@ -54,14 +62,86 @@ jobs:
         env:
           # Repository variable; analytics are skipped when it is unset.
           NEXT_PUBLIC_CF_BEACON_TOKEN: ${{ vars.CF_BEACON_TOKEN }}
-      - name: Deploy 🚀
-        # Pull requests run every check above but must never publish: only a
-        # commit that is actually on main may reach the live site.
+      - name: Upload site
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: out
+          # out/.nojekyll must survive: without it GitHub Pages runs Jekyll,
+          # which drops the _next directory and breaks the site.
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 1
+
+  # Publishes the artifact built above. This is the only job that can write
+  # to the repository, and it runs no npm code at all. Pull requests never
+  # reach it: only a commit that is actually on main may reach the live site.
+  deploy:
+    needs: build
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: out
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
+
+  # Deploys the MCP worker so production cannot drift from main, then checks
+  # that the live server completes the MCP handshake. Needs the repository
+  # secrets CLOUDFLARE_API_TOKEN (scoped to "Workers Scripts: Edit") and
+  # CLOUDFLARE_ACCOUNT_ID; without them it warns and skips.
+  deploy-mcp:
+    needs: build
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - name: Check for Cloudflare credentials
+        if: env.HAS_CF_TOKEN != 'true'
+        run: echo "::warning::CLOUDFLARE_API_TOKEN is not set; the MCP worker was not deployed."
+      - uses: actions/checkout@v7
+        if: env.HAS_CF_TOKEN == 'true'
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        if: env.HAS_CF_TOKEN == 'true'
+        with:
+          node-version: 22.x
+          cache: "npm"
+      - run: npm ci --ignore-scripts
+        if: env.HAS_CF_TOKEN == 'true'
+      - name: Deploy worker
+        if: env.HAS_CF_TOKEN == 'true'
+        run: npx wrangler deploy -c my-portfolio-mcp/wrangler.toml
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Smoke test
+        if: env.HAS_CF_TOKEN == 'true'
+        run: |
+          body='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"ci","version":"0"}}}'
+          for attempt in 1 2 3 4 5; do
+            out=$(curl -sS -m 20 -X POST https://my-portfolio-mcp.colinzhou.workers.dev \
+              -H 'Content-Type: application/json' -d "$body" || true)
+            if echo "$out" | grep -q '"serverInfo"'; then echo "MCP handshake OK"; exit 0; fi
+            sleep 10
+          done
+          echo "::error::MCP initialize did not return serverInfo. Last response: $out"
+          exit 1
 
   # Merge Dependabot pull requests on their own once every check above passes.
   # Only runs for commits Dependabot itself pushed: if a person pushes to the
