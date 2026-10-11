@@ -1,11 +1,14 @@
 import Image from "next/image";
 import igProfile from "../public/images/ig-profile.jpg";
 import tiktokProfile from "../public/images/tiktok-profile.jpg";
+import jigsawPuzzle from "../public/images/jigsaw-puzzle.jpg";
 import YouTubeFacade from "./YouTubeFacade";
 
 // Two columns inside a max-w-5xl container from md up, one column below.
 const PROFILE_SIZES =
   "(min-width: 1024px) 464px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 32px)";
+// Single column capped at max-w-3xl (768px); full width minus gutters below.
+const PUZZLE_SIZES = "(min-width: 800px) 768px, calc(100vw - 32px)";
 
 export default function Hobbies() {
   return (
@@ -61,6 +64,23 @@ export default function Hobbies() {
         multiple official competitions since 2014. My best time in a competition
         was 12.92 seconds. Here is a video of myself solving a 3x3 cube in under
         14 seconds at a Bay Area event in 2015.
+      </p>
+
+      <div className="card mx-auto mt-10 max-w-3xl overflow-hidden">
+        <Image
+          src={jigsawPuzzle}
+          alt="A completed 1000-piece Across America jigsaw puzzle: a grid of vintage-style travel posters, one for each of the 50 states"
+          sizes={PUZZLE_SIZES}
+          className="h-auto w-full"
+        />
+      </div>
+
+      <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed sm:text-lg">
+        Away from the keyboard, I also like to solve 1000-piece jigsaw puzzles.
+        It is my favorite way to unwind: no screen, no clock, just the slow
+        satisfaction of sorting through a pile of pieces and watching a picture
+        come together. Pictured above is a finished Across America puzzle, a
+        vintage-style travel poster for each of the 50 states.
       </p>
     </div>
   );
