@@ -58,7 +58,7 @@
   },
   "overrides": {
     "next": {
-      "postcss": "8.5.23"
+      "postcss": "$postcss"
     }
   }
 }
