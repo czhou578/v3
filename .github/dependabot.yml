@@ -1,0 +1,44 @@
+# Dependabot configuration. Pull requests it opens are merged automatically by
+# the dependabot-merge job in workflows/node.js.yml once CI passes.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    commit-message:
+      prefix: "deps"
+    groups:
+      # One PR a week for everything that is not a breaking change.
+      npm-minor-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      # Security fixes arrive as they are published, but as one PR rather
+      # than one per package.
+      npm-security:
+        applies-to: security-updates
+        patterns: ["*"]
+    ignore:
+      # Major versions are deliberate upgrades, not routine maintenance:
+      # Tailwind 4 moved its PostCSS plugin and broke the build when it landed
+      # unreviewed (#87); Next 16 and React 19 need their own migration work.
+      # Delete this block, or narrow it to specific packages, to let them in.
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    commit-message:
+      prefix: "ci"
+    groups:
+      github-actions:
+        patterns: ["*"]
