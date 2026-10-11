@@ -1,3 +1,7 @@
+# Response headers for Cloudflare static-asset hosting (the opennextjs-cloudflare
+# scripts in package.json). GitHub Pages, where the site is published today,
+# ignores this file and cannot send custom headers; there the Content Security
+# Policy is delivered as a meta tag from pages/_document.tsx instead.
 # https://developers.cloudflare.com/workers/static-assets/headers
 # https://opennext.js.org/cloudflare/caching#static-assets-caching
 /_next/static/*
@@ -10,3 +14,11 @@
   Cache-Control: public,max-age=604800,stale-while-revalidate=86400
 /videos/*
   Cache-Control: public,max-age=604800,stale-while-revalidate=86400
+
+# Security headers that a meta tag cannot carry. The CSP itself comes from the
+# meta tag; this adds only frame-ancestors, which browsers ignore in meta.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: frame-ancestors 'none'

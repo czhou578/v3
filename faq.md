@@ -48,7 +48,7 @@ A: React and TypeScript are his primary frontend stack. He also has experience w
 A: Python (FastAPI, SQLAlchemy), Node.js (Express), PostgreSQL, MySQL, MongoDB, Docker, GraphQL, REST APIs, and AWS (Amplify, S3). He has built CRUD systems, RBAC auth flows, async pipelines, and data migration scripts in production.
 
 **Q: What cloud and DevOps experience does Colin have?**
-A: AWS (Amplify GraphQL, S3), GCP, Docker, and Cloudflare Workers (this portfolio is deployed on Cloudflare Pages via OpenNext). He has configured CI/CD pipelines and improved test suite performance (27% faster CI at PolicyEngine by refactoring 150 Jest tests).
+A: AWS (Amplify GraphQL, S3), GCP, Docker, and Cloudflare Workers (this portfolio is deployed to GitHub Pages by GitHub Actions, and its MCP server runs on Cloudflare Workers). He has configured CI/CD pipelines and improved test suite performance (27% faster CI at PolicyEngine by refactoring 150 Jest tests).
 
 ---
 
