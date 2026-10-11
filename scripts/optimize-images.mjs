@@ -64,7 +64,7 @@ async function main() {
 
     // rotate() with no argument bakes in the EXIF orientation, so phone
     // photos come out the way up the camera intended.
-    const image = sharp(src, { failOn: "none" }).rotate();
+    const image = sharp(src).rotate();
     await Promise.all(
       pending.map(({ w, out }) =>
         image

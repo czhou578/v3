@@ -30,5 +30,5 @@ export const featuredProjects = projects.filter((p) => p.featured);
 export const archiveProjects = projects.filter((p) => !p.featured);
 
 /** Only real URLs get a "View live" button; plain-text notes do not. */
-export const liveUrl = (p: Project) =>
+export const projectLiveUrl = (p: Project) =>
   p.live && /^https?:\/\//.test(p.live) ? p.live : undefined;

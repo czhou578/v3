@@ -1,76 +1,63 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
 import {
   CallToolRequestSchema,
+  ErrorCode,
   ListToolsRequestSchema,
+  McpError,
 } from "@modelcontextprotocol/sdk/types.js";
 import openapiYaml from "../openapi.yaml";
 
-const server = new Server(
-  {
-    name: "my-portfolio-mcp",
-    version: "1.0.0",
-  },
-  {
-    capabilities: {
-      tools: {},
-    },
-  }
-);
+const SERVER_INFO = { name: "my-portfolio-mcp", version: "1.1.0" };
 
+// Both files are published from the main branch of the portfolio repo.
 const RESUME_URL =
   "https://raw.githubusercontent.com/czhou578/v3/main/public/resume.md";
 const PROJECTS_URL =
   "https://raw.githubusercontent.com/czhou578/v3/main/public/projects.json";
 
-server.setRequestHandler(ListToolsRequestSchema, async () => {
-  return {
-    tools: [
-      {
-        name: "get_experiences",
-        description: "Gets the professional experiences from Colin's resume.",
-        inputSchema: { type: "object", properties: {} },
-      },
-      {
-        name: "get_projects",
-        description: "Gets the list of Colin's past projects.",
-        inputSchema: { type: "object", properties: {} },
-      },
-      {
-        name: "match_job",
-        description:
-          "Reads a job description string and outputs matching technical skills from Colin's resume.",
-        inputSchema: {
-          type: "object",
-          properties: {
-            job_description: {
-              type: "string",
-              description: "The full text of the job description.",
-            },
-          },
-          required: ["job_description"],
-        },
-      },
-    ],
-  };
-});
+// Shape of public/projects.json, written by scripts/generate-agent-files.mjs.
+type AgentProject = {
+  name: string;
+  date: string;
+  description: string;
+  technologies: string[];
+  github: string | null;
+  live: string | null;
+};
 
-async function getExperiences() {
-  const res = await fetch(RESUME_URL);
-  if (!res.ok) throw new Error("Failed to fetch resume");
-  const text = await res.text();
-  const match = text.match(/## Experience\r?\n([\s\S]*?)(?=\r?\n## |$)/);
-  if (match && match[1]) {
-    return "=== Experiences ===\n" + match[1].trim();
-  }
-  return "Could not find the Experience section in resume.";
+// ---------------------------------------------------------------------------
+// Data access
+// ---------------------------------------------------------------------------
+
+async function fetchText(url: string, what: string): Promise<string> {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to fetch ${what} (HTTP ${res.status})`);
+  return res.text();
 }
 
-async function getProjects() {
+/** Body of a `## Heading` section of a Markdown document, up to the next `## `. */
+function markdownSection(markdown: string, heading: string): string {
+  const pattern = new RegExp(
+    `## ${heading}\\r?\\n([\\s\\S]*?)(?=\\r?\\n## |$)`
+  );
+  const body = markdown.match(pattern)?.[1]?.trim();
+  if (!body)
+    throw new Error(`Could not find the ${heading} section in resume.`);
+  return body;
+}
+
+async function getExperiences(): Promise<string> {
+  const resume = await fetchText(RESUME_URL, "resume");
+  return "=== Experiences ===\n" + markdownSection(resume, "Experience");
+}
+
+async function getProjects(): Promise<string> {
   const res = await fetch(PROJECTS_URL);
-  if (!res.ok) throw new Error("Failed to fetch projects");
-  const data: any = await res.json();
+  if (!res.ok) throw new Error(`Failed to fetch projects (HTTP ${res.status})`);
+  const { projects } = (await res.json()) as { projects: AgentProject[] };
   let result = "=== Projects ===\n";
-  for (const p of data.projects) {
+  for (const p of projects) {
     result += `- ${p.name} (${p.date})\n`;
     result += `  Description: ${p.description}\n`;
     result += `  Tech: ${p.technologies.join(", ")}\n`;
@@ -81,163 +68,262 @@ async function getProjects() {
   return result;
 }
 
-async function matchJob(jobText: string) {
-  const res = await fetch(RESUME_URL);
-  if (!res.ok) throw new Error("Failed to fetch resume");
-  const text = await res.text();
-  const match = text.match(/## Skills\r?\n([\s\S]*?)(?=\r?\n## |$)/);
-  if (!match || !match[1]) {
-    throw new Error("Could not find the Skills section in resume.");
-  }
-
-  const skillsText = match[1];
-  const skillLines = skillsText
-    .split(/\r?\n/)
-    .filter((l: string) => l.trim().length > 0);
-  const resumeSkills = new Set<string>();
-
-  skillLines.forEach((line: string) => {
+// The resume's Skills section is a list of lines shaped like
+// "- **Frontend:** HTML5/CSS3, TypeScript, Cloud (AWS, GCP)". Each line is
+// split on commas, parentheses, and slashes into individual lowercase skills.
+function extractSkills(skillsSection: string): Set<string> {
+  const skills = new Set<string>();
+  for (const line of skillsSection.split(/\r?\n/)) {
     const cleanLine = line.replace(/^- \*\*.*?\*\*/, "").trim();
-    if (cleanLine) {
-      const formattedLine = cleanLine.replace(/[()]/g, ",");
-      const items = formattedLine
-        .split(",")
-        .map((s: string) => s.trim().toLowerCase());
-      items.forEach((item: string) => {
-        const subItems = item.split("/");
-        subItems.forEach((si: string) => {
-          const finalWord = si.trim();
-          if (finalWord && finalWord !== "es6" && finalWord !== "cloud") {
-            resumeSkills.add(finalWord);
-          }
-        });
-      });
+    if (!cleanLine) continue;
+    for (const item of cleanLine.replace(/[()]/g, ",").split(",")) {
+      for (const part of item.split("/")) {
+        const skill = part.trim().toLowerCase();
+        // "es6" and "cloud" are qualifiers in the resume, not skills.
+        if (skill && skill !== "es6" && skill !== "cloud") skills.add(skill);
+      }
     }
-  });
+  }
+  return skills;
+}
 
+async function matchJob(jobText: string): Promise<string> {
+  const resume = await fetchText(RESUME_URL, "resume");
+  const skills = extractSkills(markdownSection(resume, "Skills"));
   const jobTextLower = jobText.toLowerCase();
-  const matchedSkills: string[] = [];
-  resumeSkills.forEach((skill: string) => {
-    const escapedSkill = skill.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const regex = new RegExp(`(^|[^a-z0-9])${escapedSkill}([^a-z0-9]|$)`, "i");
 
-    if (regex.test(jobTextLower)) {
-      matchedSkills.push(skill);
-    }
+  const matched = [...skills].filter((skill) => {
+    const escaped = skill.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    // Word-boundary-ish match that still works for "c++" and "node.js".
+    return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, "i").test(
+      jobTextLower
+    );
   });
 
   let output = "=== Job Match Results ===\n";
-  if (matchedSkills.length > 0) {
-    output += `Found ${matchedSkills.length} matching skills from your resume:\n`;
-    matchedSkills.forEach((s) => (output += `- ${s}\n`));
+  if (matched.length > 0) {
+    output += `Found ${matched.length} matching skills from your resume:\n`;
+    for (const s of matched) output += `- ${s}\n`;
   } else {
     output += "No explicit keyword matches found from your skills section.\n";
   }
   return output;
 }
 
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  if (request.params.name === "get_experiences") {
-    const exp = await getExperiences();
-    return { content: [{ type: "text", text: exp }] };
-  } else if (request.params.name === "get_projects") {
-    const proj = await getProjects();
-    return { content: [{ type: "text", text: proj }] };
-  } else if (request.params.name === "match_job") {
-    const args = request.params.arguments as { job_description: string };
-    const match = await matchJob(args.job_description);
-    return { content: [{ type: "text", text: match }] };
-  }
-  throw new Error(`Tool not found: ${request.params.name}`);
-});
+// ---------------------------------------------------------------------------
+// Tools: one table drives both tools/list and tools/call
+// ---------------------------------------------------------------------------
 
-// Since the MCP sdk doesn't officially expose a synchronous HTTP router for Workers,
-// we map the JSON-RPC specifically
+type ToolSpec = {
+  name: string;
+  description: string;
+  inputSchema: {
+    type: "object";
+    properties: Record<string, unknown>;
+    required?: string[];
+  };
+  run: (args: Record<string, unknown>) => Promise<string>;
+};
+
+const TOOLS: ToolSpec[] = [
+  {
+    name: "get_experiences",
+    description: "Gets the professional experiences from Colin's resume.",
+    inputSchema: { type: "object", properties: {} },
+    run: getExperiences,
+  },
+  {
+    name: "get_projects",
+    description: "Gets the list of Colin's past projects.",
+    inputSchema: { type: "object", properties: {} },
+    run: getProjects,
+  },
+  {
+    name: "match_job",
+    description:
+      "Reads a job description string and outputs matching technical skills from Colin's resume.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        job_description: {
+          type: "string",
+          description: "The full text of the job description.",
+        },
+      },
+      required: ["job_description"],
+    },
+    run: async (args) => {
+      const jobDescription = args.job_description;
+      if (typeof jobDescription !== "string" || !jobDescription.trim()) {
+        throw new McpError(
+          ErrorCode.InvalidParams,
+          "job_description must be a non-empty string"
+        );
+      }
+      return matchJob(jobDescription);
+    },
+  },
+];
+
+// A Server can be bound to only one transport, and the transport below is
+// per-request, so a fresh Server is created for every request. Construction
+// is cheap: it only registers the two handlers.
+function createServer(): Server {
+  const server = new Server(SERVER_INFO, { capabilities: { tools: {} } });
+
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({
+    tools: TOOLS.map(({ name, description, inputSchema }) => ({
+      name,
+      description,
+      inputSchema,
+    })),
+  }));
+
+  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+    const tool = TOOLS.find((t) => t.name === request.params.name);
+    if (!tool) {
+      throw new McpError(
+        ErrorCode.InvalidParams,
+        `Unknown tool: ${request.params.name}`
+      );
+    }
+    try {
+      const text = await tool.run(request.params.arguments ?? {});
+      return { content: [{ type: "text", text }] };
+    } catch (err) {
+      if (err instanceof McpError) throw err;
+      // Failures inside a tool (for example GitHub being unreachable) are
+      // reported as a tool result rather than a protocol error, so the
+      // calling model sees what went wrong and can respond to it.
+      const message = err instanceof Error ? err.message : String(err);
+      return {
+        content: [{ type: "text", text: `Error: ${message}` }],
+        isError: true,
+      };
+    }
+  });
+
+  return server;
+}
+
+// ---------------------------------------------------------------------------
+// HTTP
+// ---------------------------------------------------------------------------
+
+const INFO_TEXT = [
+  "Colin Zhou Portfolio MCP Server",
+  "POST / — MCP over Streamable HTTP (JSON-RPC 2.0: initialize, tools/list, tools/call)",
+  "GET /openapi.yaml — OpenAPI 3.0 specification",
+  "",
+  "Tools: get_experiences | get_projects | match_job",
+  "Docs: https://czhou578.github.io/v3",
+].join("\n");
+
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers":
+    "Content-Type, Accept, Authorization, Mcp-Session-Id, MCP-Protocol-Version",
+  "Access-Control-Expose-Headers": "Mcp-Session-Id, MCP-Protocol-Version",
+};
+
+function withCors(response: Response): Response {
+  const headers = new Headers(response.headers);
+  for (const [name, value] of Object.entries(CORS_HEADERS)) {
+    headers.set(name, value);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+// The Streamable HTTP spec requires clients to accept both JSON and SSE, and
+// the SDK transport enforces that with a 406. Real MCP clients send the header;
+// this fills it in for plain JSON-RPC callers such as curl and the examples in
+// llms.txt, which would otherwise be rejected.
+function withDefaultAccept(request: Request): Request {
+  const accept = request.headers.get("accept") ?? "";
+  if (
+    accept.includes("text/event-stream") &&
+    accept.includes("application/json")
+  ) {
+    return request;
+  }
+  const headers = new Headers(request.headers);
+  headers.set("accept", "application/json, text/event-stream");
+  return new Request(request, { headers });
+}
+
+function methodNotAllowed(): Response {
+  return Response.json(
+    {
+      jsonrpc: "2.0",
+      error: { code: -32000, message: "Method not allowed." },
+      id: null,
+    },
+    { status: 405, headers: { Allow: "POST, OPTIONS" } }
+  );
+}
+
+async function handleMcp(request: Request): Promise<Response> {
+  const server = createServer();
+  const transport = new WebStandardStreamableHTTPServerTransport({
+    // Stateless: no session ids, every request carries everything it needs.
+    sessionIdGenerator: undefined,
+    // Plain JSON bodies instead of SSE streams; nothing here streams.
+    enableJsonResponse: true,
+  });
+  await server.connect(transport);
+  return transport.handleRequest(withDefaultAccept(request));
+}
+
 const worker = {
-  async fetch(request: Request, env: any, ctx: any): Promise<Response> {
+  async fetch(request: Request): Promise<Response> {
     const url = new URL(request.url);
 
-    if (url.pathname === "/openapi.yaml") {
-      return new Response(openapiYaml, {
-        status: 200,
-        headers: {
-          "Content-Type": "application/yaml",
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
 
-    if (request.method !== "POST") {
-      return new Response(
-        "Colin Zhou Portfolio MCP Server\n" +
-          "POST / — JSON-RPC 2.0 (methods: tools/list, tools/call)\n" +
-          "GET /openapi.yaml — OpenAPI 3.0 specification\n\n" +
-          "Tools: get_experiences | get_projects | match_job\n" +
-          "Docs: https://czhou578.github.io/v3",
-        {
-          status: 200,
-          headers: { "Content-Type": "text/plain" },
-        }
+    if (url.pathname === "/openapi.yaml") {
+      return withCors(
+        new Response(openapiYaml, {
+          headers: { "Content-Type": "application/yaml" },
+        })
       );
     }
 
-    try {
-      const body: any = await request.json();
-
-      if (body.method === "tools/list") {
-        return Response.json({
-          jsonrpc: "2.0",
-          id: body.id,
-          result: {
-            tools: [
-              {
-                name: "get_experiences",
-                description:
-                  "Gets the professional experiences from Colin's resume.",
-                inputSchema: { type: "object", properties: {} },
-              },
-              {
-                name: "get_projects",
-                description: "Gets the list of Colin's past projects.",
-                inputSchema: { type: "object", properties: {} },
-              },
-              {
-                name: "match_job",
-                description:
-                  "Reads a job description string and outputs matching technical skills from Colin's resume.",
-                inputSchema: {
-                  type: "object",
-                  properties: {
-                    job_description: { type: "string" },
-                  },
-                  required: ["job_description"],
-                },
-              },
-            ],
-          },
-        });
-      } else if (body.method === "tools/call") {
-        const { name, arguments: args } = body.params;
-        let text = "";
-
-        if (name === "get_experiences") text = await getExperiences();
-        else if (name === "get_projects") text = await getProjects();
-        else if (name === "match_job")
-          text = await matchJob(args.job_description);
-        else throw new Error(`Tool not found: ${name}`);
-
-        return Response.json({
-          jsonrpc: "2.0",
-          id: body.id,
-          result: { content: [{ type: "text", text }] },
-        });
-      }
-
-      return new Response("Method not implemented", { status: 501 });
-    } catch (e: any) {
-      return new Response(e.message, { status: 500 });
+    if (url.pathname !== "/" && url.pathname !== "/mcp") {
+      return withCors(new Response("Not found", { status: 404 }));
     }
+
+    // People and crawlers get a short description. MCP clients that open the
+    // optional server-to-client stream send Accept: text/event-stream and go
+    // to the transport, which correctly answers 405 in stateless mode.
+    const wantsEventStream = (request.headers.get("accept") ?? "").includes(
+      "text/event-stream"
+    );
+    if (request.method === "GET" && !wantsEventStream) {
+      return withCors(
+        new Response(INFO_TEXT, {
+          headers: { "Content-Type": "text/plain; charset=utf-8" },
+        })
+      );
+    }
+
+    // A stateless server has no server-to-client stream to open and no
+    // session to end, so the GET and DELETE halves of Streamable HTTP are
+    // declined here, as in the SDK's own stateless example. Handing a GET to
+    // the transport would open an SSE stream that never carries anything,
+    // which the Workers runtime cancels as a hung request.
+    if (request.method === "GET" || request.method === "DELETE") {
+      return withCors(methodNotAllowed());
+    }
+
+    return withCors(await handleMcp(request));
   },
-};
+} satisfies ExportedHandler;
 
 export default worker;

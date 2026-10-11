@@ -1,8 +1,8 @@
 import Seo from "@/components/Seo";
-import HeaderBar from "@/components/Headerbar";
+import HeaderBar from "@/components/HeaderBar";
 import Footer from "@/components/Footer";
-import NoteWorthyProjects from "@/components/NoteWorthyProjects";
-import { archiveProjects, liveUrl } from "@/lib/projects";
+import ArchiveProjectCard from "@/components/ArchiveProjectCard";
+import { archiveProjects, projectLiveUrl } from "@/lib/projects";
 
 export default function FullProjectArchive() {
   return (
@@ -17,13 +17,13 @@ export default function FullProjectArchive() {
         <h1 className="section-heading">Full Project Archive</h1>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {archiveProjects.map((project) => (
-            <NoteWorthyProjects
+            <ArchiveProjectCard
               key={project.name}
-              header={project.name}
+              title={project.name}
               description={project.description}
-              techUsed={project.technologies}
-              githubLink={project.github ?? undefined}
-              liveLink={liveUrl(project)}
+              technologies={project.technologies}
+              githubUrl={project.github ?? undefined}
+              liveUrl={projectLiveUrl(project)}
             />
           ))}
         </div>

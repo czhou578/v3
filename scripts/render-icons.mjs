@@ -15,6 +15,7 @@ const ROOT = path.resolve(
   ".."
 );
 const PORT = 9444;
+const LAUNCH_TIMEOUT_MS = 10_000;
 
 const CANDIDATES = [
   process.env.CHROME_BIN,
@@ -39,7 +40,11 @@ const getJSON = (url) =>
   );
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Starts the first candidate browser whose DevTools endpoint answers. Each
+// failed candidate is recorded with its actual cause (binary missing, process
+// exited, or port never answered) so the final error says what went wrong.
 async function launch() {
+  const attempts = [];
   for (const bin of CANDIDATES) {
     const proc = spawn(
       bin,
@@ -54,17 +59,35 @@ async function launch() {
       ],
       { stdio: "ignore" }
     );
-    const failed = new Promise((r) => proc.on("error", () => r(true)));
-    for (let i = 0; i < 40; i++) {
-      if (await Promise.race([failed, sleep(250).then(() => false)])) break;
+    let failure = null;
+    proc.on("error", (err) => {
+      failure ??= err.code === "ENOENT" ? "binary not found" : err.message;
+    });
+    proc.on("exit", (code, signal) => {
+      failure ??= signal
+        ? `exited on signal ${signal}`
+        : `exited with code ${code}`;
+    });
+
+    const deadline = Date.now() + LAUNCH_TIMEOUT_MS;
+    while (!failure && Date.now() < deadline) {
       try {
         await getJSON(`http://127.0.0.1:${PORT}/json/version`);
         return proc;
-      } catch {}
+      } catch {
+        // Not listening yet; keep polling until the deadline.
+        await sleep(250);
+      }
     }
     proc.kill();
+    attempts.push(
+      `${bin}: ${failure ?? `started, but port ${PORT} did not answer within ${LAUNCH_TIMEOUT_MS / 1000}s`}`
+    );
   }
-  throw new Error("No Chrome/Chromium found. Set CHROME_BIN.");
+  throw new Error(
+    "Could not start a browser. Set CHROME_BIN to a Chrome or Chromium binary.\n  " +
+      attempts.join("\n  ")
+  );
 }
 
 class CDP {

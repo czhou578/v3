@@ -61,23 +61,23 @@ function ProjectVideo({
   );
 }
 
-export default function Projects({
+export default function ProjectCard({
   id,
-  header,
+  title,
   description,
-  list,
-  githubLink,
-  liveLink,
+  technologies,
+  githubUrl,
+  liveUrl,
   image,
   video,
 }: {
   id?: string;
-  header: string;
+  title: string;
   description: string;
-  list: string[];
-  githubLink?: string;
+  technologies: string[];
+  githubUrl?: string;
   /** Hosted demo or store listing, shown as a "Live" button when present. */
-  liveLink?: string;
+  liveUrl?: string;
   image?: StaticImageData;
   video?: { src: string; poster: StaticImageData };
 }) {
@@ -89,14 +89,14 @@ export default function Projects({
       <div className="flex flex-1 flex-col p-4 sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-2">
           <h3 className="text-xl font-semibold text-white sm:text-2xl">
-            {header}
+            {title}
           </h3>
-          {githubLink ? (
+          {githubUrl ? (
             <a
-              href={githubLink}
+              href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${header} on GitHub`}
+              aria-label={`${title} on GitHub`}
               className="-mr-2 -mt-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-indigo-400 transition-colors hover:bg-white/5 hover:text-indigo-200"
             >
               <FaGithub className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
@@ -107,17 +107,13 @@ export default function Projects({
         {image ? (
           <Image
             src={image}
-            alt={`Screenshot of ${header}`}
+            alt={`Screenshot of ${title}`}
             sizes={IMAGE_SIZES}
             className="mb-6 h-auto w-full rounded-lg ring-1 ring-white/10"
           />
         ) : video ? (
           <div className="mb-6 overflow-hidden rounded-lg ring-1 ring-white/10">
-            <ProjectVideo
-              src={video.src}
-              poster={video.poster}
-              title={header}
-            />
+            <ProjectVideo src={video.src} poster={video.poster} title={title} />
           </div>
         ) : null}
 
@@ -126,17 +122,17 @@ export default function Projects({
         </p>
 
         <ul className="flex flex-wrap gap-2">
-          {list.map((element) => (
+          {technologies.map((element) => (
             <li key={element} className="chip">
               {element}
             </li>
           ))}
         </ul>
 
-        {liveLink ? (
+        {liveUrl ? (
           <div className="mt-5">
             <a
-              href={liveLink}
+              href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-indigo-500/15 px-4 text-sm font-medium text-indigo-200 ring-1 ring-indigo-400/30 transition-colors hover:bg-indigo-500/25 hover:text-white"

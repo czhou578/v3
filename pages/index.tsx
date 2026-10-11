@@ -1,16 +1,16 @@
 import Seo from "@/components/Seo";
 import Image from "next/image";
-import HeaderBar from "@/components/Headerbar";
+import HeaderBar from "@/components/HeaderBar";
 import Introduction from "@/components/Introduction";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
+import ProjectCard from "@/components/ProjectCard";
 import Classwork from "@/components/Classwork";
 import Hobbies from "@/components/Hobbies";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import { withPrefix } from "@/lib/prefix";
-import { featuredProjects, liveUrl } from "@/lib/projects";
+import { featuredProjects, projectLiveUrl } from "@/lib/projects";
 import projectMedia from "@/lib/projectMedia";
 
 import ProfileImg from "../public/images/IMG-0197.jpg";
@@ -75,74 +75,74 @@ const SKILL_GROUPS = [
 
 const CLASSWORK = [
   {
-    header: "Distributed System",
+    title: "Distributed System",
     date: "Fall 2023",
     location: "UIUC",
-    githubLink: "https://github.com/czhou578/CS425",
-    techUsed: ["Python", "Linux", "Hadoop"],
+    githubUrl: "https://github.com/czhou578/CS425",
+    technologies: ["Python", "Linux", "Hadoop"],
   },
   {
-    header: "Web Programming",
+    title: "Web Programming",
     date: "Winter 2022",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/CS-380-Work",
-    techUsed: ["HTML/CSS", "JS", "React"],
+    githubUrl: "https://github.com/czhou578/CS-380-Work",
+    technologies: ["HTML/CSS", "JS", "React"],
   },
   {
-    header: "Internet of Things",
+    title: "Internet of Things",
     date: "Winter 2022",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/IoT-work",
-    techUsed: ["C++", "C"],
+    githubUrl: "https://github.com/czhou578/IoT-work",
+    technologies: ["C++", "C"],
   },
   {
-    header: "Operating Systems",
+    title: "Operating Systems",
     date: "Fall 2021",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/CS360-Work",
-    techUsed: ["C"],
+    githubUrl: "https://github.com/czhou578/CS360-Work",
+    technologies: ["C"],
   },
   {
-    header: "Data Structures / Databases",
+    title: "Data Structures / Databases",
     date: "Fall 2020",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/Fall-2020-Work",
-    techUsed: ["Java", "C++"],
+    githubUrl: "https://github.com/czhou578/Fall-2020-Work",
+    technologies: ["Java", "C++"],
   },
   {
-    header: "Programming Languages",
+    title: "Programming Languages",
     date: "Winter 2021",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/Winter-2021-Quarter-Work",
-    techUsed: ["Java", "Python"],
+    githubUrl: "https://github.com/czhou578/Winter-2021-Quarter-Work",
+    technologies: ["Java", "Python"],
   },
   {
-    header: "Fundamentals of CS II",
+    title: "Fundamentals of CS II",
     date: "Winter 2020",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/CS-211-Work",
-    techUsed: ["Java"],
+    githubUrl: "https://github.com/czhou578/CS-211-Work",
+    technologies: ["Java"],
   },
   {
-    header: "Artificial Intelligence",
+    title: "Artificial Intelligence",
     date: "Spring 2023",
     location: "UIUC",
-    githubLink: "https://github.com/czhou578/AI-Class-Work",
-    techUsed: ["Python"],
+    githubUrl: "https://github.com/czhou578/AI-Class-Work",
+    technologies: ["Python"],
   },
   {
-    header: "Cloud Computing",
+    title: "Cloud Computing",
     date: "Spring 2022",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/Cloud-Computing-Work",
-    techUsed: ["C#"],
+    githubUrl: "https://github.com/czhou578/Cloud-Computing-Work",
+    technologies: ["C#"],
   },
   {
-    header: "Spring 2021 Bellevue Work",
+    title: "Spring 2021 Bellevue Work",
     date: "Spring 2021",
     location: "Bellevue",
-    githubLink: "https://github.com/czhou578/Spring-Quarter-2021",
-    techUsed: ["Java"],
+    githubUrl: "https://github.com/czhou578/Spring-Quarter-2021",
+    technologies: ["Java"],
   },
 ];
 
@@ -313,13 +313,13 @@ export default function Home() {
           <div className="mx-auto max-w-4xl">
             <Reveal>
               <Experience
-                companyLogo={MovendiLogo}
+                logo={MovendiLogo}
                 companyName="Movendi"
                 companyNote="A Kaliber Labs company, formerly Vitesse"
                 position="Full Stack Software Engineer"
                 date="08/2026 - present"
                 location="San Mateo, CA, United States (Onsite)"
-                description={[
+                bullets={[
                   `Used TypeScript and Go to connect the historian microservice to the frontend, allowing users to 
                   query and download historical data from PLC controllers within a specified time interval and visualize the changes.`,
                   `Implemented organizational RBAC controls over the integrations side of the platform`,
@@ -330,12 +330,12 @@ export default function Home() {
             </Reveal>
             <Reveal>
               <Experience
-                companyLogo={Kaliber}
+                logo={Kaliber}
                 companyName="Kaliber Labs Inc."
                 position="Software Engineer"
                 date="01/2026 - 08/2026"
                 location="San Mateo, CA, United States (Onsite)"
-                description={[
+                bullets={[
                   `Rearchitected the Conversation Pipeline demo to be more modular and extendable to various
                   medical skills, such as Speech Therapy / Patient Intake using FastAPI and React. Successfully
                   orchestrated multiple model operations within one system (Qwen, GPT).`,
@@ -346,12 +346,12 @@ export default function Home() {
             </Reveal>
             <Reveal>
               <Experience
-                companyLogo={NuclearnLogo}
+                logo={NuclearnLogo}
                 companyName="Nuclearn"
                 position="Full Stack Software Engineer"
                 date="12/2024 - 02/2025"
                 location="Phoenix, Arizona, United States (Remote)"
-                description={[
+                bullets={[
                   `Utilized FastAPI/SQLAlchemy to develop backend functionality for retrieving up to 25 most similar records in a
                   dataset using 500+ embeddings generated through natural language techniques.`,
                   `Architected a back-end workflow
@@ -368,12 +368,12 @@ export default function Home() {
             </Reveal>
             <Reveal>
               <Experience
-                companyLogo={PolicyEngineLogo}
+                logo={PolicyEngineLogo}
                 companyName="PolicyEngine"
                 position="Open Source Software Engineer"
                 date="03/2024 - present"
                 location="Issaquah, Washington, United States (Remote)"
-                description={[
+                bullets={[
                   `Worked with 3 contributors on PolicyEngine's web app project on GitHub (over 600 visits monthly).`,
                   `Assisted in migrating the front end component library to the newest version of Ant Design. Streamlined
                   150 Jest unit tests by refactoring 5 metadata API calls to occur in the beginning of testing runs.`,
@@ -382,12 +382,12 @@ export default function Home() {
             </Reveal>
             <Reveal>
               <Experience
-                companyLogo={EcoLogicalLogo}
+                logo={EcoLogicalLogo}
                 companyName="EcoLogical"
                 position="Software Engineer Intern"
                 date="09/2023 - 12/2023"
                 location="Champaign, Illinois, United States (Remote)"
-                description={[
+                bullets={[
                   `Using Ant Design components to improve the front-end experience of the flagship web app for small businesses to track their carbon footprint.`,
                   `Set up 10 mutations and queries to AWS Amplify backend for the user signup workflow.`,
                 ]}
@@ -395,12 +395,12 @@ export default function Home() {
             </Reveal>
             <Reveal>
               <Experience
-                companyLogo={IOIntel}
+                logo={IOIntel}
                 companyName="IOIntelligence"
                 position="Software Engineer Intern"
                 date="07/2022 - 09/2022"
                 location="Bellevue, Washington, United States"
-                description={[
+                bullets={[
                   `Developed a 5 page application dashboard that displays networking analytics
                   from company's wireless devices worldwide.`,
                   `Used Chakra UI, React for frontend and Express.js and MySQL for the backend.`,
@@ -409,12 +409,12 @@ export default function Home() {
             </Reveal>
             <Reveal>
               <Experience
-                companyLogo={PencilLogo}
+                logo={PencilLogo}
                 companyName="Molloy Moreno LLC"
                 position="Software Engineer Intern"
                 date="06/2021 - 09/2021"
                 location="Issaquah, Washington, United States"
-                description={[
+                bullets={[
                   `Developed a serverless web app for New York school teachers to track the academic progress of at-risk students.`,
                   `Made final design choices for UI components.`,
                   `Used React to implement UI components on the frontend and AWS for storing media on the backend.`,
@@ -435,13 +435,13 @@ export default function Home() {
               const media = project.media;
               return (
                 <Reveal key={project.name} className="h-full">
-                  <Projects
+                  <ProjectCard
                     id={project.anchor}
-                    header={project.name}
+                    title={project.name}
                     description={project.description}
-                    list={project.technologies}
-                    githubLink={project.github ?? undefined}
-                    liveLink={liveUrl(project)}
+                    technologies={project.technologies}
+                    githubUrl={project.github ?? undefined}
+                    liveUrl={projectLiveUrl(project)}
                     image={
                       media?.type === "image"
                         ? projectMedia(media.image)
@@ -505,7 +505,7 @@ export default function Home() {
           <Reveal>
             <div className="mx-auto flex max-w-4xl flex-col gap-3">
               {CLASSWORK.map((course) => (
-                <Classwork key={course.githubLink} {...course} />
+                <Classwork key={course.githubUrl} {...course} />
               ))}
             </div>
           </Reveal>

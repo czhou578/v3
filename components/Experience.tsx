@@ -2,15 +2,15 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 
 export default function Experience({
-  companyLogo,
+  logo,
   companyName,
   companyNote,
   position,
   date,
   location,
-  description,
+  bullets,
 }: {
-  companyLogo: StaticImageData;
+  logo: StaticImageData;
   companyName: string;
   /** Short context about the company, e.g. its parent company. Shown as its
       own label, apart from the dates and the bullet points. */
@@ -18,14 +18,14 @@ export default function Experience({
   position: string;
   date: string;
   location: string;
-  description: string[];
+  bullets: string[];
 }) {
   return (
     <article className="card mb-6 overflow-hidden sm:flex">
       {/* Wide screens: logo panel beside the text. */}
       <div className="hidden shrink-0 items-center justify-center bg-gray-700/60 p-4 sm:flex sm:w-44">
         <Image
-          src={companyLogo}
+          src={logo}
           width={120}
           height={120}
           alt=""
@@ -38,7 +38,7 @@ export default function Experience({
           {/* Small screens: compact logo inline with the title. */}
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gray-700/60 p-1 sm:hidden">
             <Image
-              src={companyLogo}
+              src={logo}
               width={48}
               height={48}
               alt=""
@@ -65,7 +65,7 @@ export default function Experience({
           {date} • {location}
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-gray-300 sm:text-base">
-          {description.map((item, idx) => (
+          {bullets.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
         </ul>

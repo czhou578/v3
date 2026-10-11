@@ -22,6 +22,9 @@
     "deploy": "npm run images && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "npm run images && opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "mcp:dev": "wrangler dev -c my-portfolio-mcp/wrangler.toml",
+    "mcp:deploy": "wrangler deploy -c my-portfolio-mcp/wrangler.toml",
+    "mcp:typecheck": "tsc -p my-portfolio-mcp --noEmit",
     "agent-files": "node scripts/generate-agent-files.mjs"
   },
   "dependencies": {

@@ -7,16 +7,19 @@ info:
     over JSON-RPC 2.0 via HTTP POST. Use with Claude, Cursor, Open-WebUI, or
     any MCP-compatible agent.
 
-    **Transport:** All tool calls are made with `POST /` using a JSON-RPC 2.0
-    envelope. See each operation's request body schema for the exact payload.
+    **Transport:** MCP Streamable HTTP (stateless). All calls are made with
+    `POST /` using a JSON-RPC 2.0 envelope and answered with a JSON body. See
+    each operation's request body schema for the exact payload.
 
     **Usage with MCP clients:** Point your MCP client at the server URL below.
-    The server responds to `tools/list` and `tools/call` method calls.
+    The server implements the standard `initialize` handshake plus
+    `tools/list` and `tools/call`. Plain JSON-RPC callers may omit the
+    `Accept` header; the server fills it in.
 
     **Direct REST alternative:** Machine-readable files are also available at
     the portfolio site — `/v3/resume.md`, `/v3/projects.json`, `/v3/faq.md`,
     `/v3/llms.txt`.
-  version: 1.0.0
+  version: 1.1.0
   contact:
     name: Colin Zhou
     url: https://czhou578.github.io/v3
@@ -45,9 +48,14 @@ paths:
       summary: JSON-RPC 2.0 endpoint (MCP transport)
       operationId: mcp_jsonrpc
       description: >
-        Single endpoint for all MCP tool interactions. The `method` field in
-        the JSON-RPC body selects the operation. Supported methods:
-        `tools/list` and `tools/call`.
+        Single endpoint for all MCP interactions. The `method` field in the
+        JSON-RPC body selects the operation: `initialize`, `ping`,
+        `tools/list`, or `tools/call`. Unknown methods, unknown tools, and
+        invalid arguments are answered with a JSON-RPC `error` object (HTTP
+        200); a malformed request body is answered with HTTP 400 and a
+        JSON-RPC parse error. A failure inside a tool (for example the
+        upstream resume being unreachable) is returned as a normal result
+        with `isError: true`.
       requestBody:
         required: true
         content:
@@ -138,18 +146,18 @@ paths:
                       content:
                         - type: text
                           text: "=== Experiences ===\n..."
-        "500":
-          description: Internal error (e.g. upstream fetch failed)
+        "400":
+          description: Malformed JSON-RPC request
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-        "501":
-          description: Method not implemented
-          content:
-            text/plain:
-              schema:
-                type: string
+                $ref: "#/components/schemas/JsonRpcErrorResponse"
+              example:
+                jsonrpc: "2.0"
+                id: null
+                error:
+                  code: -32700
+                  message: "Parse error"
 
 components:
   schemas:
@@ -324,3 +332,30 @@ components:
                   type: array
                   items:
                     $ref: "#/components/schemas/TextContent"
+                isError:
+                  type: boolean
+                  description: Present and true when the tool itself failed.
+
+    JsonRpcErrorResponse:
+      type: object
+      required: [jsonrpc, error]
+      properties:
+        jsonrpc:
+          type: string
+          enum: ["2.0"]
+        id:
+          oneOf:
+            - type: integer
+            - type: string
+          nullable: true
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: integer
+              description: >
+                JSON-RPC error code, e.g. -32700 parse error, -32601 method
+                not found, -32602 invalid params (also used for unknown tools).
+            message:
+              type: string

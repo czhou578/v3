@@ -9,6 +9,12 @@ on:
   pull_request:
     branches: ["main"]
 
+# One deploy at a time, so a push to main cannot be overwritten by an older
+# run that happened to finish later.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,6 +38,10 @@ jobs:
       - run: node scripts/generate-agent-files.mjs --check
       - name: Lint
         run: npm run lint
+      # The MCP worker has its own tsconfig (Workers runtime types, no DOM) and
+      # is excluded from the site's, so it needs its own check.
+      - name: Typecheck MCP worker
+        run: npm run mcp:typecheck
       - name: Check formatting
         run: npm run format:check
       - run: npm run build --if-present
@@ -39,6 +49,9 @@ jobs:
           # Repository variable; analytics are skipped when it is unset.
           NEXT_PUBLIC_CF_BEACON_TOKEN: ${{ vars.CF_BEACON_TOKEN }}
       - name: Deploy 🚀
+        # Pull requests run every check above but must never publish: only a
+        # commit that is actually on main may reach the live site.
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # The branch the action should deploy to.

@@ -1,5 +1,5 @@
 import Seo from "@/components/Seo";
-import HeaderBar from "@/components/Headerbar";
+import HeaderBar from "@/components/HeaderBar";
 import Footer from "@/components/Footer";
 import { withPrefix } from "@/lib/prefix";
 
