@@ -8,11 +8,17 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  # Dispatched by the dependabot-merge job below: a merge performed with the
+  # workflow token does not fire the `push` trigger, so it asks for the deploy
+  # explicitly instead.
+  workflow_dispatch:
 
 # One deploy at a time, so a push to main cannot be overwritten by an older
-# run that happened to finish later.
+# run that happened to finish later. Pull requests each get their own group:
+# sharing one group would cancel queued PR runs whenever several open at once,
+# which is exactly what Dependabot does.
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
   cancel-in-progress: false
 
 jobs:
@@ -51,8 +57,58 @@ jobs:
       - name: Deploy 🚀
         # Pull requests run every check above but must never publish: only a
         # commit that is actually on main may reach the live site.
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
+
+  # Merge Dependabot pull requests on their own once every check above passes.
+  # Only runs for commits Dependabot itself pushed: if a person pushes to the
+  # branch, the actor changes and the PR goes back to needing a manual merge.
+  dependabot-merge:
+    needs: build
+    if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write # to dispatch the deploy run after merging
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - name: Merge
+        run: |
+          # GitHub computes mergeability lazily, so it can read UNKNOWN for a
+          # moment after a push; give it a few tries before deciding.
+          for attempt in 1 2 3 4 5 6; do
+            state=$(gh pr view "$PR" --json mergeStateStatus --jq .mergeStateStatus)
+            [ "$state" != "UNKNOWN" ] && break
+            sleep 10
+          done
+          echo "merge state: $state"
+          case "$state" in
+            DIRTY)
+              # Several Dependabot PRs touch package-lock.json, so after one
+              # merges the rest conflict. Dependabot rebases them itself within
+              # a few minutes, and the resulting push re-runs this workflow.
+              echo "Conflicts with main; waiting for Dependabot to rebase."
+              exit 0 ;;
+            BLOCKED)
+              echo "Blocked by branch protection; leaving for a manual merge."
+              exit 0 ;;
+          esac
+          gh pr merge "$PR" --merge
+      - name: Deploy main
+        # The merge above was made with the workflow token, so it did not
+        # trigger the `push` run that normally publishes the site.
+        if: success()
+        run: |
+          merged=$(gh pr view "$PR" --json state --jq .state)
+          if [ "$merged" = "MERGED" ]; then
+            gh workflow run node.js.yml --ref main
+          else
+            echo "PR was not merged; nothing to deploy."
+          fi
