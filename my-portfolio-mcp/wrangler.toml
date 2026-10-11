@@ -6,3 +6,18 @@ compatibility_date = "2024-03-20"
 type = "Text"
 globs = ["**/*.yaml"]
 fallthrough = true
+
+# Request logs and console output in the Cloudflare dashboard (Workers ->
+# my-portfolio-mcp -> Logs), so abuse and upstream failures are visible.
+[observability]
+enabled = true
+
+# Per-IP limit on MCP calls, read by isRateLimited() in src/index.ts. The
+# namespace id is any number unique to this rate limiter within the account.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 30
+  period = 60

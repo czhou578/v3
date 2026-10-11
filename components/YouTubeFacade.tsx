@@ -1,14 +1,21 @@
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
 
 // Shows a static thumbnail and only loads the YouTube player, and its
-// several hundred kilobytes of script, when the viewer presses play.
+// several hundred kilobytes of script, when the viewer presses play. The
+// thumbnail is self-hosted, so nothing is requested from Google until then.
 export default function YouTubeFacade({
   id,
   title,
+  poster,
+  sizes,
 }: {
   id: string;
   title: string;
+  poster: StaticImageData;
+  sizes: string;
 }) {
   const [playing, setPlaying] = useState(false);
 
@@ -29,14 +36,12 @@ export default function YouTubeFacade({
           aria-label={`Play video: ${title}`}
           className="group absolute inset-0 flex h-full w-full items-center justify-center"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+          <Image
+            src={poster}
             alt=""
-            width={1280}
-            height={720}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
+            fill
+            sizes={sizes}
+            className="object-cover"
           />
           <span className="relative flex h-14 w-20 items-center justify-center rounded-xl bg-red-600 text-white shadow-lg transition-transform group-hover:scale-105 motion-reduce:transition-none">
             <FaPlay className="h-6 w-6" aria-hidden="true" />

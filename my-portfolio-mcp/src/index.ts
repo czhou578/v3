@@ -16,6 +16,19 @@ const RESUME_URL =
 const PROJECTS_URL =
   "https://raw.githubusercontent.com/czhou578/v3/main/public/projects.json";
 
+// Bindings declared in wrangler.toml. The rate limiter is optional so the
+// worker still runs if the binding is removed or unavailable.
+type Env = { RATE_LIMITER?: RateLimit };
+
+// Limits on what one caller can make the worker do. A real job description is
+// a few thousand characters; the request cap leaves room for the JSON-RPC
+// envelope around one.
+const MAX_JOB_DESCRIPTION_CHARS = 20_000;
+const MAX_REQUEST_BODY_BYTES = 64 * 1024;
+const UPSTREAM_TIMEOUT_MS = 5_000;
+// raw.githubusercontent.com itself serves these files with max-age=300.
+const UPSTREAM_CACHE_SECONDS = 300;
+
 // Shape of public/projects.json, written by scripts/generate-agent-files.mjs.
 type AgentProject = {
   name: string;
@@ -30,10 +43,19 @@ type AgentProject = {
 // Data access
 // ---------------------------------------------------------------------------
 
-async function fetchText(url: string, what: string): Promise<string> {
-  const res = await fetch(url);
+// Every tool call reads from GitHub, so cache the response at the edge and
+// give up quickly if GitHub is slow rather than holding the request open.
+async function fetchUpstream(url: string, what: string): Promise<Response> {
+  const res = await fetch(url, {
+    cf: { cacheTtl: UPSTREAM_CACHE_SECONDS, cacheEverything: true },
+    signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
+  });
   if (!res.ok) throw new Error(`Failed to fetch ${what} (HTTP ${res.status})`);
-  return res.text();
+  return res;
+}
+
+async function fetchText(url: string, what: string): Promise<string> {
+  return (await fetchUpstream(url, what)).text();
 }
 
 /** Body of a `## Heading` section of a Markdown document, up to the next `## `. */
@@ -53,8 +75,7 @@ async function getExperiences(): Promise<string> {
 }
 
 async function getProjects(): Promise<string> {
-  const res = await fetch(PROJECTS_URL);
-  if (!res.ok) throw new Error(`Failed to fetch projects (HTTP ${res.status})`);
+  const res = await fetchUpstream(PROJECTS_URL, "projects");
   const { projects } = (await res.json()) as { projects: AgentProject[] };
   let result = "=== Projects ===\n";
   for (const p of projects) {
@@ -160,6 +181,12 @@ const TOOLS: ToolSpec[] = [
           "job_description must be a non-empty string"
         );
       }
+      if (jobDescription.length > MAX_JOB_DESCRIPTION_CHARS) {
+        throw new McpError(
+          ErrorCode.InvalidParams,
+          `job_description must be at most ${MAX_JOB_DESCRIPTION_CHARS} characters`
+        );
+      }
       return matchJob(jobDescription);
     },
   },
@@ -196,6 +223,7 @@ function createServer(): Server {
       // reported as a tool result rather than a protocol error, so the
       // calling model sees what went wrong and can respond to it.
       const message = err instanceof Error ? err.message : String(err);
+      console.error(`tool ${tool.name} failed: ${message}`);
       return {
         content: [{ type: "text", text: `Error: ${message}` }],
         isError: true,
@@ -256,6 +284,28 @@ function withDefaultAccept(request: Request): Request {
   return new Request(request, { headers });
 }
 
+function tooManyRequests(): Response {
+  return Response.json(
+    {
+      jsonrpc: "2.0",
+      error: { code: -32000, message: "Too many requests; try again shortly." },
+      id: null,
+    },
+    { status: 429, headers: { "Retry-After": "60" } }
+  );
+}
+
+// Per-IP limit on MCP calls (see [[ratelimits]] in wrangler.toml). Each call
+// fetches from GitHub and, for match_job, scans the caller's text, so this
+// keeps one client from using up the account's daily request allowance.
+async function isRateLimited(request: Request, env: Env): Promise<boolean> {
+  if (!env.RATE_LIMITER) return false;
+  const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
+  const { success } = await env.RATE_LIMITER.limit({ key: ip });
+  if (!success) console.warn(`rate limited ${ip}`);
+  return !success;
+}
+
 function methodNotAllowed(): Response {
   return Response.json(
     {
@@ -274,13 +324,15 @@ async function handleMcp(request: Request): Promise<Response> {
     sessionIdGenerator: undefined,
     // Plain JSON bodies instead of SSE streams; nothing here streams.
     enableJsonResponse: true,
+    // The SDK default is 4 MB; nothing legitimate here comes close.
+    maxRequestBodySize: MAX_REQUEST_BODY_BYTES,
   });
   await server.connect(transport);
   return transport.handleRequest(withDefaultAccept(request));
 }
 
 const worker = {
-  async fetch(request: Request): Promise<Response> {
+  async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") {
@@ -322,8 +374,12 @@ const worker = {
       return withCors(methodNotAllowed());
     }
 
+    if (await isRateLimited(request, env)) {
+      return withCors(tooManyRequests());
+    }
+
     return withCors(await handleMcp(request));
   },
-} satisfies ExportedHandler;
+} satisfies ExportedHandler<Env>;
 
 export default worker;

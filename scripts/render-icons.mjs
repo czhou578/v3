@@ -3,6 +3,11 @@
 // and public/apple-touch-icon.png. Run once after changing a template, then
 // commit the outputs. Needs Chrome or Chromium; set CHROME_BIN to point at
 // the binary if it is not found automatically.
+//
+// The browser runs sandboxed, with a fresh private profile directory and a
+// DevTools port chosen by the OS, so other local users cannot predict or
+// attach to it. If Chrome cannot start its sandbox on this machine (common in
+// containers), set CHROME_NO_SANDBOX=1 to run it without one.
 import { spawn } from "node:child_process";
 import { promises as fs } from "node:fs";
 import http from "node:http";
@@ -14,8 +19,8 @@ const ROOT = path.resolve(
   path.dirname(new URL(import.meta.url).pathname),
   ".."
 );
-const PORT = 9444;
 const LAUNCH_TIMEOUT_MS = 10_000;
+const NO_SANDBOX = process.env.CHROME_NO_SANDBOX === "1";
 
 const CANDIDATES = [
   process.env.CHROME_BIN,
@@ -40,21 +45,51 @@ const getJSON = (url) =>
   );
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Kills the browser and waits for it to exit, so its profile directory can be
+// deleted without Chrome writing new files into it on the way down.
+async function stop(proc) {
+  if (proc.exitCode === null && proc.signalCode === null) {
+    const exited = new Promise((r) => proc.once("exit", r));
+    proc.kill();
+    await Promise.race([exited, sleep(5_000)]);
+  }
+}
+
+// Chrome writes the DevTools port it was given (with port 0, a random free
+// one) to this file in its profile directory once it is listening.
+async function readDevToolsPort(profileDir) {
+  try {
+    const text = await fs.readFile(
+      path.join(profileDir, "DevToolsActivePort"),
+      "utf8"
+    );
+    const port = Number(text.split("\n")[0]);
+    return Number.isInteger(port) && port > 0 ? port : null;
+  } catch {
+    return null;
+  }
+}
+
 // Starts the first candidate browser whose DevTools endpoint answers. Each
 // failed candidate is recorded with its actual cause (binary missing, process
 // exited, or port never answered) so the final error says what went wrong.
 async function launch() {
   const attempts = [];
   for (const bin of CANDIDATES) {
+    // mkdtemp creates the directory with a random name and owner-only access.
+    const profileDir = await fs.mkdtemp(
+      path.join(os.tmpdir(), "render-icons-")
+    );
     const proc = spawn(
       bin,
       [
         "--headless",
-        `--remote-debugging-port=${PORT}`,
-        "--no-sandbox",
+        "--remote-debugging-address=127.0.0.1",
+        "--remote-debugging-port=0",
+        ...(NO_SANDBOX ? ["--no-sandbox"] : []),
         "--disable-gpu",
         "--hide-scrollbars",
-        `--user-data-dir=${path.join(os.tmpdir(), "render-icons-profile")}`,
+        `--user-data-dir=${profileDir}`,
         "about:blank",
       ],
       { stdio: "ignore" }
@@ -71,17 +106,25 @@ async function launch() {
 
     const deadline = Date.now() + LAUNCH_TIMEOUT_MS;
     while (!failure && Date.now() < deadline) {
-      try {
-        await getJSON(`http://127.0.0.1:${PORT}/json/version`);
-        return proc;
-      } catch {
-        // Not listening yet; keep polling until the deadline.
-        await sleep(250);
+      const port = await readDevToolsPort(profileDir);
+      if (port) {
+        try {
+          await getJSON(`http://127.0.0.1:${port}/json/version`);
+          return { proc, port, profileDir };
+        } catch {
+          // Port file written but not answering yet; keep polling.
+        }
       }
+      await sleep(250);
     }
-    proc.kill();
+    await stop(proc);
+    await fs.rm(profileDir, { recursive: true, force: true });
+    const hint =
+      !NO_SANDBOX && failure?.startsWith("exited")
+        ? " (if the sandbox cannot start here, retry with CHROME_NO_SANDBOX=1)"
+        : "";
     attempts.push(
-      `${bin}: ${failure ?? `started, but port ${PORT} did not answer within ${LAUNCH_TIMEOUT_MS / 1000}s`}`
+      `${bin}: ${failure ?? `started, but DevTools did not answer within ${LAUNCH_TIMEOUT_MS / 1000}s`}${hint}`
     );
   }
   throw new Error(
@@ -174,7 +217,7 @@ function toIco(pngs) {
 
 const chrome = await launch();
 try {
-  const target = (await getJSON(`http://127.0.0.1:${PORT}/json`)).find(
+  const target = (await getJSON(`http://127.0.0.1:${chrome.port}/json`)).find(
     (t) => t.type === "page"
   );
   const ws = new WebSocket(target.webSocketDebuggerUrl);
@@ -206,5 +249,6 @@ try {
     "wrote public/og-image.png, favicon.ico, favicon-32.png, apple-touch-icon.png"
   );
 } finally {
-  chrome.kill();
+  await stop(chrome.proc);
+  await fs.rm(chrome.profileDir, { recursive: true, force: true });
 }

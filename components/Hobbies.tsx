@@ -2,6 +2,7 @@ import Image from "next/image";
 import igProfile from "../public/images/ig-profile.jpg";
 import tiktokProfile from "../public/images/tiktok-profile.jpg";
 import jigsawPuzzle from "../public/images/jigsaw-puzzle.jpg";
+import cubeVideoPoster from "../public/images/rubiks-cube-video.jpg";
 import YouTubeFacade from "./YouTubeFacade";
 
 // Two columns inside a max-w-5xl container from md up, one column below.
@@ -56,6 +57,8 @@ export default function Hobbies() {
         <YouTubeFacade
           id="XOTlieuv-Sc"
           title="Rubik's Cube solved in 13.31 seconds"
+          poster={cubeVideoPoster}
+          sizes={PUZZLE_SIZES}
         />
       </div>
 
