@@ -2,14 +2,16 @@ import Image from "next/image";
 import igProfile from "../public/images/ig-profile.jpg";
 import tiktokProfile from "../public/images/tiktok-profile.jpg";
 import jigsawPuzzle from "../public/images/jigsaw-puzzle.jpg";
+import jigsawPuzzle2 from "../public/images/jigsaw-puzzle-2.jpg";
 import cubeVideoPoster from "../public/images/rubiks-cube-video.jpg";
 import YouTubeFacade from "./YouTubeFacade";
 
 // Two columns inside a max-w-5xl container from md up, one column below.
-const PROFILE_SIZES =
+// Used by both two-image rows: the social profiles and the puzzles.
+const TWO_COLUMN_SIZES =
   "(min-width: 1024px) 464px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 32px)";
 // Single column capped at max-w-3xl (768px); full width minus gutters below.
-const PUZZLE_SIZES = "(min-width: 800px) 768px, calc(100vw - 32px)";
+const VIDEO_SIZES = "(min-width: 800px) 768px, calc(100vw - 32px)";
 
 export default function Hobbies() {
   return (
@@ -24,7 +26,7 @@ export default function Hobbies() {
           <Image
             src={igProfile}
             alt="Colin's Instagram profile, colin.pianist"
-            sizes={PROFILE_SIZES}
+            sizes={TWO_COLUMN_SIZES}
             className="h-auto w-full"
           />
         </a>
@@ -37,7 +39,7 @@ export default function Hobbies() {
           <Image
             src={tiktokProfile}
             alt="Colin's TikTok profile, colin.pianist"
-            sizes={PROFILE_SIZES}
+            sizes={TWO_COLUMN_SIZES}
             className="h-auto w-full"
           />
         </a>
@@ -58,7 +60,7 @@ export default function Hobbies() {
           id="XOTlieuv-Sc"
           title="Rubik's Cube solved in 13.31 seconds"
           poster={cubeVideoPoster}
-          sizes={PUZZLE_SIZES}
+          sizes={VIDEO_SIZES}
         />
       </div>
 
@@ -69,21 +71,32 @@ export default function Hobbies() {
         14 seconds at a Bay Area event in 2015.
       </p>
 
-      <div className="card mx-auto mt-10 max-w-3xl overflow-hidden">
-        <Image
-          src={jigsawPuzzle}
-          alt="A completed 1000-piece Across America jigsaw puzzle: a grid of vintage-style travel posters, one for each of the 50 states"
-          sizes={PUZZLE_SIZES}
-          className="h-auto w-full"
-        />
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="card overflow-hidden">
+          <Image
+            src={jigsawPuzzle}
+            alt="A completed 1000-piece Across America jigsaw puzzle: a grid of vintage-style travel posters, one for each of the 50 states"
+            sizes={TWO_COLUMN_SIZES}
+            className="h-auto w-full"
+          />
+        </div>
+        <div className="card overflow-hidden">
+          <Image
+            src={jigsawPuzzle2}
+            alt="A completed Well Behaved Women Seldom Make History jigsaw puzzle: a pink gallery wall of framed portraits of notable women"
+            sizes={TWO_COLUMN_SIZES}
+            className="h-auto w-full"
+          />
+        </div>
       </div>
 
       <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed sm:text-lg">
         Away from the keyboard, I also like to solve 1000-piece jigsaw puzzles.
-        It is my favorite way to unwind: no screen, no clock, just the slow
-        satisfaction of sorting through a pile of pieces and watching a picture
-        come together. Pictured above is a finished Across America puzzle, a
-        vintage-style travel poster for each of the 50 states.
+        It is my favorite way to unwind without more screentime. Something about the slowly 
+        sorting through a pile of pieces and watching a picture
+        come together is so satisfying. Pictured above are two I have finished: Across America, a
+        vintage-style travel poster for each of the 50 states, and Well Behaved
+        Women Seldom Make History, a gallery wall of portraits of notable women in history.
       </p>
     </div>
   );

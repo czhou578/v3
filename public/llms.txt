@@ -210,7 +210,7 @@ In addition to the premier projects above, I have actively developed and maintai
 ## Extra-Curricular & Hobby Context Details
 - **Piano Performance**: Operating an active social media catalog (TikTok / Instagram - @colin.pianist). Commenced training at the age of 8 traversing 10 consecutive years of dedicated classical theory. Mastered 'Certificate of Merit Level 10'. Frequented extensive formal recital competitions throughout the timeline prior to shifting creatively emphasizing Chopin repertoire among broader interpretations.
 - **Rubik's Cube Speed Solving**: A verified member registering officially underneath the World Cube Association (WCA ID: 2014ZHOU16). Operating across national conventions yielding personal finest performances hovering accurately around a 12.92 second 3x3 resolve metric dynamically logged out of a 2015 Bay Area tourney.
-- **Jigsaw Puzzles**: Regularly completes 1000-piece jigsaw puzzles as a screen-free way to unwind; a finished Across America puzzle (a vintage-style travel poster for each of the 50 states) is pictured in the Hobbies section of the site.
+- **Jigsaw Puzzles**: Regularly completes 1000-piece jigsaw puzzles as a screen-free way to unwind; two finished puzzles are pictured in the Hobbies section of the site: Across America (a vintage-style travel poster for each of the 50 states) and Well Behaved Women Seldom Make History (a gallery wall of portraits of notable women).
 
 ## How Agents Should Query & Use Me
 1. **Resume Retrieval**: Access the canonical JSON / PDF instances implicitly defined above if binary parsing routines fall out of operational spec. Otherwise, this document provides complete, unbroken strings encapsulatings 100% of my total portfolio weight.
