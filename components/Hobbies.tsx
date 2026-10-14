@@ -92,11 +92,12 @@ export default function Hobbies() {
 
       <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed sm:text-lg">
         Away from the keyboard, I also like to solve 1000-piece jigsaw puzzles.
-        It is my favorite way to unwind without more screentime. Something about the slowly 
-        sorting through a pile of pieces and watching a picture
-        come together is so satisfying. Pictured above are two I have finished: Across America, a
-        vintage-style travel poster for each of the 50 states, and Well Behaved
-        Women Seldom Make History, a gallery wall of portraits of notable women in history.
+        It is my favorite way to unwind without more screentime. Something about
+        the slowly sorting through a pile of pieces and watching a picture come
+        together is so satisfying. Pictured above are two I have finished:
+        Across America, a vintage-style travel poster for each of the 50 states,
+        and Well Behaved Women Seldom Make History, a gallery wall of portraits
+        of notable women in history.
       </p>
     </div>
   );
