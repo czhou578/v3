@@ -17,16 +17,23 @@
       }
     },
     {
-      "name": "nanoGPT Inference Optimizations",
-      "anchor": "nanoGPT",
+      "name": "Hermes Discord Stock Bot",
+      "anchor": "hermes",
       "featured": true,
       "date": "2026",
-      "summary": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
-      "description": "Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill, Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an interactive frontend / backend that demonstrates the main differences and performance gains.",
-      "technologies": ["Python", "PyTorch", "FastAPI", "React / Vite"],
-      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "summary": "Discord stock research bot on Hermes Agent: research reports, SEC filing analyses, earnings updates, technical and options reads, and a cross-channel watchlist stored in SQLite.",
+      "description": "A Discord bot that does my stock research, built on Nous Research's Hermes Agent. It writes research reports, SEC filing analyses, earnings reports, \"what changed since last time\" updates, and technical and options reads. Eight custom Hermes skills drive a set of Python CLIs for live fundamentals, peer comparisons, watchlist scans, insider buying clusters, and quant factor screens, and every report is saved to a local SQLite database. Slash commands like /ta, /scan, and /comps run the CLIs directly and reply in about a second with no model call.",
+      "technologies": [
+        "Python",
+        "Hermes Agent",
+        "Discord",
+        "SQLite",
+        "Playwright",
+        "SEC EDGAR API"
+      ],
+      "github": null,
       "live": null,
-      "media": { "type": "image", "image": "nanoGPT" }
+      "media": { "type": "image", "image": "hermes-stock-bot" }
     },
     {
       "name": "StreetFoodLove",
@@ -84,9 +91,19 @@
       "media": { "type": "image", "image": "benchmark2" }
     },
     {
-      "name": "Caption Image Classifier",
-      "anchor": "img-classify",
+      "name": "nanoGPT Inference Optimizations",
+      "anchor": "nanoGPT",
       "featured": true,
+      "date": "2026",
+      "summary": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
+      "description": "Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill, Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an interactive frontend / backend that demonstrates the main differences and performance gains.",
+      "technologies": ["Python", "PyTorch", "FastAPI", "React / Vite"],
+      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "live": null,
+      "media": { "type": "image", "image": "nanoGPT" }
+    },
+    {
+      "name": "Caption Image Classifier",
       "date": "2024–2025",
       "summary": "Full-stack web app: classify images (custom PyTorch CIFAR-100 model) + generate captions (HuggingFace via WebSockets).",
       "description": "A full stack web application that classifies images and generates captions; using my own pretrained PyTorch model based on the CIFAR-100 dataset and leveraging HuggingFace's API to do image captioning using WebSockets.",

@@ -5,6 +5,7 @@ import PE1 from "../public/images/PE1.png";
 import benchmark2 from "../public/images/benchmark2.png";
 import llmPoster from "../public/images/llm-poster.jpg";
 import imgclassifyPoster from "../public/images/imgclassify-poster.jpg";
+import hermesStockBot from "../public/images/hermes-stock-bot.png";
 
 // Static imports give next/image the real width and height of each file.
 // data/projects.json refers to these by key; adding a project image means
@@ -16,6 +17,7 @@ const MEDIA: Record<string, StaticImageData> = {
   benchmark2,
   "llm-poster": llmPoster,
   "imgclassify-poster": imgclassifyPoster,
+  "hermes-stock-bot": hermesStockBot,
 };
 
 /** Throws during the static build if data/projects.json names an unknown image. */
