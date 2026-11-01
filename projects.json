@@ -17,15 +17,17 @@
       "featured": true
     },
     {
-      "name": "nanoGPT Inference Optimizations",
-      "description": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
+      "name": "Hermes Discord Stock Bot",
+      "description": "Discord stock research bot on Hermes Agent: research reports, SEC filing analyses, earnings updates, technical and options reads, and a cross-channel watchlist stored in SQLite.",
       "technologies": [
         "Python",
-        "PyTorch",
-        "FastAPI",
-        "React / Vite"
+        "Hermes Agent",
+        "Discord",
+        "SQLite",
+        "Playwright",
+        "SEC EDGAR API"
       ],
-      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "github": null,
       "live": null,
       "date": "2026",
       "featured": true
@@ -80,6 +82,20 @@
       "featured": true
     },
     {
+      "name": "nanoGPT Inference Optimizations",
+      "description": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
+      "technologies": [
+        "Python",
+        "PyTorch",
+        "FastAPI",
+        "React / Vite"
+      ],
+      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "live": null,
+      "date": "2026",
+      "featured": true
+    },
+    {
       "name": "Caption Image Classifier",
       "description": "Full-stack web app: classify images (custom PyTorch CIFAR-100 model) + generate captions (HuggingFace via WebSockets).",
       "technologies": [
@@ -92,7 +108,7 @@
       "github": "https://github.com/czhou578/cifar",
       "live": null,
       "date": "2024–2025",
-      "featured": true
+      "featured": false
     },
     {
       "name": "Jobname Screener",
