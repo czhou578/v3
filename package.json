@@ -38,7 +38,7 @@
     "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261025.1",
+    "@cloudflare/workers-types": "^5.20261026.1",
     "@eslint/eslintrc": "^3.3.7",
     "@modelcontextprotocol/sdk": "^1.32.2",
     "@next/bundle-analyzer": "^15.5.28",
@@ -54,7 +54,7 @@
     "prettier": "^3.9.10",
     "tailwindcss": "3.4.19",
     "typescript": "^5.9.3",
-    "wrangler": "^4.152.0"
+    "wrangler": "^4.153.0"
   },
   "overrides": {
     "next": {
