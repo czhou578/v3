@@ -38,11 +38,11 @@
     "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20261109.1",
+    "@cloudflare/workers-types": "^5.20261116.1",
     "@eslint/eslintrc": "^3.3.7",
     "@modelcontextprotocol/sdk": "^1.32.2",
     "@next/bundle-analyzer": "^15.5.29",
-    "@opennextjs/cloudflare": "^1.20.16",
+    "@opennextjs/cloudflare": "^1.20.17",
     "@types/node": "^22.20.5",
     "@types/react": "18.3.27",
     "@types/react-dom": "18.3.7",
@@ -50,11 +50,11 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.39.5",
     "eslint-config-next": "^15.5.29",
-    "postcss": "8.5.32",
-    "prettier": "^3.9.10",
+    "postcss": "8.5.33",
+    "prettier": "^3.10.1",
     "tailwindcss": "3.4.19",
     "typescript": "^5.9.3",
-    "wrangler": "^4.159.0"
+    "wrangler": "^4.163.0"
   },
   "overrides": {
     "next": {
