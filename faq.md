@@ -59,7 +59,7 @@ A:
 
 1. **LLM God** — Multi-LLM Electron desktop app (Claude, ChatGPT, Gemini). Shows systems thinking and developer tooling instincts. → https://github.com/czhou578/llm-god
 2. **Caption Image Classifier** — PyTorch CIFAR-100 model + HuggingFace captioning via real-time WebSockets. Shows ML + full-stack integration. → https://github.com/czhou578/cifar
-3. **React Backend-Benchmarks** — React frontend benchmarking Node.js vs Python/Flask vs Golang backends against a shared MySQL DB. Shows multi-language backend knowledge. → https://github.com/czhou578/React-Backend-Benchmarks
+3. **prune-moe-kit** — Command-line pipeline that prunes a local mixture-of-experts (MoE) model for one workflow, with gates that compare each cut with the full model. Shows ML inference and tooling skills. → https://github.com/czhou578/prune-moe-kit
 4. **StreetFoodLove** — Yelp-style food-truck app; 4-person capstone team. TypeScript, React, SQL, AWS, Redux. → https://github.com/bcfoodapp/streetfoodlove
 5. **Job Screener Chrome Extension** — Chrome API + Google Sheets API extension, highlighting previously-applied companies on job boards. Practical automation tooling. → https://github.com/czhou578/jobname-screener
 
