@@ -73,8 +73,31 @@
       "media": { "type": "image", "image": "PE1" }
     },
     {
-      "name": "React Backend-Benchmarks",
+      "name": "prune-moe-kit",
+      "anchor": "prune-moe-kit",
       "featured": true,
+      "date": "2026",
+      "summary": "Command-line pipeline that prunes a local mixture-of-experts (MoE) model for one workflow: a quick check, a capture of the routed experts, a rank, a byte-for-byte build, and gates that compare each cut with the full model.",
+      "description": "A command-line pipeline that prunes a local mixture-of-experts (MoE) model for one workflow. It removes the experts that the work uses least, and the model then needs less memory. I first pruned DeepSeek V4 Flash and Qwen3.6-35B-A3B by hand, which removed 27% and 20% of the loaded weights. prune-moe-kit turns those steps into commands, with gates that compare each cut with the full model. On a third model, Inkling-2-Mini, a 41-minute probe agreed with the 103-minute full gate.",
+      "technologies": ["Python", "vLLM", "safetensors", "uv", "pytest"],
+      "github": "https://github.com/czhou578/prune-moe-kit",
+      "live": null,
+      "media": { "type": "image", "image": "prune-moe-kit" }
+    },
+    {
+      "name": "nanoGPT Inference Optimizations",
+      "anchor": "nanoGPT",
+      "featured": true,
+      "date": "2026",
+      "summary": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
+      "description": "Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill, Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an interactive frontend / backend that demonstrates the main differences and performance gains.",
+      "technologies": ["Python", "PyTorch", "FastAPI", "React / Vite"],
+      "github": "https://github.com/czhou578/nanoGPT-inference",
+      "live": null,
+      "media": { "type": "image", "image": "nanoGPT" }
+    },
+    {
+      "name": "React Backend-Benchmarks",
       "date": "2023",
       "summary": "React frontend that sends repeated queries to three backends (Node.js, Python/Flask, Go) sharing one MySQL database and compares their response times.",
       "description": "A web application with a React frontend and three backends written in different languages that are all connected to a common MySQL database. Users will be able to send repetitive queries to any backend that they choose and see how fast the server responds after the completed operation.",
@@ -89,18 +112,6 @@
       "github": "https://github.com/czhou578/React-Backend-Benchmarks",
       "live": null,
       "media": { "type": "image", "image": "benchmark2" }
-    },
-    {
-      "name": "nanoGPT Inference Optimizations",
-      "anchor": "nanoGPT",
-      "featured": true,
-      "date": "2026",
-      "summary": "19 LLM inference optimizations (KV caching, chunked prefill, speculative decoding, paged attention, continuous batching) implemented on nanoGPT, benchmarked against a baseline, with an interactive frontend showing the gains.",
-      "description": "Implementing 19 industry level ML inference optimizations on Andrej Karpathy's nanoGPT code, including KV Caching, Chunked Prefill, Speculative Decoding, Paged Attention, Continuous batching, etc. Benchmarked all these strategies against a baseline and also created an interactive frontend / backend that demonstrates the main differences and performance gains.",
-      "technologies": ["Python", "PyTorch", "FastAPI", "React / Vite"],
-      "github": "https://github.com/czhou578/nanoGPT-inference",
-      "live": null,
-      "media": { "type": "image", "image": "nanoGPT" }
     },
     {
       "name": "Caption Image Classifier",
