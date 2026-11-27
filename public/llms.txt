@@ -166,10 +166,10 @@ Roles-Based Access Control (RBAC), Serverless deployments, API Migration, Markdo
 - **Tech Stack**: HTML/CSS, TypeScript, React.js, Semantic UI, AWS, Redux.
 - **Github Repository**: https://github.com/czhou578/Code-Samples-Project-Elpis
 
-### 5. React Backend-Benchmarks
-- **Overview**: Demonstrates deep polyglot engineering comprehension. This platform pairs a singular React user interface with three categorically disparate backend applications—Python (Flask), Node.js (Express), and Golang—all interfacing centrally to a heavily loaded MySQL deployment. Serves benchmarking utilities tracking processing speed variances natively across each server environments.
-- **Tech Stack**: TypeScript, React.js, Node.js, MySQL, Python / Flask, Golang.
-- **Github Repository**: https://github.com/czhou578/React-Backend-Benchmarks
+### 5. prune-moe-kit
+- **Overview**: A command-line pipeline that prunes a local mixture-of-experts (MoE) model for one workflow. It removes the experts that the work uses least, and the model then needs less memory. It follows two prunes by hand of DeepSeek V4 Flash and Qwen3.6-35B-A3B, which removed 27% and 20% of the loaded weights. Its stages are a quick check, a capture of the routed experts, a rank, a byte-for-byte build, and gates that compare each cut with the full model.
+- **Tech Stack**: Python, vLLM, safetensors, uv, pytest.
+- **Github Repository**: https://github.com/czhou578/prune-moe-kit
 
 ### 6. Job Screener Extension
 - **Overview**: An aggressively practical Google Chrome plugin explicitly tethered to my personal Google Sheets API instances. Scans browser DOM configurations looking for registered enterprise names. Programmatically injects UI modifications (bright orange highlighting) over any corporation that I have formally submitted a job application toward. Built completely from the ground up to counter applying redundantly inside deeply saturated internet job boards.
@@ -186,6 +186,7 @@ Roles-Based Access Control (RBAC), Serverless deployments, API Migration, Markdo
 ## Full Historical Project Archive
 In addition to the premier projects above, I have actively developed and maintained an extensive list of other systems:
 
+- **React Backend-Benchmarks**: A React frontend that sends repeated queries to three backends (Node.js, Python/Flask, Golang) that share one MySQL database, and compares their response times. (https://github.com/czhou578/React-Backend-Benchmarks)
 - **iPhone Image-Classifier**: Connects PyTorch inference pipelines natively against NLTK libraries tracking prompts querying specifically targeted labels across local database schemas. Constructed meticulously with Sqlite 3 underneath a Tailwind+Next.js UI. (https://github.com/czhou578/iphone-img-classify)
 - **Distance Calc**: Engineered highly accurate latitude/longitude mapping software leveraging React Router, Firebase infrastructure, and Material UI aesthetics. (https://github.com/czhou578/DistanceCalc)
 - **PostureCam**: Actuated hardware systems directly via Python leveraging OpenCV. Programmatically identifies skeletal contours ensuring continuous tracking of spine and neck posture. (https://github.com/czhou578/PostureCam)
