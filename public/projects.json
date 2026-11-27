@@ -66,19 +66,18 @@
       "featured": true
     },
     {
-      "name": "React Backend-Benchmarks",
-      "description": "React frontend that sends repeated queries to three backends (Node.js, Python/Flask, Go) sharing one MySQL database and compares their response times.",
+      "name": "prune-moe-kit",
+      "description": "Command-line pipeline that prunes a local mixture-of-experts (MoE) model for one workflow: a quick check, a capture of the routed experts, a rank, a byte-for-byte build, and gates that compare each cut with the full model.",
       "technologies": [
-        "TypeScript",
-        "React.js",
-        "Node.js",
-        "MySQL",
-        "Python / Flask",
-        "Golang"
+        "Python",
+        "vLLM",
+        "safetensors",
+        "uv",
+        "pytest"
       ],
-      "github": "https://github.com/czhou578/React-Backend-Benchmarks",
+      "github": "https://github.com/czhou578/prune-moe-kit",
       "live": null,
-      "date": "2023",
+      "date": "2026",
       "featured": true
     },
     {
@@ -94,6 +93,22 @@
       "live": null,
       "date": "2026",
       "featured": true
+    },
+    {
+      "name": "React Backend-Benchmarks",
+      "description": "React frontend that sends repeated queries to three backends (Node.js, Python/Flask, Go) sharing one MySQL database and compares their response times.",
+      "technologies": [
+        "TypeScript",
+        "React.js",
+        "Node.js",
+        "MySQL",
+        "Python / Flask",
+        "Golang"
+      ],
+      "github": "https://github.com/czhou578/React-Backend-Benchmarks",
+      "live": null,
+      "date": "2023",
+      "featured": false
     },
     {
       "name": "Caption Image Classifier",
